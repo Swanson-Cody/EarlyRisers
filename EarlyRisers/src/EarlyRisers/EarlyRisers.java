@@ -48,11 +48,25 @@ public class EarlyRisers  {
         scene.setQuestion(question);
         System.out.println(scene.toString());
         
+    }    
+       
+    public static void testCodyClasses(){
+        
+    Location location =new Location();
+    location.setVisited(false);
+    location.setRow(2);
+    location.setColumn(4);
+    System.out.println(location.toString());
+    Provision provision =new Provision();
+    provision.setPerishable(false);
+    provision.setName("Player");
+    System.out.println(provision.toString());
+       
+    
     }
     public static void testRachelClasses(){
     }
-    public static void testCodyClasses(){
-    }
+    
         // TODO code application logic here
     public static void main(String[] args){
         testTeamClasses();  
