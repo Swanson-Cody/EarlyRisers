@@ -65,8 +65,16 @@ public class EarlyRisers  {
     
     }
     public static void testRachelClasses(){
-    }
+    Player player =new Player();
+    player.setName("Player Name");
+    System.out.println(player.toString());
+    Point point = new Point();
+    point.setRow(3);
+    point.setColumn(2);
+    System.out.println(point.toString());
     
+    }
+    private String name;
         // TODO code application logic here
     public static void main(String[] args){
         testTeamClasses();  
