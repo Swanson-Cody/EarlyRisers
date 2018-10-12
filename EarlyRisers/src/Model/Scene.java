@@ -17,17 +17,10 @@ public class Scene implements Serializable {
     
         private String name;
         private String description;
-        private String question;
+        private Question question;
         private String item;
         
-        public static void testSceneClasses(){
-       Scene scene = new Scene();
-       scene.setName("Player");
-       scene.setDescription("Field");
-       scene.setQuestion("Enter Name");
-       scene.setItem("Tool");
-              System.out.println(scene.toString());
-         }
+     
         
     /**
      * Get the value of name
@@ -74,7 +67,7 @@ public class Scene implements Serializable {
      *
      * @return the value of question
      */
-    public String getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
@@ -83,7 +76,7 @@ public class Scene implements Serializable {
      *
      * @param question new value of question
      */
-    public void setQuestion(String question) {
+    public void setQuestion(Question question) {
         this.question = question;
     }
 
@@ -148,10 +141,10 @@ public class Scene implements Serializable {
     public String toString() {
         return "Scene{" + "name=" + name + ", description=" + description + ", question=" + question + ", item=" + item + '}';
     }
-public static void main(String[] args){
-          
-     testHeatherClasses();
-        
-    }
 
+   
+
+        
 }
+
+

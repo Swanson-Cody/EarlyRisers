@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
- * @author Heather
+ * @author Cody
  */
-public class Map {
+public class Map implements Serializable{
  
     private String locations;
     private int currentLocation;

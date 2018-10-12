@@ -15,30 +15,22 @@ import java.util.Objects;
  */    
 
 public class Question implements Serializable{
-    private String questionTest;
+    private String questionText;
     private String answer1;
     private String answer2;
     private String answer3;
     private String answer4;
     private int correctAnswer;
     
-    public static void testQuestionClasses(){
-       Question question = new Question();
-       question.setAnswer1("I don't know");
-       question.setAnswer2("Turn Right");
-       question.setAnswer3("Turn Left");
-       question.setAnswer4("Stay here");
-       question.setCorrectAnswer(100);
-       System.out.println(question.toString());
-         }
+    
     
     /**
      * Get the value of questionTest
      *
      * @return the value of questionTest
      */
-    public String getQuestionTest() {
-        return questionTest;
+    public String getQuestionText() {
+        return questionText;
     }
 
     /**
@@ -46,8 +38,8 @@ public class Question implements Serializable{
      *
      * @param questionTest new value of questionTest
      */
-    public void setQuestionTest(String questionTest) {
-        this.questionTest = questionTest;
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
     }
 
     
@@ -153,7 +145,7 @@ public class Question implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.questionTest);
+        hash = 97 * hash + Objects.hashCode(this.questionText);
         hash = 97 * hash + Objects.hashCode(this.answer1);
         hash = 97 * hash + Objects.hashCode(this.answer2);
         hash = 97 * hash + Objects.hashCode(this.answer3);
@@ -177,7 +169,7 @@ public class Question implements Serializable{
         if (this.correctAnswer != other.correctAnswer) {
             return false;
         }
-        if (!Objects.equals(this.questionTest, other.questionTest)) {
+        if (!Objects.equals(this.questionText, other.questionText)) {
             return false;
         }
         if (!Objects.equals(this.answer1, other.answer1)) {
@@ -197,7 +189,7 @@ public class Question implements Serializable{
 
     @Override
     public String toString() {
-        return "Question{" + "questionTest=" + questionTest + ", answer1=" + answer1 + ", answer2=" + answer2 + ", answer3=" + answer3 + ", answer4=" + answer4 + ", correctAnswer=" + correctAnswer + '}';
+        return "Question{" + "questionTest=" + questionText + ", answer1=" + answer1 + ", answer2=" + answer2 + ", answer3=" + answer3 + ", answer4=" + answer4 + ", correctAnswer=" + correctAnswer + '}';
     }
     public static void main(String[] args){
          

@@ -32,6 +32,22 @@ public class EarlyRisers  {
     
     
     public static void testHeatherClasses(){
+        
+       Question question = new Question();
+       question.setQuestionText("What shall we do now?");
+       question.setAnswer1("I don't know");
+       question.setAnswer2("Turn Right");
+       question.setAnswer3("Turn Left");
+       question.setAnswer4("Stay here");
+       question.setCorrectAnswer(2);
+       System.out.println(question.toString());
+       Scene scene =new Scene();
+        scene.setName("Field");
+        scene.setDescription("Wheat Field");
+        scene.setItem("Hammer");
+        scene.setQuestion(question);
+        System.out.println(scene.toString());
+        
     }
     public static void testRachelClasses(){
     }
