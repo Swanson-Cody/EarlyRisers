@@ -72,6 +72,12 @@ public class EarlyRisers  {
     point.setRow(3);
     point.setColumn(2);
     System.out.println(point.toString());
+    Map map =new Map();
+    map.setCurrentLocation(5);
+    map.setLocations("Field");
+     System.out.println(map.toString());
+    
+    
     
     }
     private String name;
