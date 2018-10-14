@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -52,6 +53,40 @@ public class Map implements Serializable{
      */
     public void setCurrentLocation(int currentLocation) {
         this.currentLocation = currentLocation;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.locations);
+        hash = 53 * hash + this.currentLocation;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.currentLocation != other.currentLocation) {
+            return false;
+        }
+        if (!Objects.equals(this.locations, other.locations)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" + "locations=" + locations + ", currentLocation=" + currentLocation + '}';
     }
 
 }
