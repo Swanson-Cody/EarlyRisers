@@ -52,12 +52,12 @@ public class EarlyRisers  {
        
     public static void testCodyClasses(){
         
-    Location location =new Location();
+    Location location = new Location();
     location.setVisited(false);
     location.setRow(2);
     location.setColumn(4);
     System.out.println(location.toString());
-    Provision provision =new Provision();
+    Provision provision = new Provision();
     provision.setPerishable(false);
     provision.setName("Player");
     System.out.println(provision.toString());
