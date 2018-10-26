@@ -13,7 +13,7 @@ package Control;
  */
 public class Population {
 
-    public static int calcGrowth(int population, int w) {
+    public double calcGrowth(double population, double w) {
         //Get random number 1-5 for percent of population increase
 
         //   Random percent = new Random();
@@ -36,8 +36,8 @@ public class Population {
         //Calculate population by taking the beginning population number and taking the 
 //random percent times it by 100 times the population and adding that number to 
 //the total. 
-        int result  = population + ((w/100)*population);
-       
+        double result  = population + ((w/100)*population);
+        Math.rint(result);
         return result;   
 
 }
