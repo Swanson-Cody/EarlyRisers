@@ -7,18 +7,13 @@ package Control;
 //import java.util.Random;
 
 //import java.util.Random;
-
-
 /**
  *
  * @author Heather
  */
 public class Population {
 
-    public static double calcGrowth(int population, int w) {
-
-        population = 100;
-        w = 5;
+    public static int calcGrowth(int population, int w) {
         //Get random number 1-5 for percent of population increase
 
         //   Random percent = new Random();
@@ -26,24 +21,25 @@ public class Population {
         //   ++w;
         //   System.out.println(w); 
 //Define invalid variables
-        if (population <= 0) {
+        if (population <= 0) { //if population is under 0
             return -1;
         }
-        else if (population > 300) {
+        if (population > 300) {//if population grows bigger than 300
             return -2;
         }
-        else if (w <= 0) {
+        if (w <= 0) {//if percent is less than or equal to 0
             return -3;
         }
-        else if (w > 5) {
+        if (w > 5) {//if percent is greater than 5
             return -4;
         }
         //Calculate population by taking the beginning population number and taking the 
 //random percent times it by 100 times the population and adding that number to 
 //the total. 
-        else {double populationTotal = population + ((w / 100) * population);
-        return Math.round(populationTotal); }
+        int result  = population + ((w/100)*population);
+       
+        return result;   
 
-    }
-
+}
+    
 }
