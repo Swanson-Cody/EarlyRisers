@@ -37,9 +37,8 @@ public class Population {
 //random percent times it by 100 times the population and adding that number to 
 //the total. 
         double result  = population + ((w/100)*population);
-        Math.rint(result);
-        return result;   
-
+        return Math.rint(result);
+ 
 }
     
 }
