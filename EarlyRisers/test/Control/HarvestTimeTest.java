@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author rache
+ * @author Early Risers
  */
 public class HarvestTimeTest {
     
