@@ -31,11 +31,7 @@ public class HarvestTimeTest {
      * Test of calcHarvest method, of class HarvestTime.
      */
     @Test
-    public void testCalcHarvest() {
-        System.out.println("calcHarvest");
-        
-         // --- Text Case 1---
-        System.out.println("\tTest Case 1");
+    public void testCalcHarvestOne() {
         int percent = 15;
         int acresOwned = 80;
         int highTithesYieldPerAcre = 5;
@@ -44,74 +40,94 @@ public class HarvestTimeTest {
         int expResult = 400;
         int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
         assertEquals(expResult, result);
-        
-         // --- Text Case 2---
-        System.out.println("\tTest Case 2");
-        percent = 5;
-        acresOwned = 50;
-        highTithesYieldPerAcre = 0;
-        medTithesYieldPerAcre = 0;
-        lowTithesYieldPerAcre = 3;
-        expResult = 150;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+    }    
+    
+    
+    /**
+     * Test of calcHarvest method, of class HarvestTime.
+     */
+    @Test
+    public void testCalcHarvestTwo() {
+        int percent = 5;
+        int acresOwned = 50;
+        int highTithesYieldPerAcre = 0;
+        int medTithesYieldPerAcre = 0;
+        int lowTithesYieldPerAcre = 3;
+        int expResult = 150;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
         assertEquals(expResult, result);
-        
-         // --- Text Case 3---
-        System.out.println("\tTest Case 3");
-        percent = -6;
-        acresOwned = 90;
-        highTithesYieldPerAcre = 5;
-        medTithesYieldPerAcre = 0;
-        lowTithesYieldPerAcre = 3;
-        expResult = -1;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+    }    
+    
+        /**
+     * Test of calcHarvest method, of class HarvestTime.
+     */
+    @Test
+    public void testCalcHarvestThree() {
+        int percent = -6;
+        int acresOwned = 90;
+        int highTithesYieldPerAcre = 5;
+        int medTithesYieldPerAcre = 0;
+        int lowTithesYieldPerAcre = 3;
+        int expResult = -1;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
         assertEquals(expResult, result);
-        
-        // --- Text Case 4---
-        System.out.println("\tTest Case 4");
-        percent = 105;
-        acresOwned = 102;
-        highTithesYieldPerAcre = 0;
-        medTithesYieldPerAcre = 0;
-        lowTithesYieldPerAcre = 1;
-        expResult = 0;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+    }    
+    @Test
+    public void testCalcHarvestFour() {
+        int percent = 105;
+        int acresOwned = 102;
+        int highTithesYieldPerAcre = 0;
+        int medTithesYieldPerAcre = 0;
+        int lowTithesYieldPerAcre = 1;
+        int expResult = -2;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
         assertEquals(expResult, result);
-        
-        // --- Text Case 5---
-        System.out.println("\tTest Case 5");
-        percent = 3;
-        acresOwned = 20;
-        highTithesYieldPerAcre = 0;
-        medTithesYieldPerAcre = 0;
-        lowTithesYieldPerAcre = 2;
-        expResult = 40;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
-        assertEquals(expResult, result);
-        
-        // --- Text Case 6---
-        System.out.println("\tTest Case 6");
-        percent = 10;
-        acresOwned = 97;
-        highTithesYieldPerAcre = 0;
-        medTithesYieldPerAcre = 4;
-        lowTithesYieldPerAcre = 0;
-        expResult = 388;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
-        assertEquals(expResult, result);
-        
-        // --- Text Case 7---
-        System.out.println("\tTest Case 7");
-        percent = 12;
-        acresOwned = 151;
-        highTithesYieldPerAcre = 0;
-        medTithesYieldPerAcre = 3;
-        lowTithesYieldPerAcre = 0;
-        expResult = 453;
-        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
+    @Test
+    public void testCalcHarvestFive() {
+        int percent = 3;
+        int acresOwned = 20;
+        int highTithesYieldPerAcre = 0;
+        int medTithesYieldPerAcre = 0;
+        int lowTithesYieldPerAcre = 2;
+        int expResult = 40;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testCalcHarvestSix() {
+        int percent = 10;
+        int acresOwned = 97;
+        int highTithesYieldPerAcre = 0;
+        int medTithesYieldPerAcre = 4;
+        int lowTithesYieldPerAcre = 0;
+        int expResult = 388;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testCalcHarvestSeven() {
+        int percent = 12;
+        int acresOwned = 151;
+        int highTithesYieldPerAcre = 0;
+        int medTithesYieldPerAcre = 3;
+        int lowTithesYieldPerAcre = 0;
+        int expResult = 453;
+        int result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+        assertEquals(expResult, result);
+    }
+//        // --- Text Case 7---
+//        System.out.println("\tTest Case 7");
+//        percent = 12;
+//        acresOwned = 151;
+//        highTithesYieldPerAcre = 0;
+//        medTithesYieldPerAcre = 3;
+//        lowTithesYieldPerAcre = 0;
+//        expResult = 453;
+//        result = HarvestTime.calcHarvest(percent, acresOwned, highTithesYieldPerAcre, medTithesYieldPerAcre, lowTithesYieldPerAcre);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        //fail("The test case is a prototype.");
+//    }
     
 }
