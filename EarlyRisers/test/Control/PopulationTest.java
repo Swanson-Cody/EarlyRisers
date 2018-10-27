@@ -37,7 +37,7 @@ public class PopulationTest {
 //        System.out.println("Test Case 2");
 //        population = 93.0;
 //        w = 3.0;
-//        expResult = 95.79; //96
+//        expResult = 96; //96
 //        result = Population.calcGrowth(population, w);
 //        assertEquals(expResult, result, 0.0);
 //       
@@ -61,7 +61,7 @@ public class PopulationTest {
 //        System.out.println("Test Case 5");
 //        population = 55.0;
 //        w = 4.0;
-//        expResult = 57.2; //57
+//        expResult = 57; //57
 //        result = Population.calcGrowth(population, w);
 //        assertEquals(expResult, result, 0.0);
 //        
@@ -69,7 +69,7 @@ public class PopulationTest {
 //        System.out.println("Test Case 6");
 //        population = 140.0;
 //        w = 3.0;
-//        expResult = 144.2; //144
+//        expResult = 144; //144
 //        result = Population.calcGrowth(population, w);
 //        assertEquals(expResult, result, 0.0);
 //        
@@ -77,7 +77,7 @@ public class PopulationTest {
 //        System.out.println("Test Case 7");
 //        population = 85.0;
 //        w = 2.0;
-//        expResult = 86.7; //87
+//        expResult = 87; //87
 //        result = Population.calcGrowth(population, w);
 //        assertEquals(expResult, result, 0.0);
 
