@@ -5,6 +5,8 @@
  */
 package View;
       
+import java.util.Scanner;
+
 /**
  *
  * @author Heather
@@ -49,8 +51,9 @@ public class HelpMenuView {
         int choice = -1; 
     while (choice <0 || choice >5){
     try {
-        System.out.print ("\Enter your choice: ");
-        choice = Interger.parseInt (kb.nextLine());
+        System.out.println("Enter your choice: ");
+        choice = Integer.parseInt(kb.nextLine());
+        
     }
     catch (NumberFormatException e)  {
     System.out.println("Invalid selection. Please try again.");
@@ -58,4 +61,58 @@ public class HelpMenuView {
     }
     return choice;
 }
+    private void performAction (int choice){
+    switch (choice){
+        case 0:
+            exit = true;
+            System.out.println("Have a good day.  Goodbye!");
+        case 1: 
+            menuWheat();
+            break;
+        case 2:
+            menuTithing();
+            break;
+        case 3:
+            menuLand(); 
+            break;
+        case 4:
+            menuGamePlay();
+            break;
+        case 5:
+            menuScenes();
+            break;
+        default:
+            System.out.println("An unknown error has occured.");
+    }
+    }
+    
+private void menuWheat(){
+        int num = (1);
+        System.out.println("You will start the game with an allotment of wheat."
+                + "Each turn you will be given the option to use wheat to feed the"
+                + "people of the city and use wheat to plant crops for a fall harvest."
+                + "You will also be given the opportunity to pay your tithing using your"
+                + "wheat. Use this resource wisely.  If you don't feed your people enough"
+                + "they will starve.");
+    }
+    private void menuTithing(){
+        System.out.println("You will be given the opportunity each turn to pay your tithing."
+                + "This is not required of you, however, paying your tithing will return blessings"
+                + "upon you.");
+    }
+    private void menuLand(){
+        System.out.println("You will be given land to start the game.  You will also"
+                + "be given the opportunity to purchase or sell land each round. The price"
+                + "of the purchase or sell will vary on the round.");
+    }
+    private void menuGamePlay(){
+        System.out.println("This game will be played in 5 rounds with optional scenes that"
+                + "may help you along the way.  ");
+    }
+    private void menuScenes(){
+        System.out.println("This game has a total of 25 scenes and 5 rounds of play."
+                + "Use your resources wisely to complete the game.");
+    }
 }
+
+
