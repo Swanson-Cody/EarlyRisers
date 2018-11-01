@@ -73,33 +73,36 @@ public class HelpMenuView {
             break;
         case 1: 
             
-            System.out.println("You will start the game with an allotment of wheat."
-                + "Each turn you will be given the option to use wheat to feed the"
-                + "people of the city and use wheat to plant crops for a fall harvest."
-                + "You will also be given the opportunity to pay your tithing using your"
-                + "wheat. Use this resource wisely.  If you don't feed your people enough"
-                + "they will starve.");
-            break;
+            System.out.println("\nWheat Information \nYou will start the game with an allotment of wheat."
+                + "\nEach turn you will be given the option to use wheat to feed "
+                + "\nthe people of the city and use wheat to plant crops for a fall"
+                + "\nharvest. You will also be given the opportunity to pay your"
+                + "\ntithing using your wheat. Use this resource wisely.  If you"
+                + "\ndon't feed your people enough they will starve.");
+        break;
         case 2:
-            System.out.println("You will be given the opportunity each turn to pay your tithing."
-                + "This is not required of you, however, paying your tithing will return blessings"
-                + "upon you.");
+            System.out.println("\nTithing Information \nYou will be given the opportunity each turn to "
+                + "\npay your tithing. This is not required of you, however, "
+                + "\npaying your tithing will return blessings upon you.");
             break;
         case 3:
-            System.out.println("You will be given land to start the game.  You will also"
-                + "be given the opportunity to purchase or sell land each round. The price"
-                + "of the purchase or sell will vary on the round."); 
+            System.out.println("\nLand Information\nYou will be given land to start the game.  "
+                + "\nYou will also be given the opportunity to purchase or sell "
+                + "\nland each round. The price of the purchase or sell will vary "
+                + "\non the round."); 
             break;
         case 4:
-           System.out.println("This game will be played in 5 rounds with optional scenes that"
-                + "may help you along the way.  ");
+           System.out.println("\nGame Play\nThis game will be played in 5 rounds with "
+                + "\noptional scenes that may help you along the way.  ");
+                
             break;
         case 5:
-             System.out.println("This game has a total of 25 scenes and 5 rounds of play."
-                + "Use your resources wisely to complete the game.");
+             System.out.println("\nScene Information\nThis game has a total of 25 scenes and 5 rounds"
+                + " \nof play. Use your resources wisely to complete the game.");
+                
             break;
         default:
-            System.out.println("An unknown error has occured.");
+            System.out.println("\nAn unknown error has occured.");
     }
     }
    }
