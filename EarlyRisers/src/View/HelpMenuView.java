@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class HelpMenuView {
     boolean exit;
     
-    public static void main (String[]args)  {
+    public static void main (String[] args)  {
         HelpMenuView menu = new HelpMenuView();
         menu.runMenu();
         
@@ -24,7 +24,8 @@ public class HelpMenuView {
         while (!exit){
             printMenu();
             int choice = getInput();
-            performAction(choice);}
+            performAction(choice);
+        }
 }
    
     //Welcome Screen
@@ -46,13 +47,13 @@ public class HelpMenuView {
     System.out.println("5) Learn more about Scenes");
     System.out.println("0) Exit Menu");
     }
-    
+    //Get number input from user 
     private int getInput(){
         Scanner kb = new Scanner(System.in);
         int choice = -1; 
-    while (choice <0 || choice >5){
+    while(choice < 0 || choice > 5){
     try {
-        System.out.print("\nEnter your choice: ");
+        System.out.print("\nEnter a Number: ");
         choice = Integer.parseInt(kb.nextLine());
     }
     catch (NumberFormatException e)  {
@@ -61,8 +62,8 @@ public class HelpMenuView {
     }
     return choice;
 }
-        private void performAction (int choice){
-    switch (choice){
+    private void performAction(int choice){
+    switch(choice){
         case 0:
             exit = true;
             System.out.println("Have a good day.  Goodbye!");
