@@ -37,7 +37,7 @@ public class HelpMenuView {
     System.out.println("|                                           |");
     System.out.println("+-------------------------------------------+");
     }
-    //Menu options
+    //Menu options 
     private void printMenu(){
     System.out.println("\nPlease make a menu selection: ");
     System.out.println("1) Learn more about Wheat");
@@ -49,18 +49,21 @@ public class HelpMenuView {
     }
     //Get number input from user 
     private int getInput(){
-        Scanner kb = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         int choice = -1; 
-    while(choice < 0 || choice > 5){
-    try {
-        System.out.print("\nEnter a Number: ");
-        choice = Integer.parseInt(kb.nextLine());
+        do{
+            System.out.print("\nEnter a Number: ");
+        try {
+            choice = Integer.parseInt(keyboard.nextLine());
     }
-    catch (NumberFormatException e)  {
-    System.out.println("Invalid selection. Please try again.");
+        catch (NumberFormatException e)  {
+        System.out.println("Invalid selection. Please try again.");
     }
-    }
-    return choice;
+        if(choice< 0 || choice > 5) {
+            System.out.println("Choice outside of range.  Please choose again.");
+        }}
+        while(choice < 0 || choice > 5);
+        return choice;
 }
     private void performAction(int choice){
     switch(choice){
@@ -69,6 +72,7 @@ public class HelpMenuView {
             System.out.println("Have a good day.  Goodbye!");
             break;
         case 1: 
+            
             System.out.println("You will start the game with an allotment of wheat."
                 + "Each turn you will be given the option to use wheat to feed the"
                 + "people of the city and use wheat to plant crops for a fall harvest."
