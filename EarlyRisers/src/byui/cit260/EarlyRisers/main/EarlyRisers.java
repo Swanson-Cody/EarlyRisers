@@ -18,8 +18,13 @@ public class EarlyRisers  {
      * @param args
      */
     public void main(String []args){
-    StartProgramViewNew startProgramViewNew = new
-             StartProgramViewNew ();
+       
+        StartProgramViewNew menu = new StartProgramViewNew();
+        menu.displayStartProgramView();    
+    }
+    }
+   
+
     /**
      * 
     / * @param args the command line arguments
@@ -96,4 +101,4 @@ public class EarlyRisers  {
 //        testRachelClasses();
 //        testCodyClasses();
 //    }
-}
+
