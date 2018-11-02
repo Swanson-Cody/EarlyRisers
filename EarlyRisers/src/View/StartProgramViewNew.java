@@ -15,18 +15,19 @@ import java.util.Scanner;
 public class StartProgramViewNew {
     boolean exit;
     
-    public static void main (String[] args)  {
+    public StartProgramViewNew()  {
         StartProgramViewNew menu = new StartProgramViewNew();
-        menu.runMenu();    
+        menu.displayStartProgramView();    
     }
    
-    public void runMenu() {
+    public void displayStartProgramView() {
         printHeader();
         getPlayer();
         while (!exit){
             printMenu();
             int choice = getInput();
             doAction(choice);
+           
         }
 }
    
@@ -122,4 +123,14 @@ public class StartProgramViewNew {
    }
 
 
- 
+         
+//        displayStartProgramView() {
+// endOfView = false
+// DO
+//inputs = getInputs()
+//IF no inputs were entered OR the first input is Q
+// RETURN
+//ENDIF
+//endOfView = doAction(inputs)
+//WHILE endOfView != true
+//

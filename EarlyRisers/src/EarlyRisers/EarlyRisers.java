@@ -4,8 +4,7 @@
  * and open the template in the editor. Testing
  */
 package EarlyRisers;
-
-import Model.*;
+ //import Model.*;
 
 /**
  *
@@ -14,6 +13,15 @@ import Model.*;
 public class EarlyRisers  {
     
     /**
+     *
+     * @param args
+     */
+    public void main(String []args){
+     StartProgramViewNew startProgramViewNew = StartProgramViewNew();
+     startProgramViewNew.displayStartProgramView();
+}    }
+    /**
+     * 
     / * @param args the command line arguments
      */
 //    public static void testTeamClasses(){
