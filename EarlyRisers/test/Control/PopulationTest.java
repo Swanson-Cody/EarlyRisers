@@ -1,5 +1,6 @@
 package Control;
 
+import byui.cit260.EarlyRisers.control.Population;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
