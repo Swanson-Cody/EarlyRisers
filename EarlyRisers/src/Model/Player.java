@@ -16,7 +16,18 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
-
+    private int time;
+    
+   public Player(){
+   }
+   public Player(String name, int time){
+   this.name = name;
+   this.time = time;
+   }
+   public String getName(){
+   return name;}
+   
+   
     @Override
     public int hashCode() {
         int hash = 7;
