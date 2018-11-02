@@ -15,11 +15,17 @@ import java.util.Scanner;
 public class StartProgramViewNew {
     boolean exit;
     
-    public StartProgramViewNew()  {
+    /**
+     *
+     */
+     public StartProgramViewNew()  {
         StartProgramViewNew menu = new StartProgramViewNew();
         menu.displayStartProgramView();    
     }
-   
+ 
+    /**
+     *
+     */
     public void displayStartProgramView() {
         printHeader();
         getPlayer();
@@ -42,6 +48,10 @@ public class StartProgramViewNew {
     
     }   //Get name of player from user
     
+    /**
+     *
+     * @return
+     */
     public boolean getPlayer(){
     System.out.print("\nPlease enter your name.\n");
     Scanner keyboard = new Scanner(System.in); 
@@ -118,7 +128,8 @@ public class StartProgramViewNew {
     
     }
     private void helpMenu(){
-       runMenu();
+       HelpMenuView menu = new HelpMenuView();
+        menu.runMenu();
     }
    }
 
