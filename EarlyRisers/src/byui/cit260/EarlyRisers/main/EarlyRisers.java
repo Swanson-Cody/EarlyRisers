@@ -20,7 +20,7 @@ public class EarlyRisers  {
     public void main(String []args){
        
         StartProgramViewNew menu = new StartProgramViewNew();
-        menu.displayStartProgramView();    
+        menu.display();
     }
     }
    

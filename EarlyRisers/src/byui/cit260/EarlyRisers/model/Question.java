@@ -5,7 +5,7 @@
  */
 package byui.cit260.EarlyRisers.model;
 
-import static byui.cit260.EarlyRisers.main.EarlyRisers.testHeatherClasses;
+//import static byui.cit260.EarlyRisers.main.EarlyRisers.testHeatherClasses;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -193,7 +193,7 @@ public class Question implements Serializable{
     }
     public static void main(String[] args){
          
-        testHeatherClasses();
+     //   testHeatherClasses();
         
     }
 }

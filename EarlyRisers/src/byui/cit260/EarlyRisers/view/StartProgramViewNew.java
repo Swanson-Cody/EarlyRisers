@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.view;
-      
+//import byui.cit260.EarlyRisers.model.Player;
+import byui.cit260.EarlyRisers.model.Player;
 import java.util.Scanner;
 
 /**
@@ -20,15 +21,12 @@ public class StartProgramViewNew {
      */
      public StartProgramViewNew()  {
         StartProgramViewNew menu = new StartProgramViewNew();
-        menu.displayStartProgramView();    
+        menu.display();    
     }
  
-    /**
-     *
-     */
-    public void displayStartProgramView() {
+    public void display() {
         printHeader();
-        getPlayer();
+        getName();
         while (!exit){
             printMenu();
             int choice = getInput();
@@ -52,7 +50,8 @@ public class StartProgramViewNew {
      *
      * @return
      */
-    public boolean getPlayer(){
+    public boolean getName(){
+        Player player = GameControl.savePlayer;
     System.out.print("\nPlease enter your name.\n");
     Scanner keyboard = new Scanner(System.in); 
     String playerName = keyboard.nextLine();

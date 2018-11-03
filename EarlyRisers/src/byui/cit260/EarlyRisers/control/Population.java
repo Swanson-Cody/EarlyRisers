@@ -13,6 +13,12 @@ package byui.cit260.EarlyRisers.control;
  */
 public class Population {
 
+    /**
+     *
+     * @param population
+     * @param w
+     * @return
+     */
     public static double calcGrowth(double population, double w) {
         //Get random number 1-5 for percent of population increase
 

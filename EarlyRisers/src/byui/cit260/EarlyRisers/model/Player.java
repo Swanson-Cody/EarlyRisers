@@ -3,7 +3,7 @@
  */
 package byui.cit260.EarlyRisers.model;
 
-import static byui.cit260.EarlyRisers.main.EarlyRisers.testHeatherClasses;
+//import static byui.cit260.EarlyRisers.main.EarlyRisers.testHeatherClasses;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -58,10 +58,6 @@ public class Player implements Serializable {
      *
      * @return the value of name
      */
-    public String getName() {
-        return name;
-    }
-
     /**
      * Set the value of name
      *
