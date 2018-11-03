@@ -64,8 +64,8 @@ public class StartProgramView {
 //endOfView = doAction(inputs)
 //WHILE endOfView != true
 //}
-    }
+   // }
    
         
-    }
-}
+   // }
+//}
