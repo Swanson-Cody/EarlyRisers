@@ -13,10 +13,22 @@ import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 public class GameControl {
     
     public static Player savePlayer(String playerName) {
-        System.out.println("*** savePlayer() called ***."); //To change body of generated methods, choose Tools | Templates.
-   return new Player(); 
-    }
-    
+       Player player = new Player();
+       
+       
+       
+     return new Player(); 
+     
+      }
+     
     
         
 }
+//savePlayer(name): Player  
+//BEGIN  
+//if name is null OR length of name is < 1 THEN   
+//RETURN null  
+//ENDIF  player = new Player object  
+//save the name in the player object  
+//save the player in the main class of the project  
+//RETURN player END

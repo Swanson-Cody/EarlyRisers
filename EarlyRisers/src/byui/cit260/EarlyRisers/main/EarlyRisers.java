@@ -6,7 +6,8 @@
 package byui.cit260.EarlyRisers.main;
  //import Model.*;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
-
+import byui.cit260.EarlyRisers.model.Player;
+import byui.cit260.EarlyRisers.model.Game;
 /**
  *
  * @author Heather
@@ -17,12 +18,32 @@ public class EarlyRisers  {
      *
      * @param args
      */
-    public void main(String []args){
-       
-        StartProgramViewNew menu = new StartProgramViewNew();
-        menu.display();
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+//    public static void main(String []args){
+//       
+//        StartProgramViewNew menu = new StartProgramViewNew();
+//        menu.display();
+//    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
     }
+
+    public static void setCurrentGame(Game currentGame) {
+        EarlyRisers.currentGame = currentGame;
     }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        EarlyRisers.player = player;
+    }
+    
+}
    
 
     /**
@@ -95,10 +116,11 @@ public class EarlyRisers  {
 //    }
 //    private String name;
 //        // TODO code application logic here
-//    public static void main(String[] args){
+    public static void main(String[] args){
 //        testTeamClasses();  
 //        testHeatherClasses();
 //        testRachelClasses();
 //        testCodyClasses();
-//    }
+    System.out.println("TEst"));
+    }
 

@@ -20,13 +20,15 @@ public class StartProgramViewNew {
      *
      */
      public StartProgramViewNew()  {
-        StartProgramViewNew menu = new StartProgramViewNew();
-        menu.display();    
+           
     }
  
+    /**
+     *
+     */
     public void display() {
         printHeader();
-        getName();
+        setPlayer();
         while (!exit){
             printMenu();
             int choice = getInput();
@@ -48,9 +50,10 @@ public class StartProgramViewNew {
     
     /**
      *
-     * @return
+     * 
+     * @return 
      */
-    public boolean getName(){
+    public boolean setPlayer(){
     Scanner keyboard = new Scanner(System.in); 
     String playerName = keyboard.nextLine(); 
     Player player = GameControl.savePlayer(playerName);
@@ -62,6 +65,7 @@ public class StartProgramViewNew {
         }
      return false;   
     }
+    
     //Menu options 
     private void printMenu(){
     System.out.println("\nPlease make a menu selection: \n");
