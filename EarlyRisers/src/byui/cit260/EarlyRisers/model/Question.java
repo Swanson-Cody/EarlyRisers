@@ -12,18 +12,16 @@ import java.util.Objects;
 /**
  *
  * @author Heather
- */    
+ */
+public class Question implements Serializable {
 
-public class Question implements Serializable{
     private String questionText;
     private String answer1;
     private String answer2;
     private String answer3;
     private String answer4;
     private int correctAnswer;
-    
-    
-    
+
     /**
      * Get the value of questionTest
      *
@@ -41,8 +39,6 @@ public class Question implements Serializable{
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
-
-    
 
     /**
      * Get the value of answer1
@@ -62,8 +58,6 @@ public class Question implements Serializable{
         this.answer1 = answer1;
     }
 
-    
-
     /**
      * Get the value of answer2
      *
@@ -81,8 +75,6 @@ public class Question implements Serializable{
     public void setAnswer2(String answer2) {
         this.answer2 = answer2;
     }
-
-    
 
     /**
      * Get the value of answer3
@@ -102,8 +94,6 @@ public class Question implements Serializable{
         this.answer3 = answer3;
     }
 
-    
-
     /**
      * Get the value of answer4
      *
@@ -121,8 +111,6 @@ public class Question implements Serializable{
     public void setAnswer4(String answer4) {
         this.answer4 = answer4;
     }
-
-    
 
     /**
      * Get the value of correctAnswer
@@ -191,9 +179,5 @@ public class Question implements Serializable{
     public String toString() {
         return "Question{" + "questionTest=" + questionText + ", answer1=" + answer1 + ", answer2=" + answer2 + ", answer3=" + answer3 + ", answer4=" + answer4 + ", correctAnswer=" + correctAnswer + '}';
     }
-   // public static void main(String[] args){
-         
-     //   testHeatherClasses();
-        
-    }
+
 }

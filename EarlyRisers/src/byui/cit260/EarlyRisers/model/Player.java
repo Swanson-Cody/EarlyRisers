@@ -25,7 +25,8 @@ public class Player implements Serializable {
    this.time = time;
    }
    public String getName(){
-   return name;}
+   return name;
+   }
    
    
     @Override
@@ -58,6 +59,7 @@ public class Player implements Serializable {
      *
      * @return the value of name
      */
+
     /**
      * Set the value of name
      *
@@ -71,14 +73,12 @@ public class Player implements Serializable {
     public String toString() {
         return "Player{" + "name=" + name + '}';
     }
-    public static void testRachelClasses(){
-    }
-    
-    public static void main(String[] args){
-         
-        testRachelClasses();
-        
-    }
+ 
+//    public static void main(String[] args){
+//         
+//        testRachelClasses();
+//        
+//    }
     
 }
 

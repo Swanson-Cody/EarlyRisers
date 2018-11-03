@@ -31,6 +31,12 @@ public class EarlyRisers  {
         return currentGame;
     }
 
+    public static void main(String []args){
+        StartProgramViewNew menu = new StartProgramViewNew();
+        menu.display();    
+
+    }
+
     public static void setCurrentGame(Game currentGame) {
         EarlyRisers.currentGame = currentGame;
     }
@@ -116,11 +122,4 @@ public class EarlyRisers  {
 //    }
 //    private String name;
 //        // TODO code application logic here
-    public static void main(String[] args){
-//        testTeamClasses();  
-//        testHeatherClasses();
-//        testRachelClasses();
-//        testCodyClasses();
-    System.out.println("TEst"));
-    }
 
