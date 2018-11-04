@@ -74,9 +74,10 @@ public class MainMenuView {
                        + "\nI’m sure you could mitigate these problems.");
     }
     private void savedGame(){
-    
+        System.out.println("This will display available saved games eligible to load.");
     }
     private void helpMenu(){
- //      runMenu();
+       HelpMenuView menu = new HelpMenuView();
+       menu.runMenu();
     }
 }

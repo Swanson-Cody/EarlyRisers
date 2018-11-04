@@ -15,11 +15,9 @@
 	    boolean exit;
             
 	    
-	    public HelpMenuView()  {
-	        HelpMenuView menu = new HelpMenuView();
-	        menu.runMenu();
-               
+	    public HelpMenuView()  {               
 	    }
+            
 	    public void runMenu() {
 	        printHeader();
 	        while (!exit){
