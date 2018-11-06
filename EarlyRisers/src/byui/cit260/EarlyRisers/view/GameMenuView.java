@@ -3,6 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//import byui.cit260.EarlyRisers.model.Player;
+//import byui.cit260.EarlyRisers.model.Game;  
+
 package byui.cit260.EarlyRisers.view;
 
 /**
