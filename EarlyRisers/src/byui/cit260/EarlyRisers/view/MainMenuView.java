@@ -21,11 +21,12 @@ public class MainMenuView {
         boolean done = false;
         do {
     System.out.println("=========================== ");
-    System.out.println("         Main Menu         ");
+    System.out.println("         Main Menu          ");
     System.out.println("=========================== ");
     System.out.println("N: Start a New Game");
     System.out.println("S: Load a Saved Game");
     System.out.println("H: Load a Help Menu");
+    System.out.println("T: Supplies");
     System.out.println("Q: Quit");
     String input = getInput();
     done = doAction(input);
@@ -52,6 +53,9 @@ public class MainMenuView {
         case "S":
              savedGame();
         break;
+        case "T":
+            suppliesMenu();
+            break;
         case "H":
              helpMenu();
             break;
@@ -79,5 +83,10 @@ public class MainMenuView {
     private void helpMenu(){
        HelpMenuView menu = new HelpMenuView();
        menu.runMenu();
+    }
+    
+    private void suppliesMenu(){
+       SuppliesView supplies = new SuppliesView();
+       supplies.runSuppliesMenu();
     }
 }
