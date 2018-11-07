@@ -7,6 +7,7 @@ package byui.cit260.EarlyRisers.view;
 
 //import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Player;
+import byui.cit260.EarlyRisers.control.GameControl;
 
 import java.util.Scanner;
 
