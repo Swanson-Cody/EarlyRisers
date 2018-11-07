@@ -20,9 +20,12 @@ public class MainMenuView {
     public void display(){
         boolean done = false;
         do {
-    System.out.println("=========================== ");
-    System.out.println("         Main Menu          ");
-    System.out.println("=========================== ");
+    System.out.println("+-------------------------------------------+");
+    System.out.println("|                                           |");
+    System.out.println("|              Welcome to the               |");
+    System.out.println("|                 Main Menu                 |");
+    System.out.println("|                                           |");
+    System.out.println("+-------------------------------------------+");
     System.out.println("N: Start a New Game");
     System.out.println("S: Load a Saved Game");
     System.out.println("H: Load a Help Menu");
