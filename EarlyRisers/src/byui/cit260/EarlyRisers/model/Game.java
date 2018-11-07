@@ -166,5 +166,9 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "thePlayer=" + thePlayer + ", theMap=" + theMap + ", inventoryItem=" + inventoryItem + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage + '}';
     }
+
+    public void setGame(String currentGame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   
 }

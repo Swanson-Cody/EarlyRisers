@@ -12,7 +12,7 @@ import byui.cit260.EarlyRisers.model.Game;
  *
  * @author Heather
  */
-public class EarlyRisers  {
+public class game  {
     
     /**
      *
@@ -26,19 +26,16 @@ public class EarlyRisers  {
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
-
     public static void main(String []args){
         StartProgramViewNew menu = new StartProgramViewNew();
         menu.display();    
 
     }
-
+  public static Game getCurrentGame() {
+        return currentGame;
+    }
     public static void setCurrentGame(Game currentGame) {
-        EarlyRisers.currentGame = currentGame;
+        game.currentGame = currentGame;
     }
 
     public static Player getPlayer() {
@@ -46,8 +43,10 @@ public class EarlyRisers  {
     }
 
     public static void setPlayer(Player player) {
-        EarlyRisers.player = player;
+        game.player = player;
     }
+
+    
     
 }
    
