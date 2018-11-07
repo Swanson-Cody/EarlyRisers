@@ -18,7 +18,7 @@ public class GameControl {
        
        player.setName(playerName);
        EarlyRisers.setPlayer(player);
-     return new Player(); 
+     return player; 
      
       }
      
