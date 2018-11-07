@@ -6,7 +6,8 @@
 package byui.cit260.EarlyRisers.control;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
-import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.main.game;
+import byui.cit260.EarlyRisers.model.Game;
 /**
  *
  * @author Heather
@@ -17,11 +18,15 @@ public class GameControl {
        Player player = new Player();
        
        player.setName(playerName);
-       EarlyRisers.setPlayer(player);
+       game.setPlayer(player);
      return player; 
      
       }
-     
+     public static Game saveGame(String currentGame){
+       Game game = new Game();
+       game.setGame(currentGame);
+     return game;
+     }
     
         
 }
@@ -33,3 +38,5 @@ public class GameControl {
 //save the name in the player object  
 //save the player in the main class of the project  
 //RETURN player END
+//   private static Game currentGame = null;
+ //   private static Player player = null;
