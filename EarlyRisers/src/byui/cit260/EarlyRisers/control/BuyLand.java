@@ -31,4 +31,8 @@ public class BuyLand {
         
         return totalAcresOwned;
     }
+
+    public void buyLand() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

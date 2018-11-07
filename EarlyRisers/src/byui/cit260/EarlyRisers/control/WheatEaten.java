@@ -23,6 +23,10 @@ public class WheatEaten {
          return wheatStorage;
      }
 
+    public WheatEaten() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 /**
  *
  * @author rache
