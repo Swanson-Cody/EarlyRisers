@@ -6,7 +6,7 @@
 package byui.cit260.EarlyRisers.view;
 
 import java.util.Scanner;
-
+import byui.cit260.EarlyRisers.view.SuppliesView;
 /**
  *
  * @author Heather
@@ -72,24 +72,36 @@ public class SceneMenuView {
     }
 //scene of the church where you have the option to pay tithing
     private void church(){
-        System.out.println("How much tithing would you like to pay?");
-    }
+        System.out.println("\nYou have chosen to visit the Church.  It is beautiful."
+                + "\nYour church leader explained they would appreciate your paying"
+                + "\nyour tithes. Would you like to pay your tithing today?"
+                + "\nPlease enter 'y' for yes and 'n' for no.");
+    }           
+       
+    
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
     private void warehouse(){
-        System.out.println("This to the warehouse for supplies.");
+          SuppliesView menu = new SuppliesView();
+        menu.runSuppliesMenu();
+      
     }
 //scene of the field where you harvest and plant next years crops
     private void fields(){
-        System.out.println("This will take us to fields to plant and harvest.");
+        System.out.println("\nYou have a lot of beautiful land. You have chosen"
+                + "\nto visit your fields.  They are already to harvest/plant.  What"
+                + "\nwould you like to do today?");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
     private void tools(){
-         System.out.println("This will take us to the tool menu.");
+         System.out.println("\nThis will take us to the tool Shop. The blacksmith is "
+                 + "\nready to assist you. What would you like to do today?  Buy tools,"
+                 + "\nsell tools, or exit. ");
     }
 //home where the year ends and you start the next phase
     private void home(){
-         System.out.println("This will take us home to end the year and begin "
+         System.out.println("\nYou have returned home after a long year.  It is time"
+                 + "\nto rest and prepare for another year."
                  + "the next one.");
     }
     

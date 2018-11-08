@@ -30,6 +30,7 @@ public class MainMenuView {
     System.out.println("S: Load a Saved Game");
     System.out.println("H: Load a Help Menu");
     System.out.println("T: Supplies");
+    System.out.println("P: Tool Shop");
     System.out.println("Q: Quit");
     String input = getInput();
     done = doAction(input);
@@ -59,6 +60,8 @@ public class MainMenuView {
         case "T":
             suppliesMenu();
             break;
+        case "P":
+             toolShop ();
         case "H":
              helpMenu();
             break;
@@ -91,5 +94,9 @@ public class MainMenuView {
     private void suppliesMenu(){
        SuppliesView supplies = new SuppliesView();
        supplies.runSuppliesMenu();
+    }
+     
+   ToolShop tools = new ToolShop();{
+        tools.displayTools();
     }
 }

@@ -6,6 +6,9 @@
 package byui.cit260.EarlyRisers.control;
 //import java.util.Random;
 
+import java.util.Random;
+
+
 //import java.util.Random;
 /**
  *
@@ -19,13 +22,13 @@ public class Population {
      * @param w
      * @return
      */
-    public static double calcGrowth(double population, double w) {
+    public static double calcGrowth(double population) {
         //Get random number 1-5 for percent of population increase
 
-        //   Random percent = new Random();
-        //   int w = percent.nextInt(5);
-        //   ++w;
-        //   System.out.println(w); 
+           Random percent = new Random();
+           int w = percent.nextInt(5);
+           ++w;
+           System.out.println(w); 
 //Define invalid variables
         if (population <= 0) { //if population is under 0
             return -1;
