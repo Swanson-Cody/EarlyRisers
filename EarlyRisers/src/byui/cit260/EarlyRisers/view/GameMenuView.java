@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class GameMenuView {
             //Menu options 
-    public void display(){
+    public void gameMenu(){
         boolean done = false;
         do {
     System.out.println("+-------------------------------------------+");
@@ -37,13 +37,12 @@ public class GameMenuView {
             + "\nperiod.");
            
     System.out.println("\nPlease make a game selection: ");
-    System.out.println("1) Buy/Sell land"); 
-    System.out.println("2) Buy/Sell Tools");
-    System.out.println("3) Pay tithing");
-    System.out.println("4) Plant/Collect Fields");
-    System.out.println("5) Go home");
-    System.out.println("6) Exit Menu");
-        String input = getInput();
+    System.out.println("L) Buy/Sell land"); 
+    System.out.println("N) Buy/Sell Tools");
+    System.out.println("T) Pay tithing");
+    System.out.println("F) Plant/Collect Fields");
+    System.out.println("H) Go home");
+            String input = getInput();
         done = doAction(input);
         } while(!done);
     }
@@ -58,19 +57,21 @@ public class GameMenuView {
     private boolean doAction(String choice){
        choice = choice.toUpperCase();
     switch(choice){
-        case "E":
+        case "L":
+            land();
+            break;
+        case "N":
             tools();
             break;
         case "T":
-            tithes();
+             tithes();
             break;
         case "F":
              fields();
-            break;
+             break;
         case "H":
-             home();
-        case "E":
-            System.out.println("You have exited the Game menu.");
+            help();
+            break;
         default:
             System.out.println("\nInvalid selection.");
     }
@@ -78,29 +79,29 @@ public class GameMenuView {
     }
 //scene of the church where you have the option to pay tithing
     private void land(){
-        System.out.println("You have" + totalAcresOwned + "acres of land?");
+        SuppliesView menu = new SuppliesView();
+        menu.runSuppliesMenu();
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
     private void tools(){
-          SuppliesView menu = new SuppliesView();
-        menu.runSuppliesMenu();
+        GameMenuView game = new GameMenuView();
+        game.gameMenu();  
       
     }
 //scene of the field where you harvest and plant next years crops
     private void tithes(){
-        System.out.println("This will take us to fields to plant and harvest.");
+        System.out.println("This will take us to the church to pay tithing.");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
     private void fields(){
-         System.out.println("This will take us to the tool menu.");
+        SuppliesView menu = new SuppliesView();
+        menu.runSuppliesMenu();
     }
 //home where the year ends and you start the next phase
-    private void home(){
-         System.out.println("This will take us home to end the year and begin "
-                 + "the next one.");
+    private void help(){
+      HelpMenuView menu = new HelpMenuView();
+       menu.runMenu();
     }
     
-}
-
 }
