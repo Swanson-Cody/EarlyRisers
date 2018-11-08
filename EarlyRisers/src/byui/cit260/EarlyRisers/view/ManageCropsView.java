@@ -57,41 +57,47 @@ public class ManageCropsView {
     }
     private void calculateSellLand(){
         System.out.println("You're going to sell land!");
-    }       
+    }
+    private void calculateFeedPeople(){
+        System.out.println("You're going to feed the people!");
+    }
     private void calculatePlantCrops(){
         System.out.println("You're going to plant crops!");
     }
     private void calculateTithesAndOfferings(){
         System.out.println("You're going to pay tithes and offerings!");
     }
-    private void goToMainMenu(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
+    private void goToGameMenu(){
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.gameMenu();
     }
     
     private boolean doAction(String choice){
-       choice = choice.toUpperCase();
-    switch(choice){
-        case "E":
-            System.out.println("You have exited the Manage Crops screen."
-                    + "Have fun with the game!");
-            goToMainMenu();
-            return true;
-        case "B":
-            calculateBuyLand();
-            break;
-        case "S": 
-            calculateSellLand();
-        break;
-        case "P":
-            calculatePlantCrops();
-            break;
-        case "T":
-            calculateTithesAndOfferings();
-            break;
-        default:
-            System.out.println("\nInvalid selection.");
-    }
+        choice = choice.toUpperCase();
+        switch(choice){
+            case "E":
+                System.out.println("You have exited the Manage Crops screen."
+                        + " Have fun with the game!");
+                goToGameMenu();
+                return true;
+            case "B":
+                calculateBuyLand();
+                break;
+            case "S": 
+                calculateSellLand();
+                break;
+            case "F":
+                calculateFeedPeople();
+                break;
+            case "P":
+                calculatePlantCrops();
+                break;
+            case "T":
+                calculateTithesAndOfferings();
+                break;
+            default:
+                System.out.println("\nInvalid selection.");
+        }
     return false;
     }
 

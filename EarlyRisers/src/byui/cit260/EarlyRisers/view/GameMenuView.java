@@ -37,10 +37,10 @@ public class GameMenuView {
             + "\nperiod.");
            
     System.out.println("\nPlease make a game selection: ");
-    System.out.println("L) Buy/Sell land"); 
+    System.out.println("R) Reports Menu"); 
     System.out.println("N) Buy/Sell Tools");
     System.out.println("T) Pay tithing");
-    System.out.println("F) Plant/Collect Fields");
+    System.out.println("C) Manage Crops");
     System.out.println("H) Go home");
             String input = getInput();
         done = doAction(input);
@@ -57,8 +57,8 @@ public class GameMenuView {
     private boolean doAction(String choice){
        choice = choice.toUpperCase();
     switch(choice){
-        case "L":
-            land();
+        case "R":
+            getReportsMenuView();
             break;
         case "N":
             tools();
@@ -66,11 +66,11 @@ public class GameMenuView {
         case "T":
              tithes();
             break;
-        case "F":
-             fields();
+        case "C":
+             getManageCropsView();
              break;
         case "H":
-            help();
+            home();
             break;
         default:
             System.out.println("\nInvalid selection.");
@@ -78,9 +78,9 @@ public class GameMenuView {
     return false;
     }
 //scene of the church where you have the option to pay tithing
-    private void land(){
-        SuppliesView menu = new SuppliesView();
-        menu.runSuppliesMenu();
+    private void getReportsMenuView(){
+        ReportsMenuView menu = new ReportsMenuView();
+        menu.runReportsMenuView();
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
@@ -94,14 +94,15 @@ public class GameMenuView {
         System.out.println("This will take us to the church to pay tithing.");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
-    private void fields(){
-        SuppliesView menu = new SuppliesView();
-        menu.runSuppliesMenu();
+    private void getManageCropsView(){
+        ManageCropsView menu = new ManageCropsView();
+        menu.runManageCropsView();
     }
 //home where the year ends and you start the next phase
-    private void help(){
-      HelpMenuView menu = new HelpMenuView();
-       menu.runMenu();
+    private void home(){
+      MainMenuView menu = new MainMenuView();
+       menu.display();
+               
     }
     
 }
