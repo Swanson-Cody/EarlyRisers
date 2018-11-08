@@ -31,6 +31,7 @@ public class MainMenuView {
     System.out.println("H: Load a Help Menu");
     System.out.println("T: Supplies");
     System.out.println("P: Tool Shop");
+    System.out.println("G: Game Menu");
     System.out.println("Q: Quit");
     String input = getInput();
     done = doAction(input);
@@ -65,6 +66,9 @@ public class MainMenuView {
         case "H":
              helpMenu();
             break;
+        case "G":
+             gameMenu();
+             break;
         default:
             System.out.println("\nInvalid selection.");
     }
@@ -95,8 +99,12 @@ public class MainMenuView {
        SuppliesView supplies = new SuppliesView();
        supplies.runSuppliesMenu();
     }
-     
-   ToolShop tools = new ToolShop();{
+    private void toolShop(){ 
+   ToolShop tools = new ToolShop();
         tools.displayTools();
+    }
+    private void gameMenu(){
+    GameMenuView game = new GameMenuView();
+    game.gameMenu();
     }
 }
