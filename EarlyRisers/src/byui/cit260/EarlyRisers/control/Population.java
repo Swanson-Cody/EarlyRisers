@@ -8,10 +8,8 @@ package byui.cit260.EarlyRisers.control;
 
 import java.util.Random;
 
-
 //import java.util.Random;
 /**
- *
  * @author Heather
  */
 public class Population {
@@ -19,7 +17,6 @@ public class Population {
     /**
      *
      * @param population
-     * @param w
      * @return
      */
     public static double calcGrowth(double population) {
