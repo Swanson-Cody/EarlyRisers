@@ -8,7 +8,7 @@ package byui.cit260.EarlyRisers.control;
 
 import java.util.Random;
 
-//import java.util.Random;
+
 /**
  * @author Heather
  */
