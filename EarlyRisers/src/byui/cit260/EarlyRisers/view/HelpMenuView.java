@@ -23,7 +23,7 @@
 	        while (!exit){
 	            printMenu();
 	            int choice = getInput();
-	            performAction(choice);
+	            doAction(choice);
 	        }
 	}
 	   
@@ -64,7 +64,7 @@
 	        while(choice < 0 || choice > 5);
 	        return choice;
 	}
-	    private void performAction(int choice){
+	    private void doAction(int choice){
 	    switch(choice){
 	        case 0:
 	            exit = true;

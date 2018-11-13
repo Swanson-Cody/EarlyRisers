@@ -19,7 +19,7 @@ public class MovePlayerView {
         while (!exit){
             printMovePlayerMenu();
             String choice = getInput();
-            performActions(choice);
+            doActions(choice);
         }
     }
     
@@ -51,7 +51,7 @@ public class MovePlayerView {
         return choice;
     }
     
-    private void performActions(String choice){
+    private void doActions(String choice){
         switch(choice){
 	        case "E":
                     System.out.println("Have fun playing the game");
