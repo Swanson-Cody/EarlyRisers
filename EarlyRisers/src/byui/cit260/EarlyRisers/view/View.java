@@ -15,5 +15,14 @@ public class View {
         public View() {
             
         }
+        @Override
+        public void display(){
+            displayBuyLandHeader();
+            while(!exit){
+                printBuyLandMenu();
+                String choice = getInput();
+                doAction(choice);
+            }
+        }
     }
 }
