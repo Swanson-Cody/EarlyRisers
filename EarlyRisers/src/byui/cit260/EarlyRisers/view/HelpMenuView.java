@@ -18,7 +18,7 @@
 	    public HelpMenuView()  {               
 	    }
             
-	    public void runMenu() {
+	    public void display() {
 	        printHeader();
 	        while (!exit){
 	            printMenu();

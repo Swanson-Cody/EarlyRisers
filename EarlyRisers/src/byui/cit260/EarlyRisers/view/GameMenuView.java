@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class GameMenuView {
             //Menu options 
-    public void gameMenu(){
+    public void display(){
         boolean done = false;
         do {
     System.out.println("+-------------------------------------------+");
@@ -80,13 +80,13 @@ public class GameMenuView {
 //scene of the church where you have the option to pay tithing
     private void getReportsMenuView(){
         ReportsMenuView menu = new ReportsMenuView();
-        menu.runReportsMenuView();
+        menu.display();
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
     private void tools(){
         GameMenuView game = new GameMenuView();
-        game.gameMenu();  
+        game.display();  
       
     }
 //scene of the field where you harvest and plant next years crops
@@ -96,7 +96,7 @@ public class GameMenuView {
 //scene of a tool shop to help you be able to plant and harvest crops    
     private void getManageCropsView(){
         ManageCropsView menu = new ManageCropsView();
-        menu.runManageCropsView();
+        menu.display();
     }
 //home where the year ends and you start the next phase
     private void home(){

@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MovePlayerView {
     boolean exit;
     
-    public void runMenu(){
+    public void display(){
         printMovePlayerHeader();
         while (!exit){
             printMovePlayerMenu();

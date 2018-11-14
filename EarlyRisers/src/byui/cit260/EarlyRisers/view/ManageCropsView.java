@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ManageCropsView {
     boolean exit;
     
-    public void runManageCropsView() {
+    public void display() {
 	        printCropsMenu();
 	        while (!exit){
 	            printCropsMenu();
@@ -69,7 +69,7 @@ public class ManageCropsView {
     }
     private void goToGameMenu(){
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.gameMenu();
+        gameMenu.display();
     }
     
     private boolean doAction(String choice){

@@ -83,7 +83,7 @@ public class SceneMenuView {
 //are stored
     private void warehouse(){
           SuppliesView menu = new SuppliesView();
-        menu.runSuppliesMenu();
+        menu.display();
       
     }
 //scene of the field where you harvest and plant next years crops

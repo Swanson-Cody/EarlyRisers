@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class ReportsMenuView {
     boolean exit;
     
-    public void runReportsMenuView() {
+    public void display() {
 	        printReportsMenu();
 	        while (!exit){
 	            printReportsMenu();
@@ -67,7 +67,7 @@ public class ReportsMenuView {
     }
     private void goToGameMenu(){
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.gameMenu();
+        gameMenu.display();
     }
     
     private boolean doAction(String choice){

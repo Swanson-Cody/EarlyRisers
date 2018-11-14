@@ -28,12 +28,12 @@ public class ToolShop {
 //        menu.display();        
 //}              
 	        //Menu options         
-    public void displayTools() {
+    public void display() {
 	this.toolsHeader();
         String choice = getInput();
         doAction(choice);
         ToolShop tools = new ToolShop();
-        tools.displayTools();
+        tools.display();
                    }    
             
             
@@ -84,7 +84,7 @@ public class ToolShop {
     }
     private void help(){
        HelpMenuView menu = new HelpMenuView();
-       menu.runMenu();
+       menu.display();
     
     }
         

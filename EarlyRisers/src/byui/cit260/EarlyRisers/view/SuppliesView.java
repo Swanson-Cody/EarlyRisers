@@ -21,7 +21,7 @@ public class SuppliesView {
 //    }
 //    
                 
-	    public void runSuppliesMenu() {
+	    public void display() {
 	        printSuppliesHeader();
 	        while (!exit){
 	            printSuppliesHeader();

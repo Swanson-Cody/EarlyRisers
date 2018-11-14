@@ -92,19 +92,19 @@ public class MainMenuView {
     }
     private void helpMenu(){
        HelpMenuView menu = new HelpMenuView();
-       menu.runMenu();
+       menu.display();
     }
     
     private void suppliesMenu(){
        SuppliesView supplies = new SuppliesView();
-       supplies.runSuppliesMenu();
+       supplies.display();
     }
     private void toolShop(){ 
    ToolShop tools = new ToolShop();
-        tools.displayTools();
+        tools.display();
     }
     private void gameMenu(){
     GameMenuView game = new GameMenuView();
-    game.gameMenu();
+    game.display();
     }
 }

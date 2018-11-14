@@ -27,7 +27,7 @@ public class BuyLandView {
 
     }
     
-    public void runBuyLandMenu(){
+    public void display(){
         displayBuyLandHeader();
         while(!exit){
             printBuyLandMenu();
