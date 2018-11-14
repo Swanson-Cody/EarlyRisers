@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author rache
+ * @author rachel
  */
 public class BuyLandView {
     
