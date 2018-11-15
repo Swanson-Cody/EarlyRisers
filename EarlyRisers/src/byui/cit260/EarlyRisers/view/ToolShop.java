@@ -11,10 +11,8 @@ import java.util.Scanner;
  *
  * @author Heather
  */
-public class ToolShop {
-    boolean exit;
-    	    
-    public ToolShop (){
+public class ToolShop extends View{
+      public ToolShop (){
       int plow;
       int horse;
       int shovel;
@@ -28,46 +26,35 @@ public class ToolShop {
 //        menu.display();        
 //}              
 	        //Menu options         
-    public void display() {
-	this.toolsHeader();
-        String choice = getInput();
-        doAction(choice);
-        ToolShop tools = new ToolShop();
-        tools.display();
-                   }    
-            
-            
-    private void toolsHeader(){      
-    System.out.println("+-------------------------------------------+");
-    System.out.println("|                                           |");
-    System.out.println("|              Welcome to the               |");
-    System.out.println("|                 Tool Shop                 |");
-    System.out.println("|                                           |");
-    System.out.println("+-------------------------------------------+");
-    System.out.println("\nN: Buy new tools");
-    System.out.println("S: Sell used tools");
-    System.out.println("H: Help");}
+     public String[] getInputs(){
+        String[] inputs = new String[10];
+        String selection = this.getInput(
+     
+   ("\n+-------------------------------------------+" +
+    "\n|                                           |" +
+    "\n|              Welcome to the               |" +
+    "\n|                 Tool Shop                 |" +
+    "\n|                                           |" +
+    "\n+-------------------------------------------+" +
+    "\n\n1: Buy new tools" +
+    "\n2: Sell used tools"));
+    inputs[0] = selection;
+    return inputs;
+}   
     
-    
-        boolean done = false;
     //Get number input from user 
-    private String getInput(){
+    @Override
+    public boolean doAction (String [] inputs){
         Scanner keyboard = new Scanner(System.in);
         String choice = keyboard.nextLine();
-        return choice;
-}
-    private boolean doAction(String choice){
-       choice = choice.toUpperCase();
-    switch(choice){
-        case "N":
+        switch (choice) {
+
+        case "1":
             buyTools();
             return true;
-        case "S":
+        case "2":
             sellTools();
         break;
-        case "H":
-            help();
-            break;
         default:
             System.out.println("\nInvalid selection.");
     }
@@ -87,5 +74,7 @@ public class ToolShop {
        menu.display();
     
     }
+
+   
         
 }
