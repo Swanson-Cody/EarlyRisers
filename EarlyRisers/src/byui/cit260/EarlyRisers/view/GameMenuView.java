@@ -14,62 +14,58 @@ import java.util.Scanner;
  *
  * 
  */
-public class GameMenuView {
+public class GameMenuView extends View{
             //Menu options 
-    public void display(){
-        boolean done = false;
-        do {
-    System.out.println("+-------------------------------------------+");
-    System.out.println("|                                           |");
-    System.out.println("|                Welcome to                 |");
-    System.out.println("|         Game of the City of Aaron         |");
-    System.out.println("|                                           |");
-    System.out.println("+-------------------------------------------+");
+      //Get number input from user 
+    @Override
+    public String[] getInputs(){
+        String[] inputs = new String[10];
+        String selection = this.getInput(
+
+    "\n+-------------------------------------------+" +
+    "\n|                                           |" +
+    "\n|                Welcome to                 |" +
+    "\n|         Game of the City of Aaron         |" +
+    "\n|                                           |" +
+    "\n+-------------------------------------------+" +
 	    
-    System.out.println("You have been elected the leader of the City of Aaron."
-            + "You are starting the game with the population of 100 people."
-            + "\nYou are the ruler and must make wise choices to provide for the"
-            + "\nneeds of your people.  You will start the game with 2800 bushels"
-            + "\nof wheat to feed your people, use as currency or plant the next"
-            + "\nharvest. You will also have the opportunity to buy tools and pay"
-            + "\ntithes to the church. Use all your resources well. "
-            + "\nEach turn you will use the options below to complete the time"
-            + "\nperiod.");
+ "\nYou have been elected the leader of the City of Aaron." +
+            "\nYou are starting the game with the population of 100 people." +
+            "\nYou are the ruler and must make wise choices to provide for the" +
+            "\nneeds of your people.  You will start the game with 2800 bushels" +
+            "\nof wheat to feed your people, use as currency or plant the next" +
+            "\nharvest. You will also have the opportunity to buy tools and pay" +
+            "\ntithes to the church. Use all your resources well. " +
+            "\nEach turn you will use the options below to complete the time" +
+            "\nperiod." + 
            
-    System.out.println("\nPlease make a game selection: ");
-    System.out.println("R) Reports Menu"); 
-    System.out.println("N) Buy/Sell Tools");
-    System.out.println("T) Pay tithing");
-    System.out.println("C) Manage Crops");
-    System.out.println("H) Go home");
-            String input = getInput();
-        done = doAction(input);
-        } while(!done);
+    "\n\nPlease make a game selection: " +
+    "\n1) Reports Menu" +
+    "\n2) Buy/Sell Tools" +
+    "\n3) Pay tithing" +
+    "\n4) Manage Crops" +
+    "\n5) Go home"); 
+        inputs [0] = selection;
+        return inputs;
     }
-    
-     private String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
-      
-    //Get number input from user 
-   }
-    private boolean doAction(String choice){
-       choice = choice.toUpperCase();
+@Override
+    public boolean doAction(String[] input){
+        String choice = input[0].toUpperCase();
+
     switch(choice){
-        case "R":
+        case "1":
             getReportsMenuView();
             break;
-        case "N":
+        case "2":
             tools();
             break;
-        case "T":
+        case "3":
              tithes();
             break;
-        case "C":
+        case "4":
              getManageCropsView();
              break;
-        case "H":
+        case "5":
             home();
             break;
         default:
