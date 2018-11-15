@@ -13,11 +13,11 @@ import java.util.Objects;
  * @author Heather
  */
 public class Game implements Serializable {
-      private Player thePlayer;
-      private Map theMap;
-      private InventoryItem inventoryItem;
-      private int acresOwned;
-      private int wheatStorage;
+      public Player thePlayer;
+      public Map theMap;
+      public InventoryItem inventoryItem;
+      public int acresOwned;
+      public int wheatStorage;
       public static void testTeamClasses(){
        Game game = new Game();
        game.setAcresOwned(100);
