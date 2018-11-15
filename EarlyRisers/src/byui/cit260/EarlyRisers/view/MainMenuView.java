@@ -24,7 +24,7 @@ public class MainMenuView extends View {
         "+-------------------------------------------+" +
         "\n|                                           |" +
         "\n|              Welcome to the               |" +
-        "\n|                                           |" +
+        "\n|              City of Aaron                |" +
         "\n|                                           |" +
         "\n+-------------------------------------------+\n" +
         "\nN: Start a New Game" +
