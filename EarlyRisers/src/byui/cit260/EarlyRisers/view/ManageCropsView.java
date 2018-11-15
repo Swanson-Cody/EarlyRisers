@@ -9,71 +9,33 @@ import java.util.Scanner;
  *
  * @author Cody
  */
-public class ManageCropsView {
-    boolean exit;
-    
-    public void display() {
-	        printCropsMenu();
-	        while (!exit){
-	            printCropsMenu();
-	            String choice = getInput();
-	            doAction(choice);
-	        }
-	}
-    
-    private void printCropsMenu() {
-        boolean done = false;
-        
-        do{
-        System.out.println("+-------------------------------------------+");
-        System.out.println("|                                           |");
-        System.out.println("|                Manage Crops               |");
-        System.out.println("|                                           |");
-        System.out.println("|                                           |");
-        System.out.println("+-------------------------------------------+");
-        
-        System.out.println("B: Buy Land");
-        System.out.println("S: Sell Land");
-        System.out.println("F: Feed the People");
-        System.out.println("P: Plant Crops");
-        System.out.println("T: Tithes and Offerings Payment");
-        System.out.println("E: Exit Manage Crops screen");
-        String input = getInput();
-        done = doAction(input);
-        
-        } while(!done);
-
-    } 
-    
-    
+public class ManageCropsView extends View {
     //Get input from user 
-    private String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
-    }
-    private void calculateBuyLand(){
-        System.out.println("You're going to buy land!");
-    }
-    private void calculateSellLand(){
-        System.out.println("You're going to sell land!");
-    }
-    private void calculateFeedPeople(){
-        System.out.println("You're going to feed the people!");
-    }
-    private void calculatePlantCrops(){
-        System.out.println("You're going to plant crops!");
-    }
-    private void calculateTithesAndOfferings(){
-        System.out.println("You're going to pay tithes and offerings!");
-    }
-    private void goToGameMenu(){
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+    @Override
+    public String[] getInputs(){
+        String[] inputs = new String[10];
+        String selection = this.getInput(
+        "+-------------------------------------------+" +
+        "\n|                                           |" +
+        "\n|                Manage Crops               |" +
+        "\n|                                           |" +
+        "\n|                                           |" +
+        "\n+-------------------------------------------+\n" +
+        "\nB: Buy Land" +
+        "\nS: Sell Land" +
+        "\nF: Feed the People" +
+        "\nP: Plant Crops" +
+        "\nT: Tithes and Offerings Payment" +
+        "\nE: Exit Manage Crops screen"
+        );
+        
+        inputs[0] = selection;
+        return inputs;
     }
     
-    private boolean doAction(String choice){
-        choice = choice.toUpperCase();
+    @Override
+    public boolean doAction(String[] input){
+        String choice = input[0].toUpperCase();
         switch(choice){
             case "E":
                 System.out.println("You have exited the Manage Crops screen."
@@ -98,7 +60,26 @@ public class ManageCropsView {
             default:
                 System.out.println("\nInvalid selection.");
         }
-    return false;
+        return false;
     }
-
+    
+    private void calculateBuyLand(){
+        System.out.println("You're going to buy land!");
+    }
+    private void calculateSellLand(){
+        System.out.println("You're going to sell land!");
+    }
+    private void calculateFeedPeople(){
+        System.out.println("You're going to feed the people!");
+    }
+    private void calculatePlantCrops(){
+        System.out.println("You're going to plant crops!");
+    }
+    private void calculateTithesAndOfferings(){
+        System.out.println("You're going to pay tithes and offerings!");
+    }
+    private void goToGameMenu(){
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
 }

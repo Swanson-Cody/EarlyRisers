@@ -11,69 +11,66 @@ import java.util.Scanner;
  *
  * @author Heather
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
     }
     
-     //Menu options 
-    public void display(){
-        boolean done = false;
-        do {
-    System.out.println("+-------------------------------------------+");
-    System.out.println("|                                           |");
-    System.out.println("|              Welcome to the               |");
-    System.out.println("|                 Main Menu                 |");
-    System.out.println("|                                           |");
-    System.out.println("+-------------------------------------------+");
-    System.out.println("N: Start a New Game");
-    System.out.println("S: Load a Saved Game");
-    System.out.println("H: Load a Help Menu");
-    System.out.println("T: Supplies");
-    System.out.println("P: Tool Shop");
-    System.out.println("G: Game Menu");
-    System.out.println("Q: Quit");
-    String input = getInput();
-    done = doAction(input);
-        } while(!done);
-    }
- 
-    
     //Get number input from user 
-    private String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
+    @Override
+    public String[] getInputs(){
+        String[] inputs = new String[10];
+        String selection = this.getInput(
+        "+-------------------------------------------+" +
+        "\n|                                           |" +
+        "\n|              Welcome to the               |" +
+        "\n|                                           |" +
+        "\n|                                           |" +
+        "\n+-------------------------------------------+\n" +
+        "\nN: Start a New Game" +
+        "\nS: Load a Saved Game" +
+        "\nH: Load a Help Menu" +
+        "\nT: Supplies" +
+        "\nP: Tool Shop" +
+        "\nG: Game Menu" +
+        "\nQ: Quit"
+        );
+        
+        inputs[0] = selection;
+        return inputs;
 }
-    private boolean doAction(String choice){
-       choice = choice.toUpperCase();
-    switch(choice){
-        case "Q":
-            System.out.println("Have a good day.  Goodbye!");
-            return true;
-        case "N": 
-            newGame();
-            
-        break;
-        case "S":
-             savedGame();
-        break;
-        case "T":
-            suppliesMenu();
+    
+    @Override
+    public boolean doAction(String[] input){
+        String choice = input[0].toUpperCase();
+        switch(choice){
+            case "Q":
+                System.out.println("Have a good day.  Goodbye!");
+                return true;
+            case "N": 
+                newGame();
+
             break;
-        case "P":
-             toolShop ();
-        case "H":
-             helpMenu();
+            case "S":
+                 savedGame();
             break;
-        case "G":
-             gameMenu();
-             break;
-        default:
-            System.out.println("\nInvalid selection.");
+            case "T":
+                suppliesMenu();
+                break;
+            case "P":
+                 toolShop ();
+            case "H":
+                 helpMenu();
+                break;
+            case "G":
+                 gameMenu();
+                 break;
+            default:
+                System.out.println("\nInvalid selection.");
+        }
+        return false;
     }
-    return false;
-    }
+    
     private void newGame(){
        
     System.out.println("\nCongratulations! You have been elected as the leader for"
@@ -87,9 +84,11 @@ public class MainMenuView {
                        + "\nchallenges along the way. However, if you are devout,"
                        + "\nI’m sure you could mitigate these problems.");
     }
+    
     private void savedGame(){
         System.out.println("This will display available saved games eligible to load.");
     }
+    
     private void helpMenu(){
        HelpMenuView menu = new HelpMenuView();
        menu.display();
@@ -99,12 +98,14 @@ public class MainMenuView {
        SuppliesView supplies = new SuppliesView();
        supplies.display();
     }
+    
     private void toolShop(){ 
-   ToolShop tools = new ToolShop();
+        ToolShop tools = new ToolShop();
         tools.display();
     }
+    
     private void gameMenu(){
-    GameMenuView game = new GameMenuView();
-    game.display();
+        GameMenuView game = new GameMenuView();
+        game.display();
     }
 }

@@ -5,24 +5,46 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author EarlyRisers
  */
-public class View {
-    public abstract class View implements ViewInterface {
-        
-        public View() {
+public abstract class View implements ViewInterface {
+    @Override
+    public void display() {
+        boolean endView = false;
+                
+        do{
+            String[] inputs = getInputs();
             
-        }
-        @Override
-        public void display(){
-            displayBuyLandHeader();
-            while(!exit){
-                printBuyLandMenu();
-                String choice = getInput();
-                doAction(choice);
+            if (inputs[0] == null || inputs[0] == "Q"){
+                return;
             }
+            
+            endView = doAction(inputs);
+        } while(endView != true);
+    }
+
+    @Override
+    public String getInput(String promptMessage) {
+        System.out.println(promptMessage);
+        boolean valid = false;
+        String input = "";
+        
+        while (!valid){
+            Scanner keyboard = new Scanner(System.in);
+            input = keyboard.nextLine().trim();
+            
+            if(input.length() < 1){
+                System.out.println("You must enter a value.");
+                continue;
+            }
+            
+            valid = true;
         }
+        
+        return input;
     }
 }

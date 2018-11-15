@@ -9,7 +9,7 @@ package byui.cit260.EarlyRisers.view;
  *
  * @author EarlyRisers
  */
-public class ViewInterface {
+public interface ViewInterface {
     public void display();
     public String[] getInputs();
     public String getInput(String promptMessage);
