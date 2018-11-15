@@ -18,13 +18,23 @@ public class Game implements Serializable {
       public InventoryItem inventoryItem;
       public int acresOwned;
       public int wheatStorage;
+      public int tithing;
       public static void testTeamClasses(){
        Game game = new Game();
        game.setAcresOwned(100);
        game.setWheatStorage(3000);
        game.setAcresOwned(5);
        game.setWheatStorage(100);
+       game.setTithing(0);
        System.out.println(game.toString());}
+
+    public int getTithing() {
+        return tithing;
+    }
+
+    public void setTithing(int tithing) {
+        this.tithing = tithing;
+    }
       
     /**
      * Get the value of thePlayer
@@ -164,7 +174,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + ", theMap=" + theMap + ", inventoryItem=" + inventoryItem + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage + '}';
+        return "Game{" + "thePlayer=" + thePlayer + ", theMap=" + theMap + ", inventoryItem=" + inventoryItem + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage +  '}';
     }
 
     public void setGame(String currentGame) {
