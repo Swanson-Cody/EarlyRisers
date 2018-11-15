@@ -19,31 +19,31 @@ public class GameMenuView {
     public void display(){
         boolean done = false;
         do {
-    System.out.println("+-------------------------------------------+");
-    System.out.println("|                                           |");
-    System.out.println("|                Welcome to                 |");
-    System.out.println("|         Game of the City of Aaron         |");
-    System.out.println("|                                           |");
-    System.out.println("+-------------------------------------------+");
-	    
-    System.out.println("You have been elected the leader of the City of Aaron."
-            + "You are starting the game with the population of 100 people."
-            + "\nYou are the ruler and must make wise choices to provide for the"
-            + "\nneeds of your people.  You will start the game with 2800 bushels"
-            + "\nof wheat to feed your people, use as currency or plant the next"
-            + "\nharvest. You will also have the opportunity to buy tools and pay"
-            + "\ntithes to the church. Use all your resources well. "
-            + "\nEach turn you will use the options below to complete the time"
-            + "\nperiod.");
-           
-    System.out.println("\nPlease make a game selection: ");
-    System.out.println("R) Reports Menu"); 
-    System.out.println("N) Buy/Sell Tools");
-    System.out.println("T) Pay tithing");
-    System.out.println("C) Manage Crops");
-    System.out.println("H) Go home");
+            System.out.println("+-------------------------------------------+");
+            System.out.println("|                                           |");
+            System.out.println("|                Welcome to                 |");
+            System.out.println("|         Game of the City of Aaron         |");
+            System.out.println("|                                           |");
+            System.out.println("+-------------------------------------------+");
+
+            System.out.println("You have been elected the leader of the City of Aaron."
+                    + "You are starting the game with the population of 100 people."
+                    + "\nYou are the ruler and must make wise choices to provide for the"
+                    + "\nneeds of your people.  You will start the game with 2800 bushels"
+                    + "\nof wheat to feed your people, use as currency or plant the next"
+                    + "\nharvest. You will also have the opportunity to buy tools and pay"
+                    + "\ntithes to the church. Use all your resources well. "
+                    + "\nEach turn you will use the options below to complete the time"
+                    + "\nperiod.");
+
+            System.out.println("\nPlease make a game selection: ");
+            System.out.println("R) Reports Menu"); 
+            System.out.println("N) Buy/Sell Tools");
+            System.out.println("T) Pay tithing");
+            System.out.println("C) Manage Crops");
+            System.out.println("H) Go home");
             String input = getInput();
-        done = doAction(input);
+            done = doAction(input);
         } while(!done);
     }
     
@@ -54,28 +54,29 @@ public class GameMenuView {
       
     //Get number input from user 
    }
+     
     private boolean doAction(String choice){
-       choice = choice.toUpperCase();
-    switch(choice){
-        case "R":
-            getReportsMenuView();
-            break;
-        case "N":
-            tools();
-            break;
-        case "T":
-             tithes();
-            break;
-        case "C":
-             getManageCropsView();
-             break;
-        case "H":
-            home();
-            break;
-        default:
-            System.out.println("\nInvalid selection.");
-    }
-    return false;
+        choice = choice.toUpperCase();
+        switch(choice){
+            case "R":
+                getReportsMenuView();
+                break;
+            case "N":
+                tools();
+                break;
+            case "T":
+                 tithes();
+                break;
+            case "C":
+                 getManageCropsView();
+                 break;
+            case "H":
+                home();
+                return true;
+            default:
+                System.out.println("\nInvalid selection.");
+        }
+        return false;
     }
 //scene of the church where you have the option to pay tithing
     private void getReportsMenuView(){
@@ -100,7 +101,7 @@ public class GameMenuView {
     }
 //home where the year ends and you start the next phase
     private void home(){
-      MainMenuView menu = new MainMenuView();
+       MainMenuView menu = new MainMenuView();
        menu.display();
                
     }

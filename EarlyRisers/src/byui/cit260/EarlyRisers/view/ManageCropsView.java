@@ -43,7 +43,7 @@ public class ManageCropsView extends View {
                 goToGameMenu();
                 return true;
             case "B":
-                calculateBuyLand();
+                getBuyLandView();
                 break;
             case "S": 
                 calculateSellLand();
@@ -63,9 +63,11 @@ public class ManageCropsView extends View {
         return false;
     }
     
-    private void calculateBuyLand(){
-        System.out.println("You're going to buy land!");
+    private void getBuyLandView(){
+        BuyLandView menu = new BuyLandView();
+        menu.display();
     }
+    
     private void calculateSellLand(){
         System.out.println("You're going to sell land!");
     }
