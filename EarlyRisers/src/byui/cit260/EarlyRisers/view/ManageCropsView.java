@@ -21,12 +21,12 @@ public class ManageCropsView extends View {
         "\n|                                           |" +
         "\n|                                           |" +
         "\n+-------------------------------------------+\n" +
-        "\nB: Buy Land" +
-        "\nS: Sell Land" +
-        "\nF: Feed the People" +
-        "\nP: Plant Crops" +
-        "\nT: Tithes and Offerings Payment" +
-        "\nE: Exit Manage Crops screen"
+        "\n1: Buy Land" +
+        "\n2: Sell Land" +
+        "\n3: Feed the People" +
+        "\n4: Plant Crops" +
+        "\n5: Tithes and Offerings Payment" +
+        "\n6: Exit Manage Crops screen"
         );
         
         inputs[0] = selection;
@@ -42,19 +42,19 @@ public class ManageCropsView extends View {
                         + " Have fun with the game!");
                 goToGameMenu();
                 return true;
-            case "B":
-                calculateBuyLand();
+            case "1":
+                getBuyLandView();
                 break;
-            case "S": 
+            case "2": 
                 calculateSellLand();
                 break;
-            case "F":
+            case "3":
                 calculateFeedPeople();
                 break;
-            case "P":
+            case "4":
                 calculatePlantCrops();
                 break;
-            case "T":
+            case "5":
                 calculateTithesAndOfferings();
                 break;
             default:
@@ -63,9 +63,11 @@ public class ManageCropsView extends View {
         return false;
     }
     
-    private void calculateBuyLand(){
-        System.out.println("You're going to buy land!");
+    private void getBuyLandView(){
+        BuyLandView menu = new BuyLandView();
+        menu.display();
     }
+    
     private void calculateSellLand(){
         System.out.println("You're going to sell land!");
     }

@@ -96,7 +96,7 @@ public class GameMenuView extends View{
     }
 //home where the year ends and you start the next phase
     private void home(){
-      MainMenuView menu = new MainMenuView();
+       MainMenuView menu = new MainMenuView();
        menu.display();
                
     }
