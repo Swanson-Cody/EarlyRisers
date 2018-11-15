@@ -13,19 +13,19 @@ import java.util.Scanner;
  */
 public class ToolShop extends View{
       public ToolShop (){
-      int plow;
-      int horse;
-      int shovel;
-      int scythe;
-      int oxen;
-      int seed;}
+      double plow;
+      double horse;
+      double shovel;
+      double scythe;
+      double oxen;}
 //      public void display() {
 //        this.printHeader();
 //        this.getPlayer();
 //        MainMenuView menu = new MainMenuView();
 //        menu.display();        
 //}              
-	        //Menu options         
+	        //Menu options
+     @Override
      public String[] getInputs(){
         String[] inputs = new String[10];
         String selection = this.getInput(
@@ -63,11 +63,11 @@ public class ToolShop extends View{
     private void buyTools(){
        
     System.out.println("\nThe tools for sale are plow (20 wheat), horse(100), "
-            + "ox(120), scythe2=(20), shovel(5) and seed(20/acre).");
+            + "ox(120), scythe2=(20), and shovel(5).");
     }
     private void sellTools(){
         System.out.println("\nThe tools for sale are plow (5 wheat), horse(20), "
-            + "ox(30), scythe2=(5), shovel(1) and seed(2/acre).");
+            + "ox(30), scythe2=(5), and shovel(1).");
     }
     private void help(){
        HelpMenuView menu = new HelpMenuView();
