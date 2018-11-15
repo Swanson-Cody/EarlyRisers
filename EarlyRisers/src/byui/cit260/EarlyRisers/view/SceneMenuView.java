@@ -43,23 +43,20 @@ public class SceneMenuView extends View {
         String choice = input[0].toUpperCase();
         switch(choice){
  
-            case "C":
+            case "1":
                 church();
                 break;
-            case "W":
+            case "2":
                 warehouse();
                 break;
-            case "F":
+            case "3":
                 fields();
                 break;
-            case "T":
+            case "4":
                 tools();
                 break;
-            case "H":
+            case "5":
                 home();
-            case "E":
-                System.out.println("You have exited the Scene Menu."
-                        + "Have fun with the game!");
             default:
                 System.out.println("\nInvalid selection.");
         }
