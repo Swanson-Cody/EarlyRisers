@@ -44,7 +44,7 @@ public class MainMenuView extends View {
     public boolean doAction(String[] input){
         String choice = input[0].toUpperCase();
         switch(choice){
-            case "q":
+            case "Q":
                 System.out.println("Have a good day.  Goodbye!");
                 return true;
             case "1": 
