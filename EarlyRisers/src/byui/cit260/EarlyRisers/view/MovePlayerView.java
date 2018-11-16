@@ -11,70 +11,67 @@ import java.util.Scanner;
  *
  * @author rache
  */
-public class MovePlayerView {
-    boolean exit;
-    
-    public void display(){
-        printMovePlayerHeader();
-        while (!exit){
-            printMovePlayerMenu();
-            String choice = getInput();
-            doActions(choice);
-        }
-    }
-    
-    private void printMovePlayerHeader(){
-            System.out.println("+-------------------------------------------+");
-	    System.out.println("|                                           |");
-	    System.out.println("|       How to move around the Game         |");
-	    System.out.println("|                                           |");
-	    System.out.println("|                                           |");
-	    System.out.println("+-------------------------------------------+");
-	    }
-    
-    private void printMovePlayerMenu(){
-            System.out.println("\nPlease make a menu selection: ");
-	    System.out.println("R: Move to the right");
-	    System.out.println("L: Move to the left");
-	    System.out.println("B: Move backwards");
-	    System.out.println("F: Move forwards");
-	    System.out.println("I: Inspect something or take a closer look");
-            System.out.println("P: pick up an item");
-	    System.out.println("D: Do a happy dance just because you can!");
-            System.out.println("E: Exit out of  the move menu");
-    }
-    
-    //Get the input from the user
-    private String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
-    }
-    
-    private void doActions(String choice){
-        switch(choice){
-	        case "E":
-                    System.out.println("Have fun playing the game");
-                    exit = true;
-                case "R":
-                    System.out.println("You have moved to the right");
-                    break;
-                case "L":
-                    System.out.println("You have moved to the right");
-                    break;
-                case "B":
-                    System.out.println("You have moved backwards");
-                    break;
-                case "F":
-                    System.out.println("You are moving forwards");
-                    break;
-                case "D":
-                    System.out.println("That was a awesome dance!");
-                    break;
-                default:
-                    System.out.println("\nInvalid input.");
-  
-    }
-    }
+public class MovePlayerView extends View {
+    //Get number input from user 
+
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[10];
+        String selection = this.getInput(
+                "+-------------------------------------------+"
+                + "|                                           |"
+                + "|       How to move around the Game         |"
+                + "|                                           |"
+                + "|                                           |"
+                + "+-------------------------------------------+"
+                + "\nPlease make a menu selection: "
+                + "\n1: Move to the right"
+                + "\n2: Move to the left"
+                + "\n3: Move backwards"
+                + "\n4: Move forwards"
+                + "\n5: Inspect something or take a closer look"
+                + "\n6: pick up an item"
+                + "\n7: Do a happy dance just because you can!"
+                + "\n8: Exit out of  the move menu");
+        inputs[0] = selection;
+        return inputs;
     }
 
+    @Override
+    public boolean doAction(String[] input) {
+        String choice = input[0].toUpperCase();
+        switch (choice) {
+
+            case "1":
+                System.out.println("You have moved to the right");
+                break;
+            case "2":
+                System.out.println("You have moved to the left");
+                break;
+            case "3":
+                System.out.println("You have moved to the backwards");
+                break;
+            case "4":
+                System.out.println("You have moved forwards");
+                break;
+            case "5":
+                System.out.println("Inspect something or take a closer look.");
+                break;
+            case "6":
+                System.out.println("Pick up an item.");
+                break;
+            case "7":
+                System.out.println("Do a happy dance just because you can!");
+                break;
+            case "8":
+                System.out.println("Exit out of the move menu. Have fun with the game!");
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.display();
+                break;
+            default:
+                System.out.println("\nInvalid input.");
+
+        }
+        return false;
+    }
+}
