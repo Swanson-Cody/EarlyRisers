@@ -87,6 +87,8 @@ public class GameMenuView extends View{
     }
 //scene of the field where you harvest and plant next years crops
     private void tithes(){
+        ChurchView church = new ChurchView();
+        church.display();
         System.out.println("This will take us to the church to pay tithing.");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
