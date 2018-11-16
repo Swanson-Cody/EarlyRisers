@@ -49,18 +49,17 @@ public class MainMenuView extends View {
                 return true;
             case "1": 
                 newGame();
-
             break;
             case "2":
                  savedGame();
             break;
             case "3":
-                suppliesMenu();
+                helpMenu();
                 break;
             case "4":
-                 toolShop ();
+                suppliesMenu(); 
             case "5":
-                 helpMenu();
+                toolShop();
                 break;
             case "6":
                  gameMenu();
@@ -100,7 +99,7 @@ public class MainMenuView extends View {
     }
     
     private void toolShop(){ 
-        ToolShop tools = new ToolShop();
+        ToolShopView tools = new ToolShopView();
         tools.display();
     }
     
