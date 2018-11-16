@@ -27,12 +27,12 @@ public class MainMenuView extends View {
         "\n|              City of Aaron                |" +
         "\n|                                           |" +
         "\n+-------------------------------------------+\n" +
-        "\nN: Start a New Game" +
-        "\nS: Load a Saved Game" +
-        "\nH: Load a Help Menu" +
-        "\nT: Supplies" +
-        "\nP: Tool Shop" +
-        "\nG: Game Menu" +
+        "\n1: Start a New Game" +
+        "\n2: Load a Saved Game" +
+        "\n3: Load a Help Menu" +
+        "\n4: Supplies" +
+        "\n5: Tool Shop" +
+        "\n6: Game Menu" +
         "\nQ: Quit"
         );
         
@@ -44,25 +44,25 @@ public class MainMenuView extends View {
     public boolean doAction(String[] input){
         String choice = input[0].toUpperCase();
         switch(choice){
-            case "Q":
+            case "q":
                 System.out.println("Have a good day.  Goodbye!");
                 return true;
-            case "N": 
+            case "1": 
                 newGame();
 
             break;
-            case "S":
+            case "2":
                  savedGame();
             break;
-            case "T":
+            case "3":
                 suppliesMenu();
                 break;
-            case "P":
+            case "4":
                  toolShop ();
-            case "H":
+            case "5":
                  helpMenu();
                 break;
-            case "G":
+            case "6":
                  gameMenu();
                  break;
             default:
