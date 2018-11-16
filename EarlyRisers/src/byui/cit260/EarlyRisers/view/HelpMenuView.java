@@ -4,6 +4,7 @@
 	 * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.view;
+
 import java.util.Scanner;
 
 /**
@@ -37,8 +38,9 @@ public class HelpMenuView extends View {
         inputs[0] = selection;
         return inputs;
     }
-@Override
-    public boolean doAction(String[] input){
+
+    @Override
+    public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
         Scanner keyboard = new Scanner(System.in);
 //        int choice = -1;
@@ -55,7 +57,7 @@ public class HelpMenuView extends View {
 //        } while (choice < 0 || choice > 5);
 //        return choice;
 //    }
- 
+
         switch (choice) {
             case "1":
                 System.out.println("\nWheat Information \nYou will start the game with an allotment of wheat."
@@ -85,10 +87,10 @@ public class HelpMenuView extends View {
                 System.out.println("\nScene Information\nThis game has a total of 25 scenes and 5 rounds"
                         + " \nof play. Use your resources wisely to complete the game.");
             case "6":
-            
-            System.out.println("You have exited the supplies screen."
-                    + "Have fun with the game!");
-                    goToMainMenu();
+
+                System.out.println("You have exited the supplies screen."
+                        + "Have fun with the game!");
+                goToMainMenu();
 
                 break;
             default:
@@ -96,8 +98,9 @@ public class HelpMenuView extends View {
         }
         return false;
     }
-    
-    private void goToMainMenu(){
+
+    private void goToMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();}
+        mainMenu.display();
+    }
 }
