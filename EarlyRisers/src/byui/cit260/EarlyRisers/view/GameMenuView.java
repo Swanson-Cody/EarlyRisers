@@ -44,7 +44,8 @@ public class GameMenuView extends View{
     "\n2) Buy/Sell Tools" +
     "\n3) Pay tithing" +
     "\n4) Manage Crops" +
-    "\n5) Go home"); 
+    "\n5) Go to fields" +
+    "\n6) Go home"); 
         inputs [0] = selection;
         return inputs;
     }
@@ -66,6 +67,9 @@ public class GameMenuView extends View{
              getManageCropsView();
              break;
         case "5":
+            goToFields();
+            break;
+        case "6":
             home();
             break;
         default:
@@ -96,6 +100,11 @@ public class GameMenuView extends View{
         ManageCropsView menu = new ManageCropsView();
         menu.display();
     }
+    
+    private void goToFields(){
+        WheatFieldsView fields = new WheatFieldsView();
+        fields.display();
+}
 //home where the year ends and you start the next phase
     private void home(){
        MainMenuView menu = new MainMenuView();
