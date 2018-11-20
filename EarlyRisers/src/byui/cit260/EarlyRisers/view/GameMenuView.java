@@ -45,7 +45,8 @@ public class GameMenuView extends View{
     "\n3) Pay tithing" +
     "\n4) Manage Crops" +
     "\n5) Go to fields" +
-    "\n6) Go home"); 
+    "\n6) Admire God's Creations" +
+    "\n7) Go home"); 
         inputs [0] = selection;
         return inputs;
     }
@@ -70,6 +71,9 @@ public class GameMenuView extends View{
             goToFields();
             break;
         case "6":
+            admireCreations();
+            break;
+        case "7":
             home();
             break;
         default:
@@ -111,5 +115,9 @@ public class GameMenuView extends View{
        menu.display();
                
     }
-    
+//Scene for admiring God's Creations.
+    private void admireCreations(){
+        ForTheBeautyOfTheEarthView menu = new ForTheBeautyOfTheEarthView();
+        menu.display();
+    }
 }

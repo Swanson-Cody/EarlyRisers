@@ -57,6 +57,8 @@ public class ManageCropsView extends View {
             case "5":
                 calculateTithesAndOfferings();
                 break;
+            case "6":
+                goToGameMenu();
             default:
                 System.out.println("\nInvalid selection.");
         }
