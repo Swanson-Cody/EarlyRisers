@@ -4,43 +4,45 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.control;
+
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
-import byui.cit260.EarlyRisers.main.game;
-import byui.cit260.EarlyRisers.model.Game;
+import byui.cit260.EarlyRisers.main.Game;
+import byui.cit260.EarlyRisers.model.CreateNewGame;
+
 /**
  *
  * @author Heather
  */
 public class GameControl {
-    
+
     public static Player savePlayer(String playerName) {
-       Player player = new Player();
-       
-       player.setName(playerName);
-       game.setPlayer(player);
-     return player; 
-     
-      }
-     public static Game saveGame(String currentGame){
-       Game game = new Game();
-       game.setGame(currentGame);
-     return game;
-     }
-    
-         private static int createNewGame(Player player){
-        if (player == null){
+        Player player = new Player();
+
+        player.setName(playerName);
+        Game.setPlayer(player);
+        return player;
+
+    }
+
+    public static CreateNewGame saveGame(String currentGame) {
+        CreateNewGame game = new CreateNewGame();
+        game.setGame(currentGame);
+        return game;
+    }
+
+    private static int createNewGame(Player player) {
+        if (player == null) {
             return -1;
-       }
-        
-        Game game = new Game();
+        }
+        CreateNewGame game = new CreateNewGame();
         Player thePlayer = new Player();
         String name = null;
         thePlayer.setName(name);
         game.setThePlayer(thePlayer);
-        
-}
-        
+
+    }
+
 }
 //savePlayer(name): Player  
 //BEGIN  

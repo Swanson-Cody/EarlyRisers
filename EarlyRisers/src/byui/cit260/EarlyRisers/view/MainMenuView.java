@@ -28,11 +28,9 @@ public class MainMenuView extends View {
         "\n|                                           |" +
         "\n+-------------------------------------------+\n" +
         "\n1: Start a New Game" +
-        "\n2: Load a Saved Game" +
+        "\n2: Start a Saved Game" +
         "\n3: Load a Help Menu" +
-        "\n4: Supplies" +
-        "\n5: Tool Shop" +
-        "\n6: Game Menu" +
+        "\n4: Save Game" +
         "\nQ: Quit"
         );
         
@@ -51,19 +49,13 @@ public class MainMenuView extends View {
                 newGame();
             break;
             case "2":
-                 savedGame();
+                 startExistingGame();
             break;
             case "3":
                 helpMenu();
                 break;
             case "4":
-                suppliesMenu(); 
-            case "5":
-                toolShop();
-                break;
-            case "6":
-                 gameMenu();
-                 break;
+                saveGame(); 
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -84,7 +76,7 @@ public class MainMenuView extends View {
                        + "\nI’m sure you could mitigate these problems.");
     }
     
-    private void savedGame(){
+    private void startExistingGame(){
         System.out.println("This will display available saved games eligible to load.");
     }
     
@@ -93,18 +85,10 @@ public class MainMenuView extends View {
        menu.display();
     }
     
-    private void suppliesMenu(){
-       SuppliesView supplies = new SuppliesView();
-       supplies.display();
+    private void saveGame(){
+       SaveGame menu = new SaveGame();
+       menu.display();
     }
     
-    private void toolShop(){ 
-        ToolShopView tools = new ToolShopView();
-        tools.display();
-    }
     
-    private void gameMenu(){
-        GameMenuView game = new GameMenuView();
-        game.display();
-    }
 }
