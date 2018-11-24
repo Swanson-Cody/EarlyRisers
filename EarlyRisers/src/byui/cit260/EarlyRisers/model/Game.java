@@ -19,6 +19,7 @@ public class Game implements Serializable {
       public int acresOwned;
       public int wheatStorage;
       public int tithing;
+      
       public static void testTeamClasses(){
        Game game = new Game();
        game.setAcresOwned(100);
@@ -26,7 +27,8 @@ public class Game implements Serializable {
        game.setAcresOwned(5);
        game.setWheatStorage(100);
        game.setTithing(0);
-       System.out.println(game.toString());}
+       System.out.println(game.toString());
+      }
 
     public int getTithing() {
         return tithing;

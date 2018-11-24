@@ -28,6 +28,18 @@ public class GameControl {
      return game;
      }
     
+         private static int createNewGame(Player player){
+        if (player == null){
+            return -1;
+       }
+        
+        Game game = new Game();
+        Player thePlayer = new Player();
+        String name = null;
+        thePlayer.setName(name);
+        game.setThePlayer(thePlayer);
+        
+}
         
 }
 //savePlayer(name): Player  

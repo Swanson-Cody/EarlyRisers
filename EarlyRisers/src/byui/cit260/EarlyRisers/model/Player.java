@@ -20,6 +20,7 @@ public class Player implements Serializable {
     
    public Player(){
    }
+   
    public Player(String name, int time){
    this.name = name;
    this.time = time;
