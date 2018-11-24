@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.control;
+import byui.cit260.EarlyRisers.model.Location;
+import byui.cit260.EarlyRisers.model.Map;
 
 import byui.cit260.EarlyRisers.model.Map;
 

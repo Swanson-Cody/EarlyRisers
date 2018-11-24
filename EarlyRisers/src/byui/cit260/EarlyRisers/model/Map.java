@@ -16,6 +16,10 @@ public class Map implements Serializable{
  
     private String locations;
     private int currentLocation;
+    private int rowCount;
+    private int colCount;
+
+   
 
     /**
      * Get the value of locations
@@ -54,7 +58,21 @@ public class Map implements Serializable{
     public void setCurrentLocation(int currentLocation) {
         this.currentLocation = currentLocation;
     }
+public int getRowCount() {
+        return rowCount;
+    }
 
+    public int getColCount() {
+        return colCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public void setColCount(int colCount) {
+        this.colCount = colCount;
+    }
     @Override
     public int hashCode() {
         int hash = 5;

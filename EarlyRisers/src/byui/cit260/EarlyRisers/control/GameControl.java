@@ -10,10 +10,14 @@ import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 
+
+        
+
 /**
  *
  * @author Heather
  */
+import byui.cit260.EarlyRisers.model.Map;
 public class GameControl {
 
     public static Player savePlayer(String playerName) {
@@ -42,7 +46,8 @@ public class GameControl {
         game.setThePlayer(thePlayer);
 
     }
-
+  // create the Map
+           Map theMap = new Map();
 }
 //savePlayer(name): Player  
 //BEGIN  
