@@ -19,6 +19,10 @@ public class Map implements Serializable{
     private int rowCount;
     private int colCount;
 
+    public Map(int MAX_ROW, int MAX_COL) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
     /**
@@ -105,6 +109,14 @@ public int getRowCount() {
     @Override
     public String toString() {
         return "Map{" + "locations=" + locations + ", currentLocation=" + currentLocation + '}';
+    }
+
+    public void setLocation(int i, int i0, Location loc) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getLocation(int i, int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

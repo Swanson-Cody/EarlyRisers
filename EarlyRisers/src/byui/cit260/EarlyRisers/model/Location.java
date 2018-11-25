@@ -16,6 +16,7 @@ public class Location implements Serializable{
     private boolean visited;
     private int row;
     private int column;
+     private String description;
     
     /**
      * Get the value of visited
@@ -33,6 +34,18 @@ public class Location implements Serializable{
      */
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+    
+        public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public Location(){
+        
     }
 
     
@@ -111,6 +124,10 @@ public class Location implements Serializable{
     @Override
     public String toString() {
         return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + '}';
+    }
+
+    public void setSymbol(String wh) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
