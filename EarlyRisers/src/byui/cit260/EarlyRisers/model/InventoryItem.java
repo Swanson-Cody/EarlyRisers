@@ -26,6 +26,10 @@ public static void testInventoryItemClasses(){
        inventoryItem.setTithing(100);
        System.out.println(inventoryItem.toString());
          }
+
+    public InventoryItem(String plows, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

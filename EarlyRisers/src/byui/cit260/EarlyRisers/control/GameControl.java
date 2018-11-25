@@ -9,6 +9,7 @@ import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.model.InventoryItem;
 
 
         
@@ -18,6 +19,7 @@ import byui.cit260.EarlyRisers.model.CreateNewGame;
  * @author Heather
  */
 import byui.cit260.EarlyRisers.model.Map;
+import java.util.ArrayList;
 public class GameControl {
 
     public static Player savePlayer(String playerName) {
@@ -44,6 +46,31 @@ public class GameControl {
         String name = null;
         thePlayer.setName(name);
         game.setThePlayer(thePlayer);
+
+    }
+
+    public static void createTools() {
+
+        ArrayList<InventoryItem> tools = new ArrayList<InventoryItem>();
+        tools.add(new InventoryItem("Plows", 1));
+        tools.add(new InventoryItem("", 0));
+        tools.add(new InventoryItem("Shovel", 2));
+        tools.add(new InventoryItem("Scythe", 1));
+        tools.add(new InventoryItem("", 3));
+    }
+
+    public static void createWheat() {
+        ArrayList<InventoryItem> wheat = new ArrayList<InventoryItem>();
+        wheat.add(new InventoryItem("Wheat Bushels", 3000));
+
+    }
+    
+    public static void createAnimals() {
+        ArrayList<InventoryItem> animals = new ArrayList<InventoryItem>();
+        animals.add(new InventoryItem("Rats", 50));
+        animals.add(new InventoryItem("Oxs", 0));
+        animals.add(new InventoryItem("Horses", 0));
+        
 
     }
   // create the Map
