@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
 
-    private String locations;
+    private Location [][] locations;
     private Location currentLocation;
     private int rowCount;
     private int colCount;
@@ -50,7 +50,7 @@ public class Map implements Serializable {
      *
      * @return the value of locations
      */
-    public String getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 
@@ -59,7 +59,7 @@ public class Map implements Serializable {
      *
      * @param locations new value of locations
      */
-    public void setLocations(String locations) {
+    public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
 
