@@ -12,111 +12,79 @@ import java.util.Objects;
  *
  * @author Cody
  */
-public class Map implements Serializable{
- 
+public class Map implements Serializable {
+
     private String locations;
-    private int currentLocation;
+    private Location currentLocation;
     private int rowCount;
     private int colCount;
+    private int currentRow = 0;
+    private int currentColumn = 0;
+    private Boolean visited;
 
     public Map(int MAX_ROW, int MAX_COL) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-
-    /**
-     * Get the value of locations
-     *
-     * @return the value of locations
-     */
     public String getLocations() {
         return locations;
     }
 
-    /**
-     * Set the value of locations
-     *
-     * @param locations new value of locations
-     */
     public void setLocations(String locations) {
         this.locations = locations;
     }
-   
-    
 
-    /**
-     * Get the value of currentLocation
-     *
-     * @return the value of currentLocation
-     */
-    public int getCurrentLocation() {
+    public Location getCurrentLocation() {
         return currentLocation;
     }
 
-    /**
-     * Set the value of currentLocation
-     *
-     * @param currentLocation new value of currentLocation
-     */
-    public void setCurrentLocation(int currentLocation) {
+    public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
-public int getRowCount() {
-        return rowCount;
-    }
 
-    public int getColCount() {
-        return colCount;
+    public int getRowCount() {
+        return rowCount;
     }
 
     public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
+    public int getColCount() {
+        return colCount;
+    }
+
     public void setColCount(int colCount) {
         this.colCount = colCount;
     }
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.locations);
-        hash = 53 * hash + this.currentLocation;
-        return hash;
+
+    public int getCurrentRow() {
+        return currentRow;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (this.currentLocation != other.currentLocation) {
-            return false;
-        }
-        if (!Objects.equals(this.locations, other.locations)) {
-            return false;
-        }
-        return true;
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
+    }
+
+    public int getCurrentColumn() {
+        return currentColumn;
+    }
+
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
+    }
+
+    public Boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "locations=" + locations + ", currentLocation=" + currentLocation + '}';
-    }
-
-    public void setLocation(int i, int i0, Location loc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getLocation(int i, int j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Map{" + "locations=" + locations + ", currentLocation=" + currentLocation + ", rowCount=" + rowCount + ", colCount=" + colCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", visited=" + visited + '}';
     }
 
 }
