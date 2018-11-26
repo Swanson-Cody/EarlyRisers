@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     private double totalTime;
-    private Map theMap;
+    private static Map theMap;
     
     /**
      *
@@ -24,6 +24,7 @@ public class Game implements Serializable {
      */
     private static CreateNewGame currentGame = null;
     private static Player player = null;
+   
     
 //    public static void main(String []args){
 //       

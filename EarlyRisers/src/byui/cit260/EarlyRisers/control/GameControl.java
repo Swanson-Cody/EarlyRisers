@@ -11,18 +11,14 @@ import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.control.MapControl;
-
-     
-
-
-        
-
+import byui.cit260.EarlyRisers.model.Map;
+import java.util.ArrayList;
 /**
  *
  * @author Heather
  */
-import byui.cit260.EarlyRisers.model.Map;
-import java.util.ArrayList;
+
+
 public class GameControl {
 
     public Player savePlayer(String playerName) {
@@ -37,11 +33,13 @@ public class GameControl {
         game.setGame(currentGame);
         return game;
     }
- public Map saveMap(int currentMap) {
-        Map newMap = createMap();
-        map.setMap(currentMap);
+
+    public static Map saveMap(int currentMap) {
+        Map newMap = new createMap();
+        Map.setMap(currentMap);
         return newMap;
     }
+
     private static int createNewGame(Player player) {
         if (player == null) {
             return -1;
@@ -69,16 +67,27 @@ public class GameControl {
         wheat.add(new InventoryItem("Wheat Bushels", 3000));
 
     }
-    
+
     public static void createAnimals() {
         ArrayList<InventoryItem> animals = new ArrayList<InventoryItem>();
         animals.add(new InventoryItem("Rats", 50));
         animals.add(new InventoryItem("Oxs", 0));
         animals.add(new InventoryItem("Horses", 0));
-        
 
     }
- 
+    public static void createPopulation(){
+    ArrayList<InventoryItem> population = new ArrayList<InventoryItem>();
+        population.add(new InventoryItem ("Population", 100));
+        }
+public static void createTithing(){
+    ArrayList<InventoryItem> tithing = new ArrayList<InventoryItem>();
+        tithing.add(new InventoryItem ("Tithing", 0));
+        }
+public static void createLand(){
+    ArrayList<InventoryItem> land = new ArrayList<InventoryItem>();
+        land.add(new InventoryItem ("Land", 1000));
+        }
+    
 }
 //savePlayer(name): Player  
 //BEGIN  
