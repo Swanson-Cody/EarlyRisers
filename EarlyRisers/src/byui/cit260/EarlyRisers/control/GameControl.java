@@ -10,6 +10,9 @@ import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.InventoryItem;
+import byui.cit260.EarlyRisers.control.MapControl;
+
+     
 
 
         
@@ -34,10 +37,10 @@ public class GameControl {
         game.setGame(currentGame);
         return game;
     }
- public Map saveMap(String currentMap) {
-        MapControl map = new Map();
+ public Map saveMap(int currentMap) {
+        Map newMap = createMap();
         map.setMap(currentMap);
-        return map;
+        return newMap;
     }
     private static int createNewGame(Player player) {
         if (player == null) {
@@ -75,8 +78,7 @@ public class GameControl {
         
 
     }
-  // create the Map
-           Map theMap = new Map();
+ 
 }
 //savePlayer(name): Player  
 //BEGIN  
