@@ -18,6 +18,10 @@ public class Location implements Serializable{
     private int column;
      private String description;
     
+    public Location(){
+        
+    }
+
     /**
      * Get the value of visited
      *
@@ -43,12 +47,7 @@ public class Location implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    public Location(){
-        
-    }
-
-    
+  
     /**
      * Get the value of row
      *

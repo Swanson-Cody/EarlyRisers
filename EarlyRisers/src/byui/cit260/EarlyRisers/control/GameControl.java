@@ -22,11 +22,9 @@ import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
 public class GameControl {
 
-    public static Player savePlayer(String playerName) {
+    public Player savePlayer(String playerName) {
         Player player = new Player();
-
         player.setName(playerName);
-        Game.setPlayer(player);
         return player;
 
     }
@@ -36,7 +34,11 @@ public class GameControl {
         game.setGame(currentGame);
         return game;
     }
-
+ public Map saveMap(String currentMap) {
+        MapControl map = new Map();
+        map.setMap(currentMap);
+        return map;
+    }
     private static int createNewGame(Player player) {
         if (player == null) {
             return -1;
