@@ -5,6 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.model.DisplayMap;
 import java.util.Scanner;
 
 /**
@@ -36,6 +37,17 @@ public class MovePlayerView extends View {
         inputs[0] = selection;
         return inputs;
     }
+    
+    public static void movePlayerToStartingLocation(DisplayMap map) {
+     // If starting location is not supposed to be 0,0 then use the correct values here.
+     movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+}
+public static void movePlayer(DisplayMap map, int row, int column) {
+   DisplayMap.setCurrentLocation(DisplayMap.getLocations()[row][column]);
+   DisplayMap.getCurrentLocation().setVisited(true);
+   DisplayMap.setCurrentRow(row);
+   DisplayMap.setCurrentColumn(column);
+}
 
     @Override
     public boolean doAction(String[] input) {

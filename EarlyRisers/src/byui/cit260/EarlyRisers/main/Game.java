@@ -8,7 +8,7 @@ package byui.cit260.EarlyRisers.main;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
-import byui.cit260.EarlyRisers.model.Map;
+import byui.cit260.EarlyRisers.model.DisplayMap;
 import java.io.Serializable;
 /**
  *
@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     private double totalTime;
-    private static Map theMap;
+    private static DisplayMap theMap;
         
     /**
      *
@@ -51,11 +51,11 @@ public class Game implements Serializable {
         this.player = player;
     }
     
-    public Map getMap() {
+    public DisplayMap getMap() {
         return this.theMap;
     }
     
-    public void setMap(Map map) {
+    public void setMap(DisplayMap map) {
         this.theMap = map;
     }
 

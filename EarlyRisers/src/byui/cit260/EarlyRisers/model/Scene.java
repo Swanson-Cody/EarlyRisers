@@ -47,7 +47,7 @@ public class Scene implements Serializable {
      *
      * @return the value of description
      */
-    public String getDescription() {
+    public String getScene() {
         return description;
     }
 
@@ -56,7 +56,7 @@ public class Scene implements Serializable {
      *
      * @param description new value of description
      */
-    public void setDescription(String description) {
+    public void setScene(String description) {
         this.description = description;
     }
 

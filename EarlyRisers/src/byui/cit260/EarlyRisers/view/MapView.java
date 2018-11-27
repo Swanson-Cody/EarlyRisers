@@ -5,21 +5,26 @@
  */
 package byui.cit260.EarlyRisers.view;
 import byui.cit260.EarlyRisers.main.Game;
-import byui.cit260.EarlyRisers.model.Map;
+import byui.cit260.EarlyRisers.model.DisplayMap;
 import byui.cit260.EarlyRisers.control.MapControl;
+import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.Location;
+import byui.cit260.EarlyRisers.model.Scene;
 
 /**
  *
  * 
  */
 public class MapView {
+    
+    private static Game theGame;
     public void displayMap() {
   String leftIndicator;
   String rightIndicator;
   // retreive the game
-  Game game = game.getCurrentGame(); 
-  Map map = game.getMap(); // retreive the map from game
+  CreateNewGame game = Game.getCurrentGame(); 
+  Scene thescene = Game.getScene();
+  DisplayMap map = game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
     System.out.print("City Map for the City of Aaron");
