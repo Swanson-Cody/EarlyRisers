@@ -48,55 +48,7 @@ public class MapControl {
 //public static Location[][] createLocations(int rows, int columns)
 //Create the fields
 
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc1 = new Location();
-                loc1.setDescription("Wheat Fields");
-                loc1.setSymbol("WH");
-                theMap.setLocation(i, 3, loc1);
-            }
-//Create the Church       
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc2 = new Location();
-                loc2.setDescription("Church");
-                loc2.setSymbol("CH");
-                theMap.setLocation(i, 2, loc2);
-            }
-//Create the Tool Shop        
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc3 = new Location();
-                loc3.setDescription("Tool Shop");
-                loc3.setSymbol("TS");
-                theMap.setLocation(i, 1, loc3);
-            }
-//Create the beauty of the Earth        
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc4 = new Location();
-                loc4.setDescription("For the Beauty of the Earth");
-                loc4.setSymbol("BE");
-                theMap.setLocation(i, 4, loc4);
 
-            }
-//Create the inventory shop
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc5 = new Location();
-                loc5.setDescription("Inventory");
-                loc5.setSymbol("IN");
-                theMap.setLocation(i, 5, loc5);
-
-            }
-       
-   return theMap;}
-//   
-//    public void displayMap() {
-//        Game _game = theGame.getMap();
-//        
-
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 8; j++) {
-                System.out.print(theMap.getLocation(i, j).getSymbol() + " ");
-            }
-            System.out.println();
-                  }
 //call setter to save a locations array in the map object
 
 //success = assignIemsToLocations(locations)
@@ -106,10 +58,11 @@ public class MapControl {
 //if (success < 0) then
 // return null
 //endif
+        return null;
     }
+        return null;
+}
 }
 
 // Assign all other types objects to locations (e.g., questions, spells)
-…
-return map
-}
+

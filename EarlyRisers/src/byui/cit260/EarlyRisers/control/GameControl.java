@@ -6,19 +6,15 @@
 package byui.cit260.EarlyRisers.control;
 
 import byui.cit260.EarlyRisers.model.Player;
-import byui.cit260.EarlyRisers.view.StartProgramViewNew;
-import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.InventoryItem;
-import byui.cit260.EarlyRisers.control.MapControl;
-import static byui.cit260.EarlyRisers.control.MapControl.createMap;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
+
 /**
  *
- * 
+ *
  */
-
 
 public class GameControl {
 
@@ -36,7 +32,7 @@ public class GameControl {
     }
 
     public static Map saveMap(int currentMap) {
-        Map map = new createMap();
+        Map map = new Map.setMap();
         Map.setMap(currentMap);
         return map;
     }
@@ -50,6 +46,7 @@ public class GameControl {
         String name = null;
         thePlayer.setName(name);
         game.setThePlayer(thePlayer);
+        return 0;
 
     }
 
@@ -76,26 +73,30 @@ public class GameControl {
         animals.add(new InventoryItem("Horses", 0));
 
     }
-    public static void createPopulation(){
-    ArrayList<InventoryItem> population = new ArrayList<InventoryItem>();
-        population.add(new InventoryItem ("Population", 100));
-        }
-public static void createTithing(){
-    ArrayList<InventoryItem> tithing = new ArrayList<InventoryItem>();
-        tithing.add(new InventoryItem ("Tithing", 0));
-        }
-public static void createLand(){
-    ArrayList<InventoryItem> land = new ArrayList<InventoryItem>();
-        land.add(new InventoryItem ("Land", 1000));
-        }
- public static void createCropData() {
-          ArrayList<InventoryItem> cropData = new ArrayList<InventoryItem>();
-         cropData.add(new InventoryItem("Year", 0));
+
+    public static void createPopulation() {
+        ArrayList<InventoryItem> population = new ArrayList<InventoryItem>();
+        population.add(new InventoryItem("Population", 100));
+    }
+
+    public static void createTithing() {
+        ArrayList<InventoryItem> tithing = new ArrayList<InventoryItem>();
+        tithing.add(new InventoryItem("Tithing", 0));
+    }
+
+    public static void createLand() {
+        ArrayList<InventoryItem> land = new ArrayList<InventoryItem>();
+        land.add(new InventoryItem("Land", 1000));
+    }
+
+    public static void createCropData() {
+        ArrayList<InventoryItem> cropData = new ArrayList<InventoryItem>();
+        cropData.add(new InventoryItem("Year", 0));
         cropData.add(new InventoryItem("CropYield", 0));
-        cropData.add(new InventoryItem("Dead", 0)); 
+        cropData.add(new InventoryItem("Dead", 0));
         cropData.add(new InventoryItem("Acres Planted", 0));
-              }
-    
+    }
+
 }
 //savePlayer(name): Player  
 //BEGIN  

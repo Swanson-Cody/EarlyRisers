@@ -8,7 +8,7 @@ package byui.cit260.EarlyRisers.main;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
-import byui.cit260.EarlyRisers.model.DisplayMap;
+import byui.cit260.EarlyRisers.model.Map;
 import byui.cit260.EarlyRisers.model.Scene;
 import java.io.Serializable;
 /**
@@ -17,11 +17,12 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-    public static Scene getScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Map getScene() {
+        Map map = new Map();
+        return map;   
     }
     private double totalTime;
-    private static DisplayMap theMap;
+    private static Map theMap;
         
     /**
      *
@@ -56,11 +57,11 @@ public class Game implements Serializable {
         this.player = player;
     }
     
-    public DisplayMap getMap() {
+    public Map getMap() {
         return this.theMap;
     }
     
-    public void setMap(DisplayMap map) {
+    public void setMap(Map map) {
         this.theMap = map;
     }
 

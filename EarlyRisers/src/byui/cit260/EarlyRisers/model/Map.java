@@ -14,14 +14,23 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
 
+    /**
+     *
+     * @param currentMap
+     * @return 
+     */
+    
+        public static Scene getScene() {
+        Scene scene = new Scene();
+        return scene;   
+    }
+        
+    private static Scene theMap;
+    
+    
     public static void setMap(int currentMap) {
         System.out.println("Your Map is being created");
     }
-    
-    public static void theCurrentMap(int currentMap) {
-        System.out.println("Your Map is being created");
-    }
-
 
     private Location [][] locations;
     private Location currentLocation;
@@ -30,6 +39,13 @@ public class Map implements Serializable {
     private int currentRow = 0;
     private int currentColumn = 0;
 
+    public Map() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
@@ -91,7 +107,7 @@ public class Map implements Serializable {
         
     }
 
-    public Object getLocation(int i, int j) {
+    public Object getLocations(int i, int j) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -153,4 +169,20 @@ public class Map implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+//    public static class createMap extends Map {
+//
+//        public createMap() {
+//            System.out.println("Your Map is being created");
+//        }
+//    }
+
+    public Object getLocation(int i, int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static class setMap extends Map {
+
+        public setMap() {
+        }
+    }
 }
