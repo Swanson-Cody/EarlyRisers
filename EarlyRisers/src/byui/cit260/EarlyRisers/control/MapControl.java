@@ -17,7 +17,7 @@ import byui.cit260.EarlyRisers.model.Map;
  */
 public class MapControl {
 
-    public void createMap(Game game) {
+    public static Map createMap(Game game) {
         int MAX_ROW = 5;
         int MAX_COL = 5;
 

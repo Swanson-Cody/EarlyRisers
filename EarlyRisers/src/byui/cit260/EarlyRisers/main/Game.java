@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class Game implements Serializable {
     private double totalTime;
     private static Map theMap;
-    
+        
     /**
      *
      * @param args
