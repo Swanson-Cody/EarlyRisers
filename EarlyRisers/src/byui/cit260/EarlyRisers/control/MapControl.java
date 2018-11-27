@@ -7,9 +7,7 @@ package byui.cit260.EarlyRisers.control;
 
 import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.Location;
-import byui.cit260.EarlyRisers.model.DisplayMap;
-
-import byui.cit260.EarlyRisers.model.DisplayMap;
+import byui.cit260.EarlyRisers.model.Map;
 
 /**
  *
@@ -17,7 +15,7 @@ import byui.cit260.EarlyRisers.model.DisplayMap;
  */
 public class MapControl {
 
-    public static DisplayMap createMap(Game game) {
+    public static Map createMap(Game game) {
         int MAX_ROW = 5;
         int MAX_COL = 5;
 
@@ -37,7 +35,7 @@ public class MapControl {
             System.out.println("Invalid Location.");
 // create the map object and assign values to it
 //map = a new Map object       }      
-            DisplayMap theMap = new DisplayMap(MAX_ROW, MAX_COL);
+            Map theMap = new Map(MAX_ROW, MAX_COL);
 // call setter to assign value to description in map
 //call setter to assign value to noOfRows in the map
 //call setter to assign value to noOfColumns in map

@@ -9,12 +9,17 @@ import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.DisplayMap;
+import byui.cit260.EarlyRisers.model.Scene;
 import java.io.Serializable;
 /**
  *
  * @author Heather
  */
 public class Game implements Serializable {
+
+    public static Scene getScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private double totalTime;
     private static DisplayMap theMap;
         

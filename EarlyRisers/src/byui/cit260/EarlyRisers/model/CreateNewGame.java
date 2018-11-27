@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class CreateNewGame implements Serializable {
       public Player thePlayer;
-      public DisplayMap theMap;
+      public Map theMap;
       public InventoryItem inventoryItem;
       public int acresOwned;
       public int wheatStorage;
@@ -62,7 +62,7 @@ public class CreateNewGame implements Serializable {
      *
      * @return the value of theMap
      */
-    public DisplayMap getTheMap() {
+    public Map getTheMap() {
         return theMap;
     }
 
@@ -71,7 +71,7 @@ public class CreateNewGame implements Serializable {
      *
      * @param theMap new value of theMap
      */
-    public void setTheMap(DisplayMap theMap) {
+    public void setTheMap(Map theMap) {
         this.theMap = theMap;
     }
 
@@ -183,7 +183,7 @@ public class CreateNewGame implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public DisplayMap getMap() {
+    public Map getMap() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   

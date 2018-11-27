@@ -19,6 +19,7 @@ public class Scene implements Serializable {
         private String description;
         private Question question;
         private String item;
+        private String symbol;
         
      
         
@@ -59,8 +60,14 @@ public class Scene implements Serializable {
     public void setScene(String description) {
         this.description = description;
     }
-
     
+    public String getMapSymbol(){
+        return symbol;
+    }
+
+    public void setMapSymbol(String symbol) {
+        this.symbol = symbol;
+    }
 
     /**
      * Get the value of question
