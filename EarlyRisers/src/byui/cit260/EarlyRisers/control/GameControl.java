@@ -88,25 +88,12 @@ public static void createLand(){
         land.add(new InventoryItem ("Land", 1000));
         }
  public static void createCropData() {
-            CropData theCrops = new CropData();
-           
-            
-            theCrops.setYear(0);
-            theCrops.setPopulation(100);
-            theCrops.setNewPeople(5);
-            theCrops.setCropYield(3);
-            theCrops.setNumberWhoDied(0);
-            theCrops.setOffering(10);
-            theCrops.setWheatInStore(2700);
-            theCrops.setAcresOwned(1000);
-            theCrops.setAcresPlanted(1000);
-            theCrops.setHarvest(3000);
-            theCrops.setOfferingBushels(300);
-            theCrops.setAcresPlanted(1000);
-            
-            //save the cropData in the Game object
-            Game.setCropData(theCrops); 
-        }
+          ArrayList<InventoryItem> cropData = new ArrayList<InventoryItem>();
+         cropData.add(new InventoryItem("Year", 0));
+        cropData.add(new InventoryItem("CropYield", 0));
+        cropData.add(new InventoryItem("Dead", 0)); 
+        cropData.add(new InventoryItem("Acres Planted", 0));
+              }
     
 }
 //savePlayer(name): Player  
