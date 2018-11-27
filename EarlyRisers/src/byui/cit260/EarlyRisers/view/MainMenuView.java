@@ -6,6 +6,7 @@
 package byui.cit260.EarlyRisers.view;
 
 import java.util.Scanner;
+import byui.cit260.EarlyRisers.view.MapView;
 
 /**
  *
@@ -30,7 +31,7 @@ public class MainMenuView extends View {
         "\n1: Start a New Game" +
         "\n2: Start a Saved Game" +
         "\n3: Load a Help Menu" +
-        "\n4: Save Game" +
+        "\n4: View Map" +
         "\nQ: Quit"
         );
         
@@ -55,7 +56,7 @@ public class MainMenuView extends View {
                 helpMenu();
                 break;
             case "4":
-                saveGame(); 
+                viewMap(); 
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -85,9 +86,9 @@ public class MainMenuView extends View {
        menu.display();
     }
     
-    private void saveGame(){
-       SaveGame menu = new SaveGame();
-       menu.display();
+    private void viewMap(){
+       MapView menu = new MapView();
+       menu.displayMap();
     }
     
     

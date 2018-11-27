@@ -11,11 +11,12 @@ import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.control.MapControl;
+import static byui.cit260.EarlyRisers.control.MapControl.createMap;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
 /**
  *
- * @author Heather
+ * 
  */
 
 
@@ -35,9 +36,9 @@ public class GameControl {
     }
 
     public static Map saveMap(int currentMap) {
-        Map newMap = new createMap();
+        Map map = new createMap();
         Map.setMap(currentMap);
-        return newMap;
+        return map;
     }
 
     private static int createNewGame(Player player) {

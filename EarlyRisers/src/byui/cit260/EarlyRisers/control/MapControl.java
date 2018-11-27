@@ -88,10 +88,10 @@ public class MapControl {
             }
        
    return theMap;}
-   
-    public void displayMap() {
-        Game _game = theGame.getMap();
-        
+//   
+//    public void displayMap() {
+//        Game _game = theGame.getMap();
+//        
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 8; j++) {
