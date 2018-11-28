@@ -6,58 +6,65 @@
 package byui.cit260.EarlyRisers.control;
 
 import byui.cit260.EarlyRisers.model.Player;
-import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
-import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  *
  */
-
 public class GameControl {
 
-    public Player savePlayer(String playerName) {
-        Player player = new Player();
-        player.setName(playerName);
-        return player;
+    Scanner keyboard = new Scanner(System.in);
+    // size of the Locations array
+    private static final int MAX_ROW = 5;
+    private static final int MAX_COL = 5;
+    // reference to a Game object
+    public static Game CreateNewGame;
+    private static Game Player;
 
-    }
-
-    public static CreateNewGame saveGame(String currentGame) {
-        CreateNewGame game = new CreateNewGame();
-        game.setGame(currentGame);
-        return game;
-    }
-
-    public static Map saveMap(int currentMap) {
-        Map map = new Map.setMap();
-        Map.setMap(currentMap);
-        return map;
-    }
-
-    private static int createNewGame(Player player) {
-        if (player == null) {
+    public static int createNewGame(Player player) {
+        double returnValue = GameControl.createNewGame(CreateNewGame.getPlayer());
+        if (returnValue < 0) {
+            System.out.println("ERROR - Failed to create new game.");
             return -1;
-        }
-        CreateNewGame game = new CreateNewGame();
-        Player thePlayer = new Player();
-        String name = null;
-        thePlayer.setName(name);
-        game.setThePlayer(thePlayer);
-        return 0;
+        }//create game object
+        CreateNewGame = new Game();
+        //create player object
+        CreateNewGame.setPlayer(player);
+      //create the Map ojbect
+//    Map map = new createMap();
+//    theGame.setMap(newMap);
+
+        createTools();
+        createWheat();
+        createAnimals();
+        createPopulation();
+        createTithing();
+        createLand();
+        createCropData();
+return 1;
 
     }
+
+    //savePlayer(name): Player  
+//BEGIN  
+//if name is null OR length of name is < 1 THEN   
+//RETURN null 
+
+    
 
     public static void createTools() {
-
+        
         ArrayList<InventoryItem> tools = new ArrayList<InventoryItem>();
         tools.add(new InventoryItem("Plows", 1));
         tools.add(new InventoryItem("", 0));
         tools.add(new InventoryItem("Shovel", 2));
         tools.add(new InventoryItem("Scythe", 1));
         tools.add(new InventoryItem("", 3));
+       
     }
 
     public static void createWheat() {
@@ -96,15 +103,4 @@ public class GameControl {
         cropData.add(new InventoryItem("Dead", 0));
         cropData.add(new InventoryItem("Acres Planted", 0));
     }
-
 }
-//savePlayer(name): Player  
-//BEGIN  
-//if name is null OR length of name is < 1 THEN   
-//RETURN null  
-//ENDIF  player = new Player object  
-//save the name in the player object  
-//save the player in the main class of the project  
-//RETURN player END
-//   private static Game currentGame = null;
- //   private static Player player = null;

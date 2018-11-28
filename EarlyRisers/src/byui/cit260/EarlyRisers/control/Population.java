@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.EarlyRisers.control;
-//import java.util.Random;
 
+//import java.util.Random;
+package byui.cit260.EarlyRisers.control;
 import java.util.Random;
 
 

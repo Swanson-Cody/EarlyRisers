@@ -165,9 +165,6 @@ public class Map implements Serializable {
         return "Map{" + "locations=" + locations + ", currentLocation=" + currentLocation + ", rowCount=" + rowCount + ", colCount=" + colCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", visited=" + visited + '}';
     }
 
-    public Location getCurrentLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 //    public static class createMap extends Map {
 //
@@ -175,14 +172,5 @@ public class Map implements Serializable {
 //            System.out.println("Your Map is being created");
 //        }
 //    }
-
-    public Object getLocation(int i, int j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static class setMap extends Map {
-
-        public setMap() {
-        }
-    }
 }
+ 

@@ -61,7 +61,7 @@ public class ToolShopView extends View {
         switch (choice) {
             case "1":
                 buyPlow();
-                return true;
+                break;
             case "2":
                 buyHorse();
                 break;

@@ -18,24 +18,20 @@ public class InventoryItem implements Serializable{
     private int tithing;
     
  
-public static void testInventoryItemClasses(){
-       InventoryItem inventoryItem = new InventoryItem();
-       inventoryItem.setItemType("Hammer");
-       inventoryItem.setProvisions("Wheat");
-       inventoryItem.setAnimals("Rats");
-       inventoryItem.setTithing(100);
-       System.out.println(inventoryItem.toString());
-         }
+//public static void testInventoryItemClasses(){
+//       InventoryItem item = new InventoryItem();
+//       item.setItemType("Hammer");
+//       item.setProvisions("Wheat");
+//       item.setAnimals("Rats");
+//       item.setTithing(100);
+//       System.out.println(item.toString());
+//         }
 
     public InventoryItem(String plows, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
-    private InventoryItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+     
     
          
     /**

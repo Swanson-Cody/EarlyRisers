@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.view;
-
+import byui.cit260.EarlyRisers.control.MapControl;
+import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.Scanner;
 
@@ -38,11 +39,11 @@ public class MovePlayerView extends View {
         return inputs;
     }
     
-    public static void movePlayerToStartingLocation(Map map) {
+    public void movePlayerToStartingLocation(Map map) {
      // If starting location is not supposed to be 0,0 then use the correct values here.
-     movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+     movePlayer(map, 0, 0); 
 }
-public static void movePlayer(Map map, int row, int column) {
+public void movePlayer(Map map, int row, int column) {
    Map.setCurrentLocation(Map.getLocations()[row][column]);
    Map.getCurrentLocation().setVisited(true);
    Map.setCurrentRow(row);

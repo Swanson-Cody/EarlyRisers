@@ -6,7 +6,7 @@
 package byui.cit260.EarlyRisers.view;
 
 import java.util.Scanner;
-import byui.cit260.EarlyRisers.view.MapView;
+import byui.cit260.EarlyRisers.view.GameMenuView;
 
 /**
  *
@@ -87,7 +87,7 @@ public class MainMenuView extends View {
     }
     
     private void viewMap(){
-       MapView menu = new MapView();
+       GameMenuView menu = new GameMenuView();
        menu.displayMap();
     }
     

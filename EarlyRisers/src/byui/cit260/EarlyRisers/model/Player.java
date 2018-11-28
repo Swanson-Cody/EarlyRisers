@@ -18,16 +18,13 @@ public class Player implements Serializable {
     private String name;
     private int time;
     
-   public Player(){
-   }
-   
-   public Player(String name, int time){
-   this.name = name;
-   this.time = time;
-   }
-   public String getName(){
-   return name;
-   }
+//   public Player(String name, int time){
+//   this.name = name;
+//   this.time = time;
+//   }
+//   public String getName(){
+//   return name;
+//   }
    
    
     @Override
@@ -70,9 +67,13 @@ public class Player implements Serializable {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + '}';
+//    @Override
+//    public Double toString() {
+//        return "Player{" + "name=" + name + '}';
+
+//    public void setName(Player player) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     }
  
 //    public static void main(String[] args){
@@ -81,6 +82,6 @@ public class Player implements Serializable {
 //        
 //    }
     
-}
+//}
 
 
