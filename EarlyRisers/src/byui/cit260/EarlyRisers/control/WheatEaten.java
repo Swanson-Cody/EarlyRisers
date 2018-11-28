@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.control;
+import java.util.Random;
 
 /**
  *
@@ -11,25 +12,32 @@ package byui.cit260.EarlyRisers.control;
  */
 public class WheatEaten {
 
-     public static double calcGrowth(double tithing, double random, double wheatStorage) {
+     public static double calcGrowth(int[] ratsEatWheat, double tithing, double wheatStorage) {
+         Random random = new Random();
+         int ran = random.nextInt(5);
+         ran++;
+         int total = 0;
+         
          if(tithing > 12){
-             wheatStorage = wheatStorage - random;
+             wheatStorage = wheatStorage - ran;
          } else if(tithing >= 8 && tithing <= 12){
-             wheatStorage = wheatStorage - random;
+             wheatStorage = wheatStorage - ran;
          } else if (tithing >=0 && tithing < 8){
-             wheatStorage = wheatStorage - random;
-         }
+             wheatStorage = wheatStorage - ran;
+         
+             
+             for(int eatWheat: ratsEatWheat){
+                 total = eatWheat - ran;
+             }
+             System.out.println("The rats have eaten " + total + " in total.");
        
-         return wheatStorage;
+         
      }
-
-    public WheatEaten() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+            return wheatStorage;
+     }
+}
 /**
  *
  * @author rache
  */
 
-}
