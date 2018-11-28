@@ -5,6 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.control.WheatEaten;
 import java.util.Scanner;
 
 /**
@@ -72,8 +73,10 @@ public class WheatFieldsView extends View{
 //sit and rest in the church and pray
 
     private void rats() {
+        WheatEaten wheatEaten = new WheatEaten();
         System.out.println("Those rats are such pesky things, but you manged"
                 + " to scare of a few");
+        System.out.println("They did eat" + wheatEaten + " bussels of wheat though.");
     }
 
     private void exit() {
