@@ -18,7 +18,9 @@ public class InventoryItem implements Serializable{
     private String animals;
     private int tithing;
     private ArrayList<InventoryItem> setItems;
-    
+    private int population;
+
+   
  
 //public static void testInventoryItemClasses(){
 //       InventoryItem item = new InventoryItem();
@@ -117,7 +119,21 @@ public class InventoryItem implements Serializable{
     public void setTithing(int tithing) {
         this.tithing = tithing;
     }
+ public ArrayList<InventoryItem> getSetItems() {
+        return setItems;
+    }
 
+    public void setSetItems(ArrayList<InventoryItem> setItems) {
+        this.setItems = setItems;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
     @Override
     public String toString() {
         return "InventoryItem{" + "itemType=" + itemType + ", provisions=" + provisions + ", animals=" + animals + '}';

@@ -37,11 +37,7 @@ public class ManageCropsView extends View {
     public boolean doAction(String[] input){
         String choice = input[0].toUpperCase();
         switch(choice){
-            case "E":
-                System.out.println("You have exited the Manage Crops screen."
-                        + " Have fun with the game!");
-                goToGameMenu();
-                return true;
+            
             case "1":
                 getBuyLandView();
                 break;
@@ -58,7 +54,7 @@ public class ManageCropsView extends View {
                 calculateTithesAndOfferings();
                 break;
             case "6":
-                goToGameMenu();
+                return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -82,8 +78,5 @@ public class ManageCropsView extends View {
     private void calculateTithesAndOfferings(){
         System.out.println("You're going to pay tithes and offerings!");
     }
-    private void goToGameMenu(){
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-    }
+   
 }

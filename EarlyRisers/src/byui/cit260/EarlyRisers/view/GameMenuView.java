@@ -29,23 +29,12 @@ public class GameMenuView extends View {
         String[] inputs = new String[10];
         String selection = this.getInput(
                 "\n+-------------------------------------------+"
-                + "\n|                                           |"
                 + "\n|                Welcome to                 |"
                 + "\n|         Game of the City of Aaron         |"
-                + "\n|                                           |"
                 + "\n+-------------------------------------------+"
-                + "\nYou have been elected the leader of the City of Aaron."
-                + "\nYou are starting the game with the population of 100 people."
-                + "\nYou are the ruler and must make wise choices to provide for the"
-                + "\nneeds of your people.  You will start the game with 2800 bushels"
-                + "\nof wheat to feed your people, use as currency or plant the next"
-                + "\nharvest. You will also have the opportunity to buy tools and pay"
-                + "\ntithes to the church. Use all your resources well. "
-                + "\nEach turn you will use the options below to complete the time"
-                + "\nperiod."
                 + "\n\nPlease make a game selection: "
                 + "\n1) Reports Menu"
-                + "\n2) Buy/Sell Tools"
+                + "\n2) Move Player"
                 + "\n3) Pay tithing"
                 + "\n4) Manage Crops"
                 + "\n5) Go to fields"
@@ -65,7 +54,7 @@ public class GameMenuView extends View {
                 getReportsMenuView();
                 break;
             case "2":
-                tools();
+                movePlayer();
                 break;
             case "3":
                 tithes();
@@ -98,9 +87,9 @@ public class GameMenuView extends View {
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
 
-    private void tools() {
-        GameMenuView game = new GameMenuView();
-        game.display();
+    private void movePlayer() {
+        MovePlayerView move = new MovePlayerView();
+        move.display();
 
     }
 //scene of the field where you harvest and plant next years crops

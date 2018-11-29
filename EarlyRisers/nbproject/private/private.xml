@@ -5,11 +5,12 @@
         <group>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/GameMenuView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/model/Map.java</file>
+            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/WheatEaten.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/MovePlayerView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/GameControl.java</file>
-            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/MapView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/model/Location.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/MapControl.java</file>
+            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/Population.java</file>
         </group>
     </open-files>
 </project-private>
