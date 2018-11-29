@@ -8,12 +8,10 @@
 package byui.cit260.EarlyRisers.control;
 import java.util.Random;
 
-
 /**
  * @author Heather
  */
 public class Population {
-
     /**
      *
      * @param population
@@ -46,5 +44,30 @@ public class Population {
         return Math.round(result);
  
 }
-    
+    public static double calcGrowthTithes(double population, double tithes, double harvest){
+     if (tithes >= harvest*.10) {
+        Random percent = new Random();
+           int random = percent.nextInt(10);
+           ++random;
+           System.out.println(random);
+           double result = population +((random/100)*population);
+        return Math.round(result);}
+    if (tithes <= harvest*.06) {
+        Random percent = new Random();
+           int random = percent.nextInt(6);
+           ++random;
+           System.out.println(random);
+           double result = population +((random/100)*population);
+        return Math.round(result);}
+    else if (tithes >= harvest*.04) {
+        Random percent = new Random();
+           int random = percent.nextInt(10);
+           ++random;
+           System.out.println(random);
+           double result = population -((random/100)*population);
+        return Math.round(result);
+    }
+    return population;
+}
+  
 }
