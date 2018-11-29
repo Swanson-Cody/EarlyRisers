@@ -5,6 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 import byui.cit260.EarlyRisers.control.MapControl;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.Scanner;
@@ -39,25 +40,21 @@ public class MovePlayerView extends View {
         return inputs;
     }
     
-    public void movePlayerToStartingLocation(Map map) {
-     // If starting location is not supposed to be 0,0 then use the correct values here.
-     movePlayer(map, 0, 0); 
-}
-public void movePlayer(Map map, int row, int column) {
-   Map.setCurrentLocation(Map.getLocations()[row][column]);
-   Map.getCurrentLocation().setVisited(true);
-   Map.setCurrentRow(row);
-   Map.setCurrentColumn(column);
-}
+
 
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
+        Map map = EarlyRisers.getCurrentGame().getMap();
         switch (choice) {
 
             case "1":
-                System.out.println("You have moved to the right");
-                break;
+                if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
+                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() + 1, map.getCurrentLocation().getColumn());
+                } else {
+                    System.out.println("You can't move any further to the right.");
+                }
+                return true;
             case "2":
                 System.out.println("You have moved to the left");
                 break;

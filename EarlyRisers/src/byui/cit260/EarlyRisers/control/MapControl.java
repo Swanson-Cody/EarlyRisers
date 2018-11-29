@@ -5,8 +5,8 @@
  */
 package byui.cit260.EarlyRisers.control;
 
-import byui.cit260.EarlyRisers.main.Game;
-import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.Scanner;
@@ -19,19 +19,13 @@ import java.lang.String;
  */
 public class MapControl {
 
-    public static Map createMap(Game game) {
+    public static Map createMap() {
         int MAX_ROW = 5;
         int MAX_COL = 5;
-        if (game == null) {
-            System.out.println("Game not created.");
-        }
-        if (MAX_ROW < 0) {
-            System.out.println("Invalid Location.");
-        }
-        if (MAX_COL < 0) {
-            System.out.println("Invalid Location.");
-            return null;
-          }
+
+        Map map = new Map();
+        Location[][] locations = new Location[MAX_ROW][MAX_COL];
+        map.setLocations(locations);
 //    }
 //
 //    public static void showMap(String[][] map) {
@@ -44,43 +38,56 @@ public class MapControl {
 //    Location[][] locations = Map.getLocations();
         for (int i = 0; i < MAX_ROW; i++) {
             Location loc1 = new Location();
-            loc1.setDescription("Wheat Fields");
-            loc1.setSymbol("WH");
-            Map.setLocation(i, 3, loc1);
+            loc1.setDescription("Wheat Field " + (i + 1));
+            loc1.setSymbol("W" + (i + 1));
+            map.setLocation(i, 1, loc1);
         }
-        
+//        Location loc = Map.getLocations()[0][1];
+
 //Create the Church       
         for (int i = 0; i < MAX_ROW; i++) {
             Location loc2 = new Location();
-            loc2.setDescription("Church");
-            loc2.setSymbol("CH");
-            Map.setLocation(i, 2, loc2);
+            loc2.setDescription("Church" + (i + 1));
+            loc2.setSymbol("C" + (i + 1));
+            map.setLocation(i, 2, loc2);
         }
-        
+
 //Create the Tool Shop        
         for (int i = 0; i < MAX_ROW; i++) {
             Location loc3 = new Location();
-            loc3.setDescription("Tool Shop");
-            loc3.setSymbol("TS");
-            Map.setLocation(i, 1, loc3);
+            loc3.setDescription("Tool Shop" + (i + 1));
+            loc3.setSymbol("T" + (i + 1));
+            map.setLocation(i, 3, loc3);
         }
-        
+
 //Create the beauty of the Earth        
         for (int i = 0; i < MAX_ROW; i++) {
             Location loc4 = new Location();
-            loc4.setDescription("For the Beauty of the Earth");
-            loc4.setSymbol("BE");
-            Map.setLocation(i, 4, loc4);
+            loc4.setDescription("For the Beauty of the Earth" + (i + 1));
+            loc4.setSymbol("B" + (i + 1));
+            map.setLocation(i, 4, loc4);
         }
 //Create the inventory shop
         for (int i = 0; i < MAX_ROW; i++) {
-            Location loc5 = new Location();
-            loc5.setDescription("Inventory");
-            loc5.setSymbol("IN");
-            Map.setLocation(i, 5, loc5);
+            Location loc0 = new Location();
+            loc0.setDescription("Inventory" + (i + 1));
+            loc0.setSymbol("I" + (i + 1));
+            map.setLocation(i, 0, loc0);
         }
-            
-        return new Map();
+        movePlayerToStartingLocation(map);
+        return map;
+    }
+
+    public static void movePlayerToStartingLocation(Map map) {
+        // If starting location is not supposed to be 0,0 then use the correct values here.
+        movePlayer(map, 0, 0);
+    }
+
+    public static void movePlayer(Map map, int row, int column) {
+        Map.setCurrentLocation(Map.getLocations()[row][column]);
+        Map.setCurrentRow(row);
+        Map.setCurrentColumn(column);
+        Map.getCurrentLocation().setVisited(true);
     }
 }
 //

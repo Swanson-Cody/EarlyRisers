@@ -40,7 +40,7 @@ public class Map implements Serializable {
     private static int currentColumn = 0;
 
     public Map() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//      s  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public static Location getCurrentLocation() {
@@ -104,12 +104,14 @@ public class Map implements Serializable {
         this.colCount = colCount;
     }
     
-    public static void setLocation(int i, int i0, Location loc) {
-        
+    public static void setLocation(int row, int column, Location loc) {
+        locations[row][column] = loc;
+        loc.setRow(row);
+        loc.setColumn(column);
     }
 
-    public Object getLocations(int i, int j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Object getLocation(int i, int j) {
+        return locations[i][j];
     }
 
     @Override

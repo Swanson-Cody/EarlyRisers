@@ -8,7 +8,7 @@ package byui.cit260.EarlyRisers.main;
 
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
-import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Map;
 import byui.cit260.EarlyRisers.model.Scene;
@@ -20,77 +20,49 @@ import java.util.Arrays;
  *
  * @author Heather
  */
-public class Game implements Serializable {
+public class EarlyRisers {
 
-    private static CreateNewGame currentGame = null;
+    private static Game currentGame = null;
     private static Player player = null;
 
-    private static double totalTime;
-    private static Map theMap;
-    private static ArrayList<InventoryItem> inventory;
+//    private static double totalTime;
+//    private static ArrayList<InventoryItem> inventory;
 
     public static void main(String[] args) {
         StartProgramViewNew menu = new StartProgramViewNew();
         menu.display();
     }
 
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", inventory=" + inventory + '}';
-    }
+//
+//    public void setTotalTime(double totalTime) {
+//        EarlyRisers.totalTime = totalTime;
+//    }
+//
+//    public static void setTheMap(Map theMap) {
+//        EarlyRisers.theMap = theMap;
+//    }
+//
+//    public void setInventory(ArrayList<InventoryItem> inventory) {
+//        EarlyRisers.inventory = inventory;
+//    }
+//    
+//    public void addToInventory(ArrayList<InventoryItem> inventory){
+//        for(int i = 0; i < inventory.size(); i++){
+//            EarlyRisers.inventory.add(inventory.get(i));
+//        }
+//    }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-//        hash = 43 * hash + ArrayList<InventoryItem>.deepHashCode(this.inventory);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        return true;
-    }
-
-    public void setTotalTime(double totalTime) {
-        Game.totalTime = totalTime;
-    }
-
-    public static void setTheMap(Map theMap) {
-        Game.theMap = theMap;
-    }
-
-    public void setInventory(ArrayList<InventoryItem> inventory) {
-        Game.inventory = inventory;
-    }
-    
-    public void addToInventory(ArrayList<InventoryItem> inventory){
-        for(int i = 0; i < inventory.size(); i++){
-            Game.inventory.add(inventory.get(i));
-        }
-    }
-
-    public static double getTotalTime() {
-        return totalTime;
-    }
-
-    public static Map getTheMap() {
-        return theMap;
-    }
-
-    public static ArrayList<InventoryItem> getInventory() {
-        return inventory;
-    }
+//    public static double getTotalTime() {
+//        return totalTime;
+//    }
+//
+//    public static Map getTheMap() {
+//        return theMap;
+//    }
+//
+//    public static ArrayList<InventoryItem> getInventory() {
+//        return inventory;
+//    }
 
     /**
      *
@@ -101,12 +73,12 @@ public class Game implements Serializable {
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-    public static CreateNewGame getCurrentGame() {
+    public static Game getCurrentGame() {
         return currentGame;
     }
 
-    public static void setCurrentGame(CreateNewGame currentGame) {
-        Game.currentGame = currentGame;
+    public static void setCurrentGame(Game currentGame) {
+        EarlyRisers.currentGame = currentGame;
     }
 
     public static Player getPlayer() {
@@ -114,16 +86,16 @@ public class Game implements Serializable {
     }
 
     public static void setPlayer(Player player) {
-        Game.player = player;
+        EarlyRisers.player = player;
     }
 
-    public static Map getMap() {
-        return Game.theMap;
-    }
-
-    public static void setMap(Map map) {
-        Game.theMap = map;
-    }
+//    public static Map getMap() {
+//        return EarlyRisers.theMap;
+//    }
+//
+//    public static void setMap(Map map) {
+//        EarlyRisers.theMap = map;
+//    }
 
 }
 

@@ -6,7 +6,7 @@
 package byui.cit260.EarlyRisers.model;
 
 
-import byui.cit260.EarlyRisers.main.Game;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -62,106 +62,106 @@ public class Scene implements Serializable {
         this.description = description;
     }
     
-    public static void getMapSymbol(int MAX_ROW, int MAX_COL){
-        Game theGame = new Game();
-        //public static void getMapSymbol(int MAX_ROW, int MAX_COL){
-//        MAX_ROW = 5;
-//        MAX_COL = 5;
-
-        Map theMap = new Map(MAX_ROW, MAX_COL);
-        
-        //private Map theMap;
-        
-        String church = "The church is where you can go to whorship and pay tithing.";
-        
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            loc.setDescription(church);
-            loc.setSymbol("CHU");
-            theMap.setLocation(i, 2, loc);
-        }
-        
-        // define the string for the City's Granary location
-        String granary = "A tall silo where all of your wheat is stored";
-        
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            // set a granary location with a hint
-            loc.setDescription(granary + "\nIt takes 20 bushels to feed one person");
-            loc.setSymbol("###");
-            theMap.setLocation(i, 3, loc);
-        }
-        
-        String farmland = "You are in the wheat fields and they are looking really great!";
-        
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
-            loc.setSymbol("WHE");
-            theMap.setLocation(i, 6, loc);
-        }
-        
-        String shop = "You are at the tool shop. You can buy supplies here.";
-        
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            loc.setDescription(shop + "\n There are oxen, horses, hoes and a bunch of other things here.");
-            loc.setSymbol("$$$");
-            theMap.setLocation(i, 5, loc);
-        }
-        
-       
-        String warehouse = "The warehouse where you store all of your things";
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            // set a desert location with a hint
-            loc.setDescription(warehouse);
-            loc.setSymbol("///");
-            theMap.setLocation(i, 1, loc);
-        }
-        
-        // define the string for the Village location
-        String Home = "You are at home, there is literally nothing for you to do here.";
-        
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            // set a village location with a hint
-            loc.setDescription(Home + "\nStop being anti social and do somthing!");
-            loc.setSymbol("^^^");
-            theMap.setLocation(i, 4, loc);
-        }
-        
-        // create a string that will go in the Location objects
-        // that contain the river
-        String moreWheat = "More fields of wheat! That's a lot of wheat now you can eat hehehehe!";
-        
-        // set this location object in each cell of the array in column 4
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            loc.setDescription(moreWheat);
-            loc.setSymbol("W++");
-            theMap.setLocation(i, 7, loc);
-        }
-        
-        // define the string for the Lamanite border location
-        String chapel = "Another Chapel, these things are so great!!!";
-        for(int i = 0; i < MAX_ROW; i++) {
-            // create a new Location object
-            Location loc = new Location();
-            loc.setDescription(chapel);
-            loc.setSymbol("|||");
-            theMap.setLocation(i, 0, loc);
-        }
-        
-        theGame.setMap(theMap);
-    }
+//    public static void getMapSymbol(int MAX_ROW, int MAX_COL){
+//        EarlyRisers theGame = new EarlyRisers();
+//        //public static void getMapSymbol(int MAX_ROW, int MAX_COL){
+////        MAX_ROW = 5;
+////        MAX_COL = 5;
+//
+//        Map theMap = new Map(MAX_ROW, MAX_COL);
+//        
+//        //private Map theMap;
+//        
+//        String church = "The church is where you can go to whorship and pay tithing.";
+//        
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            loc.setDescription(church);
+//            loc.setSymbol("CHU");
+//            theMap.setLocation(i, 2, loc);
+//        }
+//        
+//        // define the string for the City's Granary location
+//        String granary = "A tall silo where all of your wheat is stored";
+//        
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            // set a granary location with a hint
+//            loc.setDescription(granary + "\nIt takes 20 bushels to feed one person");
+//            loc.setSymbol("###");
+//            theMap.setLocation(i, 3, loc);
+//        }
+//        
+//        String farmland = "You are in the wheat fields and they are looking really great!";
+//        
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+//            loc.setSymbol("WHE");
+//            theMap.setLocation(i, 6, loc);
+//        }
+//        
+//        String shop = "You are at the tool shop. You can buy supplies here.";
+//        
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            loc.setDescription(shop + "\n There are oxen, horses, hoes and a bunch of other things here.");
+//            loc.setSymbol("$$$");
+//            theMap.setLocation(i, 5, loc);
+//        }
+//        
+//       
+//        String warehouse = "The warehouse where you store all of your things";
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            // set a desert location with a hint
+//            loc.setDescription(warehouse);
+//            loc.setSymbol("///");
+//            theMap.setLocation(i, 1, loc);
+//        }
+//        
+//        // define the string for the Village location
+//        String Home = "You are at home, there is literally nothing for you to do here.";
+//        
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            // set a village location with a hint
+//            loc.setDescription(Home + "\nStop being anti social and do somthing!");
+//            loc.setSymbol("^^^");
+//            theMap.setLocation(i, 4, loc);
+//        }
+//        
+//        // create a string that will go in the Location objects
+//        // that contain the river
+//        String moreWheat = "More fields of wheat! That's a lot of wheat now you can eat hehehehe!";
+//        
+//        // set this location object in each cell of the array in column 4
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            loc.setDescription(moreWheat);
+//            loc.setSymbol("W++");
+//            theMap.setLocation(i, 7, loc);
+//        }
+//        
+//        // define the string for the Lamanite border location
+//        String chapel = "Another Chapel, these things are so great!!!";
+//        for(int i = 0; i < MAX_ROW; i++) {
+//            // create a new Location object
+//            Location loc = new Location();
+//            loc.setDescription(chapel);
+//            loc.setSymbol("|||");
+//            theMap.setLocation(i, 0, loc);
+//        }
+//        
+//        theGame.setMap(map);
+//    }
     
 
 

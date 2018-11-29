@@ -6,9 +6,10 @@
 package byui.cit260.EarlyRisers.control;
 
 import byui.cit260.EarlyRisers.model.Player;
-import byui.cit260.EarlyRisers.main.Game;
-import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
+import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,7 +24,7 @@ public class GameControl {
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     // reference to a Game object
-    public static Game Game;
+    public static EarlyRisers Game;
 
     public static void startNewGame(Player player) {
         double returnValue = GameControl.createNewGame(Game.getPlayer());
@@ -38,20 +39,18 @@ public class GameControl {
         }
         
         //create game object
-        Game = new Game();
-        
+//        Game = new EarlyRisers();
+        Game game = new Game();
         //create player object
-        Game.setPlayer(player);
-        
-        CreateNewGame newGame = new CreateNewGame();
-        Game.setPlayer(new Player());
-        Game.setCurrentGame(newGame);
+        game.setPlayer(player);
+      
+        EarlyRisers.setCurrentGame(game);
         //set actor?
                
         
-      //create the Map object
-        //    Map map = new createMap();
-        //    theGame.setMap(newMap);
+//      create the Map object
+            Map map = MapControl.createMap();
+            game.setMap(map);
 
         createTools();
         createWheat();
@@ -76,13 +75,13 @@ public class GameControl {
         tools.add(new InventoryItem("Scythe", 1));
         tools.add(new InventoryItem("", 3));
         
-        Game.setInventory(tools);
+        EarlyRisers.getCurrentGame().setInventory(tools);
     }
 
     public static void createWheat() {
         ArrayList<InventoryItem> wheat = new ArrayList<>();
         wheat.add(new InventoryItem("Wheat Bushels", 3000));
-        Game.addToInventory(wheat);
+        EarlyRisers.getCurrentGame().addToInventory(wheat);
     }
 
     public static void createAnimals() {
@@ -90,25 +89,25 @@ public class GameControl {
         animals.add(new InventoryItem("Rats", 50));
         animals.add(new InventoryItem("Oxs", 0));
         animals.add(new InventoryItem("Horses", 0));
-        Game.addToInventory(animals);
+        EarlyRisers.getCurrentGame().addToInventory(animals);
     }
 
     public static void createPopulation() {
         ArrayList<InventoryItem> population = new ArrayList<>();
         population.add(new InventoryItem("Population", 100));
-        Game.addToInventory(population);
+        EarlyRisers.getCurrentGame().addToInventory(population);
     }
 
     public static void createTithing() {
         ArrayList<InventoryItem> tithing = new ArrayList<>();
         tithing.add(new InventoryItem("Tithing", 0));
-        Game.addToInventory(tithing);
+        EarlyRisers.getCurrentGame().addToInventory(tithing);
     }
 
     public static void createLand() {
         ArrayList<InventoryItem> land = new ArrayList<>();
         land.add(new InventoryItem("Land", 1000));
-        Game.addToInventory(land);
+        EarlyRisers.getCurrentGame().addToInventory(land);
     }
 
     public static void createCropData() {
@@ -117,6 +116,6 @@ public class GameControl {
         cropData.add(new InventoryItem("CropYield", 0));
         cropData.add(new InventoryItem("Dead", 0));
         cropData.add(new InventoryItem("Acres Planted", 0));
-        Game.addToInventory(cropData);
+        EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
 }

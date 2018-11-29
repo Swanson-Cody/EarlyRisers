@@ -16,7 +16,10 @@ public class Location implements Serializable{
     private boolean visited;
     private int row;
     private int column;
-     private String description;
+    private String description;
+    private String symbol;
+    private Question question;
+    private InventoryItem item;
     
     public Location(){
         
@@ -125,12 +128,17 @@ public class Location implements Serializable{
         return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + '}';
     }
 
-    public void setSymbol(String wh) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public Scene getScene() {
         return new Scene();
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     

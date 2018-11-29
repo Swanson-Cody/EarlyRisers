@@ -6,29 +6,55 @@
 package byui.cit260.EarlyRisers.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author Heather
  */
-public class CreateNewGame implements Serializable {
-      public Player thePlayer;
-      public Map theMap;
-      public InventoryItem inventoryItem;
-      public int acresOwned;
-      public int wheatStorage;
-      public int tithing;
+public class Game implements Serializable {
+      private Player player;
+      private Map map;
+//      private InventoryItem inventoryItem;
+      private int acresOwned;
+      private int wheatStorage;
+      private int tithing;
+      private static double totalTime;
+      private static ArrayList<InventoryItem> inventory;
+
+    public static double getTotalTime() {
+        return totalTime;
+    }
+
+    public static void setTotalTime(double totalTime) {
+        Game.totalTime = totalTime;
+    }
+
+    public static ArrayList<InventoryItem> getInventory() {
+        return inventory;
+    }
+
+    public static void setInventory(ArrayList<InventoryItem> inventory) {
+        Game.inventory = inventory;
+    }
+    
+    
+    public void addToInventory(ArrayList<InventoryItem> inventory){
+        for(int i = 0; i < inventory.size(); i++){
+            this.inventory.add(inventory.get(i));
+        }
+    }
       
-      public static void testTeamClasses(){
-       CreateNewGame game = new CreateNewGame();
-       game.setAcresOwned(100);
-       game.setWheatStorage(3000);
-       game.setAcresOwned(5);
-       game.setWheatStorage(100);
-       game.setTithing(0);
-       System.out.println(game.toString());
-      }
+//      public static void testTeamClasses(){
+//       Game game = new Game();
+//       game.setAcresOwned(100);
+//       game.setWheatStorage(3000);
+//       game.setAcresOwned(5);
+//       game.setWheatStorage(100);
+//       game.setTithing(0);
+//       System.out.println(game.toString());
+//      }
 
     public int getTithing() {
         return tithing;
@@ -39,21 +65,21 @@ public class CreateNewGame implements Serializable {
     }
       
     /**
-     * Get the value of thePlayer
+     * Get the value of player
      *
-     * @return the value of thePlayer
+     * @return the value of player
      */
-    public Player getThePlayer() {
-        return thePlayer;
+    public Player getPlayer() {
+        return player;
     }
 
     /**
-     * Set the value of thePlayer
+     * Set the value of player
      *
-     * @param thePlayer new value of thePlayer
+     * @param player new value of player
      */
-    public void setThePlayer(Player thePlayer) {
-        this.thePlayer = thePlayer;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
 
@@ -62,17 +88,17 @@ public class CreateNewGame implements Serializable {
      *
      * @return the value of theMap
      */
-    public Map getTheMap() {
-        return theMap;
+    public Map getMap() {
+        return map;
     }
 
     /**
      * Set the value of theMap
      *
-     * @param theMap new value of theMap
+     * @param map new value of theMap
      */
-    public void setTheMap(Map theMap) {
-        this.theMap = theMap;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
    
@@ -82,18 +108,18 @@ public class CreateNewGame implements Serializable {
      *
      * @return the value of inventoryItem
      */
-    public InventoryItem getInventoryItem() {
-        return inventoryItem;
-    }
+//    public InventoryItem getInventoryItem() {
+//        return inventoryItem;
+//    }
 
     /**
      * Set the value of inventoryItem
      *
      * @param inventoryItem new value of inventoryItem
      */
-    public void setInventoryItem(InventoryItem inventoryItem) {
-        this.inventoryItem = inventoryItem;
-    }
+//    public void setInventoryItem(InventoryItem inventoryItem) {
+//        this.inventoryItem = inventoryItem;
+//    }
 
     
 
@@ -138,9 +164,9 @@ public class CreateNewGame implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.thePlayer);
-        hash = 83 * hash + Objects.hashCode(this.theMap);
-        hash = 83 * hash + Objects.hashCode(this.inventoryItem);
+        hash = 83 * hash + Objects.hashCode(this.player);
+        hash = 83 * hash + Objects.hashCode(this.map);
+//        hash = 83 * hash + Objects.hashCode(this.inventoryItem);
         hash = 83 * hash + this.acresOwned;
         hash = 83 * hash + this.wheatStorage;
         return hash;
@@ -157,17 +183,17 @@ public class CreateNewGame implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CreateNewGame other = (CreateNewGame) obj;
+        final Game other = (Game) obj;
         if (this.acresOwned != other.acresOwned) {
             return false;
         }
         if (this.wheatStorage != other.wheatStorage) {
             return false;
         }
-        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
+        if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        if (!Objects.equals(this.theMap, other.theMap)) {
+        if (!Objects.equals(this.map, other.map)) {
             return false;
         }
        
@@ -176,15 +202,7 @@ public class CreateNewGame implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + ", theMap=" + theMap + ", inventoryItem=" + inventoryItem + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage +  '}';
-    }
-
-    public void setGame(String currentGame) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Map getMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Game{" + "thePlayer=" + player + ", map=" + map + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage +  '}';
     }
   
 }

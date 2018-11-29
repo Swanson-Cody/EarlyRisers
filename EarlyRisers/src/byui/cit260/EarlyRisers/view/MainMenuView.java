@@ -6,8 +6,8 @@
 package byui.cit260.EarlyRisers.view;
 
 import byui.cit260.EarlyRisers.control.GameControl;
-import byui.cit260.EarlyRisers.main.Game;
-import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Player;
 import java.util.Scanner;
 import byui.cit260.EarlyRisers.view.GameMenuView;
@@ -79,6 +79,10 @@ public class MainMenuView extends View {
                            + "\npaid in tithes and offerings. You may encounter "
                            + "\nchallenges along the way. However, if you are devout,"
                            + "\nI’m sure you could mitigate these problems.");
+        
+        GameControl.createNewGame(EarlyRisers.getPlayer());
+        GameMenuView menu = new GameMenuView();
+        menu.display();
     }
     
     private void startExistingGame(){
