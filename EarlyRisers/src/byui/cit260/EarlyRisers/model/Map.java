@@ -32,30 +32,30 @@ public class Map implements Serializable {
         System.out.println("Your Map is being created");
     }
 
-    private Location [][] locations;
-    private Location currentLocation;
-    private int rowCount;
-    private int colCount;
-    private int currentRow = 0;
-    private int currentColumn = 0;
+    private static Location [][] locations;
+    private static Location currentLocation;
+    private static int rowCount;
+    private static int colCount;
+    private static int currentRow = 0;
+    private static int currentColumn = 0;
 
     public Map() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public Location getCurrentLocation() {
+    public static Location getCurrentLocation() {
         return currentLocation;
     }
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
+    public static void setCurrentLocation(Location currentLocation) {
+        Map.currentLocation = currentLocation;
     }
 
-    public void setCurrentRow(int currentRow) {
-        this.currentRow = currentRow;
+    public static void setCurrentRow(int currentRow) {
+        Map.currentRow = currentRow;
     }
 
-    public void setCurrentColumn(int currentColumn) {
-        this.currentColumn = currentColumn;
+    public static void setCurrentColumn(int currentColumn) {
+        Map.currentColumn = currentColumn;
     }
 
     public void setVisited(Boolean visited) {
@@ -75,7 +75,7 @@ public class Map implements Serializable {
      *
      * @return the value of locations
      */
-    public Location[][] getLocations() {
+    public static Location[][] getLocations() {
         return locations;
     }
 
@@ -84,8 +84,8 @@ public class Map implements Serializable {
      *
      * @param locations new value of locations
      */
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    public static void setLocations(Location[][] locations) {
+        Map.locations = locations;
     }
 
       public int getRowCount() {
@@ -103,7 +103,8 @@ public class Map implements Serializable {
     public void setColCount(int colCount) {
         this.colCount = colCount;
     }
- public void setLocation(int i, int i0, Location loc) {
+    
+    public static void setLocation(int i, int i0, Location loc) {
         
     }
 

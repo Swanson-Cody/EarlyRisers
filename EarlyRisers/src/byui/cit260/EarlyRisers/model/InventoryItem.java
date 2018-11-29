@@ -27,7 +27,7 @@ public class InventoryItem implements Serializable{
 //       System.out.println(item.toString());
 //         }
 
-    public InventoryItem(String plows, int i) {
+    public InventoryItem(String itemType, int i) {
        
     }
 

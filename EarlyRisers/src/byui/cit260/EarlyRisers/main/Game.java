@@ -13,6 +13,7 @@ import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Map;
 import byui.cit260.EarlyRisers.model.Scene;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -24,14 +25,13 @@ public class Game implements Serializable {
     private static CreateNewGame currentGame = null;
     private static Player player = null;
 
-    private double totalTime;
+    private static double totalTime;
     private static Map theMap;
-    private InventoryItem[] inventory;
+    private static ArrayList<InventoryItem> inventory;
 
     public static void main(String[] args) {
         StartProgramViewNew menu = new StartProgramViewNew();
         menu.display();
-
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Game implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 43 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 43 * hash + Arrays.deepHashCode(this.inventory);
+//        hash = 43 * hash + ArrayList<InventoryItem>.deepHashCode(this.inventory);
         return hash;
     }
 
@@ -63,18 +63,24 @@ public class Game implements Serializable {
     }
 
     public void setTotalTime(double totalTime) {
-        this.totalTime = totalTime;
+        Game.totalTime = totalTime;
     }
 
     public static void setTheMap(Map theMap) {
         Game.theMap = theMap;
     }
 
-    public void setInventory(InventoryItem[] inventory) {
-        this.inventory = inventory;
+    public void setInventory(ArrayList<InventoryItem> inventory) {
+        Game.inventory = inventory;
+    }
+    
+    public void addToInventory(ArrayList<InventoryItem> inventory){
+        for(int i = 0; i < inventory.size(); i++){
+            Game.inventory.add(inventory.get(i));
+        }
     }
 
-    public double getTotalTime() {
+    public static double getTotalTime() {
         return totalTime;
     }
 
@@ -82,7 +88,7 @@ public class Game implements Serializable {
         return theMap;
     }
 
-    public InventoryItem[] getInventory() {
+    public static ArrayList<InventoryItem> getInventory() {
         return inventory;
     }
 
@@ -103,20 +109,20 @@ public class Game implements Serializable {
         Game.currentGame = currentGame;
     }
 
-    public Player getPlayer() {
+    public static Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public static void setPlayer(Player player) {
+        Game.player = player;
     }
 
-    public Map getMap() {
-        return this.theMap;
+    public static Map getMap() {
+        return Game.theMap;
     }
 
-    public void setMap(Map map) {
-        this.theMap = map;
+    public static void setMap(Map map) {
+        Game.theMap = map;
     }
 
 }

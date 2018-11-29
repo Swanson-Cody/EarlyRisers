@@ -41,45 +41,48 @@ public class MapControl {
 //
 //            }
 //        }
-    Location[][] locations = map.getLocations();
-    for (int i = 0; i < MAX_ROW; i++) {
-                Location loc1 = new Location();
-                loc1.setDescription("Wheat Fields");
-                loc1.setSymbol("WH");
-                theMap.setLocation(i, 3, loc1);
-            }
+//    Location[][] locations = Map.getLocations();
+        for (int i = 0; i < MAX_ROW; i++) {
+            Location loc1 = new Location();
+            loc1.setDescription("Wheat Fields");
+            loc1.setSymbol("WH");
+            Map.setLocation(i, 3, loc1);
+        }
+        
 //Create the Church       
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc2 = new Location();
-                loc2.setDescription("Church");
-                loc2.setSymbol("CH");
-                (i, 2, loc2);
-            }
+        for (int i = 0; i < MAX_ROW; i++) {
+            Location loc2 = new Location();
+            loc2.setDescription("Church");
+            loc2.setSymbol("CH");
+            Map.setLocation(i, 2, loc2);
+        }
+        
 //Create the Tool Shop        
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc3 = new Location();
-                loc3.setDescription("Tool Shop");
-                loc3.setSymbol("TS");
-                theMap.setLocation(i, 1, loc3);
-            }
+        for (int i = 0; i < MAX_ROW; i++) {
+            Location loc3 = new Location();
+            loc3.setDescription("Tool Shop");
+            loc3.setSymbol("TS");
+            Map.setLocation(i, 1, loc3);
+        }
+        
 //Create the beauty of the Earth        
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc4 = new Location();
-                loc4.setDescription("For the Beauty of the Earth");
-                loc4.setSymbol("BE");
-                theMap.setLocation(i, 4, loc4);
-
-            }
+        for (int i = 0; i < MAX_ROW; i++) {
+            Location loc4 = new Location();
+            loc4.setDescription("For the Beauty of the Earth");
+            loc4.setSymbol("BE");
+            Map.setLocation(i, 4, loc4);
+        }
 //Create the inventory shop
-            for (int i = 0; i < MAX_ROW; i++) {
-                Location loc5 = new Location();
-                loc5.setDescription("Inventory");
-                loc5.setSymbol("IN");
-                theMap.setLocation(i, 5, loc5);
-
-            }
+        for (int i = 0; i < MAX_ROW; i++) {
+            Location loc5 = new Location();
+            loc5.setDescription("Inventory");
+            loc5.setSymbol("IN");
+            Map.setLocation(i, 5, loc5);
+        }
+            
+        return new Map();
+    }
 }
-
 //
 
 //// call setter to assign value to description in map

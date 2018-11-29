@@ -8,6 +8,8 @@ package byui.cit260.EarlyRisers.view;
 //import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.control.GameControl;
+import byui.cit260.EarlyRisers.main.Game;
+import java.util.Date;
 
 import java.util.Scanner;
 
@@ -36,10 +38,9 @@ public class StartProgramViewNew extends View {
 
     @Override
     public boolean doAction(String[] inputs) {
-        String choice = inputs[0];
-        
-        System.out.println("\n\nWelcome " + inputs[0] + " to the City of Aaron.");
-        
+        String name = inputs[0]; 
+        System.out.println("\n\nWelcome " + name + " to the City of Aaron.");
+
         MainMenuView menu = new MainMenuView();
         menu.display();
         

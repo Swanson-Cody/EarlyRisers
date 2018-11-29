@@ -10,6 +10,8 @@ import byui.cit260.EarlyRisers.control.MapControl;
 import byui.cit260.EarlyRisers.control.BuyLand;
 import byui.cit260.EarlyRisers.main.Game;
 import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.model.Location;
+import byui.cit260.EarlyRisers.model.Map;
 
 
 import java.util.Scanner;
@@ -131,8 +133,8 @@ public class GameMenuView extends View{
     public void displayMap() {
   String leftIndicator;
   String rightIndicator;
-  CreateNewGame game = GameControl.CreateNewGame.getCurrentGame(); // retreive the game
-  Map map = game.getMap(); // retreive the map from game
+//  CreateNewGame game = GameControl.CreateNewGame.getCurrentGame(); // retreive the game
+  Map map = Game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
     System.out.print("  |");
@@ -166,7 +168,7 @@ public class GameMenuView extends View{
         }
         else
           System.out.print(leftIndicator
-             + locations[row][column].getScene().getMapSymbol()
+//             + locations[row][column].getScene().getMapSymbol()
              + rightIndicator);
       }
      System.out.println("|");

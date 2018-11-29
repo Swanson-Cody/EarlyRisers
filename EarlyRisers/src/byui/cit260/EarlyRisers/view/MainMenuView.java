@@ -5,6 +5,10 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.control.GameControl;
+import byui.cit260.EarlyRisers.main.Game;
+import byui.cit260.EarlyRisers.model.CreateNewGame;
+import byui.cit260.EarlyRisers.model.Player;
 import java.util.Scanner;
 import byui.cit260.EarlyRisers.view.GameMenuView;
 
@@ -28,10 +32,10 @@ public class MainMenuView extends View {
         "\n|              City of Aaron                |" +
         "\n|                                           |" +
         "\n+-------------------------------------------+\n" +
-        "\n1: Start a New Game" +
-        "\n2: Start a Saved Game" +
-        "\n3: Load a Help Menu" +
-        "\n4: View Map" +
+        "\n1: Start a new game" +
+        "\n2: Start a saved game" +
+        "\n3: Display the Help Menu" +
+        "\n4: Save Game" +
         "\nQ: Quit"
         );
         
@@ -56,7 +60,7 @@ public class MainMenuView extends View {
                 helpMenu();
                 break;
             case "4":
-                viewMap(); 
+                saveGame(); 
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -65,16 +69,16 @@ public class MainMenuView extends View {
     
     private void newGame(){
        
-    System.out.println("\nCongratulations! You have been elected as the leader for"
-                       + "\nthe City of Aaron. In this game, you will have 10 "
-                       + "\nyears to build a prosperous city. "
-                       + "\nYour currency is wheat. Each year you will be given "
-                       + "\noptions to buy land, sell land, how much wheat to "
-                       + "\nset aside to feed the city, how many acres of land "
-                       + "\nis to be planted with wheat, and how much wheat will be"
-                       + "\npaid in tithes and offerings. You may encounter "
-                       + "\nchallenges along the way. However, if you are devout,"
-                       + "\nI’m sure you could mitigate these problems.");
+        System.out.println("\nCongratulations! You have been elected as the leader for"
+                           + "\nthe City of Aaron. In this game, you will have 10 "
+                           + "\nyears to build a prosperous city. "
+                           + "\nYour currency is wheat. Each year you will be given "
+                           + "\noptions to buy land, sell land, how much wheat to "
+                           + "\nset aside to feed the city, how many acres of land "
+                           + "\nis to be planted with wheat, and how much wheat will be"
+                           + "\npaid in tithes and offerings. You may encounter "
+                           + "\nchallenges along the way. However, if you are devout,"
+                           + "\nI’m sure you could mitigate these problems.");
     }
     
     private void startExistingGame(){
@@ -86,9 +90,8 @@ public class MainMenuView extends View {
        menu.display();
     }
     
-    private void viewMap(){
-       GameMenuView menu = new GameMenuView();
-       menu.displayMap();
+    private void saveGame(){
+       
     }
     
     

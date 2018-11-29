@@ -57,6 +57,9 @@ public class Player implements Serializable {
      *
      * @return the value of name
      */
+    public String getName(){
+        return this.name;
+    }
 
     /**
      * Set the value of name
@@ -65,6 +68,24 @@ public class Player implements Serializable {
      */
     public void setName(String name) {
         this.name = name;
+    }
+    
+    /**
+     * Get the value of time
+     *
+     * @return the value of time
+     */
+    public int getTime(){
+        return this.time;
+    }
+
+    /**
+     * Set the value of time
+     *
+     * @param time new value of time
+     */
+    public void setTime(int time) {
+        this.time = time;
     }
 
 //    @Override
