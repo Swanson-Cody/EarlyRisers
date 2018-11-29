@@ -4,6 +4,7 @@
 package byui.cit260.EarlyRisers.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,7 @@ public class InventoryItem implements Serializable{
     private String provisions;
     private String animals;
     private int tithing;
+    private ArrayList<InventoryItem> setItems;
     
  
 //public static void testInventoryItemClasses(){
@@ -29,6 +31,10 @@ public class InventoryItem implements Serializable{
 
     public InventoryItem(String plows, int i) {
        
+    }
+
+    public InventoryItem() {
+        
     }
 
      
@@ -152,6 +158,10 @@ public class InventoryItem implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setItems(ArrayList<InventoryItem> tools) {
+       this.setItems = tools; 
     }
 
 }
