@@ -64,11 +64,7 @@ public class SuppliesView extends View {
 
     }
 
-    private void goToMainMenu() {
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
-    }
-
+  
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
@@ -77,7 +73,6 @@ public class SuppliesView extends View {
             case "4":
                 System.out.println("You have exited the supplies screen."
                         + "Have fun with the game!");
-                goToMainMenu();
                 return true;
             case "1":
                 calculateMoney();

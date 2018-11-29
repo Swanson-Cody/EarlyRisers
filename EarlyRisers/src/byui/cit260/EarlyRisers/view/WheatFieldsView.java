@@ -25,12 +25,8 @@ public class WheatFieldsView extends View{
         String[] inputs = new String[10];
         String selection = this.getInput(
                    "+---------------------------------------------+" +
-                 "\n|                                             |" +
-                 "\n|                                             |" +
                  "\n|                 Welcome to                  |" + 
                  "\n|              The Wheat Fields               |" +
-                 "\n|                                             |" +
-                 "\n|                                             |" +
                  "\n+---------------------------------------------+" +
                  "\n\nPlease make a game selection: "
                 + "\n1) Plant more wheat"
@@ -52,8 +48,7 @@ public class WheatFieldsView extends View{
                 rats();
                 break;
             case "3":
-                exit();
-                break;
+              return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -78,14 +73,9 @@ public class WheatFieldsView extends View{
                 + " to scare of a few");
         System.out.println("They did eat" + wheatEaten + " bussels of wheat though.");
     }
-
-    private void exit() {
-        MainMenuView menu = new MainMenuView();
-        menu.display();
-
     }
 
     
-}
+
 
 

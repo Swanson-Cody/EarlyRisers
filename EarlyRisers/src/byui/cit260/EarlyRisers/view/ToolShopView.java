@@ -90,8 +90,7 @@ public class ToolShopView extends View {
                 sellShovel();
                 break;
             case "11":
-                goToMainMenu();
-                break;
+               return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -144,8 +143,5 @@ public class ToolShopView extends View {
         System.out.println("You have successfully sold your Shovel.");
     }
 
-    private void goToMainMenu(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
-    }
+    
 }

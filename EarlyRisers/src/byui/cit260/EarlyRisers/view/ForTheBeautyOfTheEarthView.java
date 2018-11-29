@@ -106,15 +106,11 @@ public class ForTheBeautyOfTheEarthView extends View{
                 );
                 break;
             case "6":
-                 goToGameMenu();
-                 break;
-            default:
+             return true;
+             default:
                 System.out.println("\nInvalid selection.");
         }
         return false;
     }
-    private void goToGameMenu(){
-        GameMenuView game = new GameMenuView();
-        game.display();
-    }
+    
 }

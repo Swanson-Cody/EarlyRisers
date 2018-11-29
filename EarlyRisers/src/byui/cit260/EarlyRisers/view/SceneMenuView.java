@@ -56,7 +56,7 @@ public class SceneMenuView extends View {
                 tools();
                 break;
             case "5":
-                home();
+             return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -92,12 +92,6 @@ public class SceneMenuView extends View {
                 + "\nready to assist you. What would you like to do today?  Buy tools,"
                 + "\nsell tools, or exit. ");
     }
-//home where the year ends and you start the next phase
 
-    private void home() {
-        System.out.println("\nYou have returned home after a long year.  It is time"
-                + "\nto rest and prepare for another year."
-                + "the next one.");
-    }
 
 }

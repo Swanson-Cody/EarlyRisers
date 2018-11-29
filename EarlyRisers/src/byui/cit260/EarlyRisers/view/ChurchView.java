@@ -23,11 +23,8 @@ public class ChurchView extends View {
         String[] inputs = new String[10];
         String selection = this.getInput(
                 "+---------------------------------------------+" +
-                 "\n|                                             |" +
-                 "\n|                                             |" +
                  "\n|                 Welcome to                  |" + 
                  "\n|                 The Church                  |" +
-                 "\n|                                             |" +
                  "\n+---------------------------------------------+" +
                  "\n\nPlease make a game selection: "
                 + "\n1) Pay tithing now."
@@ -49,8 +46,7 @@ public class ChurchView extends View {
                 rest();
                 break;
             case "3":
-                home();
-                break;
+               return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -78,11 +74,5 @@ public class ChurchView extends View {
 
     }
 
-    private void home() {
-        MainMenuView menu = new MainMenuView();
-        menu.display();
-
-    }
-
-    
+      
 }

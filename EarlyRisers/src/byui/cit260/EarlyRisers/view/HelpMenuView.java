@@ -90,17 +90,14 @@ public class HelpMenuView extends View {
 
                 System.out.println("You have exited the supplies screen."
                         + "Have fun with the game!");
-                goToMainMenu();
+               return true;
 
-                break;
+              
             default:
                 System.out.println("\nAn unknown error has occured.");
         }
         return false;
     }
 
-    private void goToMainMenu() {
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
-    }
+   
 }
