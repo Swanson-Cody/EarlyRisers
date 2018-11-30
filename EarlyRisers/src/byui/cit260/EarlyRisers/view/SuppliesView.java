@@ -6,7 +6,9 @@
 package byui.cit260.EarlyRisers.view;
 
 import byui.cit260.EarlyRisers.control.GameControl;
+import static byui.cit260.EarlyRisers.control.GameControl.Game;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -27,41 +29,43 @@ public class SuppliesView extends View {
 //    }
 //    
 
-    public void display() {}
-        //Get number input from user 
-        @Override
-        public String[] getInputs
-        
-            (){
+    //Get number input from user 
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[10];
-            String selection = this.getInput(
-                    "\n+-------------------------------------------+"
-                   + "\n|                 Supplies                  |"
-                    + "\n+-------------------------------------------+"
-                    + "\n1: What is the current population"
-                    + "\n2: How much wheat do you have"
-                    + "\n3: Exit supplies screen");
-            inputs[0] = selection;
-            return inputs;
-        }
-        //Get input from user 
+        String selection = this.getInput(
+                "\n+-------------------------------------------+"
+                + "\n|                 Supplies                  |"
+                + "\n+-------------------------------------------+"
+                + "\n1: What is the current population"
+                + "\n2: Tools available"
+                + "\n3: Exit supplies screen");
+        inputs[0] = selection;
+        return inputs;
+    }
+    //Get input from user 
+
     private String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String choice = keyboard.nextLine();
         return choice;
     }
+
     private void calculatePopulation() {
-         int population = new InventoryItem().getPopulation();
-                 System.out.println("The current population is" + population);
+        int population = new InventoryItem().getPopulation();
+        System.out.println("The current population is " + population);
     }
 
-    private void calculateWheat() {
-        String wheat = new InventoryItem().getName();
-        System.out.println("You currently have this much wheat in storage.");
-
-    }
-
+    private void displayToolsInventoryView() {
+         Game game = EarlyRisers.getCurrentGame();
+         game.getInventory();
+         ArrayList<InventoryItem> tools = game.getInventory();
+        System.out.println("Items available in the tool array " + tools); 
   
+       
+        
+    }
+
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
@@ -75,7 +79,7 @@ public class SuppliesView extends View {
                 calculatePopulation();
                 break;
             case "2":
-                calculateWheat();
+                displayToolsInventoryView();
                 break;
             default:
                 System.out.println("\nInvalid selection.");
