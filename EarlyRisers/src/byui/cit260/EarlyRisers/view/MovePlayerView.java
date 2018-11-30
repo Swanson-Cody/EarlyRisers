@@ -29,8 +29,7 @@ public class MovePlayerView extends View {
                 + "\n2: Move to the left"
                 + "\n3: Move up"
                 + "\n4: Move down"
-                + "\n5: Display map"
-                + "\n6: Exit out of the move menu");
+                + "\n5: Exit out of the move menu");
         inputs[0] = selection;
         return inputs;
     }
@@ -41,33 +40,41 @@ public class MovePlayerView extends View {
         Map map = EarlyRisers.getCurrentGame().getMap();
         switch (choice) {
 
-            case "1":
-                if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() + 1, map.getCurrentLocation().getColumn());
+            case "1": //Right
+                if(map.getCurrentLocation().getColumn() < map.getColCount() - 1){
+                    MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() + 1);
+                    return true;
                 } else {
                     System.out.println("You can't move any further to the right.");
                 }
-                return true;
-            case "2":
-                 if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() - 1, map.getCurrentLocation().getColumn());
+                break;
+            case "2": //Left
+                 if(map.getCurrentLocation().getColumn() > 0){
+                    MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn()-1);
+                    return true;
                 } else {
                     System.out.println("You can't move any further to the left.");
                 }
-                return true;
                 
-            case "3":
-                System.out.println("You have moved to the backwards");
                 break;
-            case "4":
-                System.out.println("You have moved forwards");
+            case "3": //Up
+                  if(map.getCurrentLocation().getRow() > 0){
+                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() -1, map.getCurrentLocation().getColumn());
+                    return true;
+                } else {
+                    System.out.println("You can't move any further up.");
+                }
                 break;
+            case "4": //Down
+               if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
+                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() +1 , map.getCurrentLocation().getColumn());
+                    return true;
+                } else {
+                    System.out.println("You can't move any further down.");
+                }
+                break;
+                      
             case "5":
-                GameMenuView displayMap = new GameMenuView ();
-                displayMap.displayMap();
-                break;
-          
-            case "6":
                 return true;
             default:
                 System.out.println("\nInvalid input.");

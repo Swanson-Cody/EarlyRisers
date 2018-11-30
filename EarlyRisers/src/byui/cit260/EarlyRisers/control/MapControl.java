@@ -7,8 +7,10 @@ package byui.cit260.EarlyRisers.control;
 
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
+import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
+import byui.cit260.EarlyRisers.model.Question;
 import byui.cit260.EarlyRisers.model.Scene;
 
 
@@ -22,11 +24,12 @@ public class MapControl {
         int MAX_ROW = 5;
         int MAX_COL = 5;
 
-        Map map = new Map();
+        Map map = new Map(MAX_ROW, MAX_COL);
+        
         Scene scene = new Scene();
         Location[][] locations = new Location[MAX_ROW][MAX_COL];
         map.setLocations(locations);
-        scene.setScene();
+        
 //    }
 //
 //    public static void showMap(String[][] map) {
@@ -37,15 +40,38 @@ public class MapControl {
 //            }
 //        }
 //    Location[][] locations = Map.getLocations();
-        for (int i = 0; i < MAX_ROW; i++) {
+        for (int row = 0; row < MAX_ROW; row++) {
             Location loc1 = new Location();
-            loc1.setDescription("Wheat Field " + (i + 1));
-            loc1.setSymbol("W" + (i + 1));
-            map.setLocation(i, 1, loc1);
+            loc1.setDescription("Wheat Field " + (row + 1));
+            loc1.setSymbol("W" + (row + 1));
+            map.setLocation(row, 1, loc1);
             
         }
-//        Location loc = Map.getLocations()[0][1];
-
+        Location loc = map.getLocations()[0][1];
+        InventoryItem item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        Question question = new Question();
+        question.setQuestionText("Who is the mayor of this town?");
+        question.setAnswer1("Moroni!");
+        question.setAnswer2("Aaron");
+        question.setAnswer3("Ether");
+        question.setAnswer4("Esther");
+        question.setCorrectAnswer(2);
+        question.setPoints(5);
+        loc.setQuestion(question);
+        
+        loc = map.getLocations()[1][1];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Who is the mayor of this town?");
+        question.setAnswer1("Moroni!");
+        question.setAnswer2("Aaron");
+        question.setAnswer3("Ether");
+        question.setAnswer4("Esther");
+        question.setCorrectAnswer(2);
+        question.setPoints(5);
+        loc.setQuestion(question);
 //Create the Church       
         for (int i = 0; i < MAX_ROW; i++) {
             Location loc2 = new Location();
@@ -88,10 +114,10 @@ public class MapControl {
     }
 
     public static void movePlayer(Map map, int row, int column) {
-        Map.setCurrentLocation(Map.getLocations()[row][column]);
-        Map.setCurrentRow(row);
-        Map.setCurrentColumn(column);
-        Map.getCurrentLocation().setVisited(true);
+        map.setCurrentLocation(map.getLocations()[row][column]);
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+        map.getCurrentLocation().setVisited(true);
     }
 }
 //

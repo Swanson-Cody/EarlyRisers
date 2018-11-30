@@ -20,6 +20,22 @@ public class Location implements Serializable{
     private String symbol;
     private Question question;
     private InventoryItem item;
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public InventoryItem getItem() {
+        return item;
+    }
+
+    public void setItem(InventoryItem item) {
+        this.item = item;
+    }
     public Location(){
         
     }
@@ -128,11 +144,7 @@ public class Location implements Serializable{
     }
 
 
-    public Scene getScene() {
-        return new Scene();
-    }
-
-    public String getSymbol() {
+        public String getSymbol() {
         return symbol;
     }
 

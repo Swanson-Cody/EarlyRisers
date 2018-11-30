@@ -21,6 +21,15 @@ public class Question implements Serializable {
     private String answer3;
     private String answer4;
     private int correctAnswer;
+    private int points;
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
     /**
      * Get the value of questionTest

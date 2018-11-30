@@ -6,7 +6,6 @@
 package byui.cit260.EarlyRisers.view;
 //import byui.cit260.EarlyRisers.model.Player;
 
-
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
@@ -88,7 +87,7 @@ public class GameMenuView extends View {
     private void movePlayer() {
         MovePlayerView move = new MovePlayerView();
         move.display();
-
+        displayMap();
     }
 //scene of the field where you harvest and plant next years crops
 
@@ -156,6 +155,15 @@ public class GameMenuView extends View {
                 }
             }
             System.out.println("|");
+        }
+        Location currentLocation = map.getCurrentLocation();
+        System.out.println("You are currently at " + currentLocation.getDescription());
+        if (currentLocation.getItem() != null) {
+            System.out.println("There is a " + currentLocation.getItem().getItemType() + "at this location.");
+        }
+        if (currentLocation.getQuestion() != null) {
+            System.out.println("I have a question for you.");
+            System.out.println(currentLocation.getQuestion().getQuestionText());
         }
     }
 

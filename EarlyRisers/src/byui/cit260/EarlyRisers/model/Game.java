@@ -20,24 +20,24 @@ public class Game implements Serializable {
       private int acresOwned;
       private int wheatStorage;
       private int tithing;
-      private static double totalTime;
-      private static ArrayList<InventoryItem> inventory;
+      private double totalTime;
+      private ArrayList<InventoryItem> inventory;
       
 
-    public static double getTotalTime() {
+    public double getTotalTime() {
         return totalTime;
     }
 
-    public static void setTotalTime(double totalTime) {
-        Game.totalTime = totalTime;
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
     }
 
-    public static ArrayList<InventoryItem> getInventory() {
+    public ArrayList<InventoryItem> getInventory() {
         return inventory;
     }
 
-    public static void setInventory(ArrayList<InventoryItem> inventory) {
-        Game.inventory = inventory;
+    public void setInventory(ArrayList<InventoryItem> inventory) {
+        this.inventory = inventory;
     }
     
     

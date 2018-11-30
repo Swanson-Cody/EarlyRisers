@@ -17,9 +17,26 @@ public class InventoryItem implements Serializable{
     private String provisions;
     private String animals;
     private int tithing;
-    private ArrayList<InventoryItem> setItems;
     private int population;
+    private int quantity;
+    private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
    
  
 //public static void testInventoryItemClasses(){
@@ -31,10 +48,16 @@ public class InventoryItem implements Serializable{
 //       System.out.println(item.toString());
 //         }
 
-    public InventoryItem(String itemType, int i) {
-       
+    public InventoryItem(String itemType, int quantity) {
+       this.itemType = itemType;
+       this.quantity = quantity;
+      
     }
-
+    public InventoryItem (String itemType, String name, int quantity) {
+       this.itemType = itemType;
+       this.quantity = quantity;
+       this.name = name;
+    }
     public InventoryItem() {
         
     }
@@ -119,14 +142,6 @@ public class InventoryItem implements Serializable{
     public void setTithing(int tithing) {
         this.tithing = tithing;
     }
- public ArrayList<InventoryItem> getSetItems() {
-        return setItems;
-    }
-
-    public void setSetItems(ArrayList<InventoryItem> setItems) {
-        this.setItems = setItems;
-    }
-
     public int getPopulation() {
         return population;
     }
@@ -176,8 +191,5 @@ public class InventoryItem implements Serializable{
         return true;
     }
 
-    public void setItems(ArrayList<InventoryItem> tools) {
-       this.setItems = tools; 
-    }
-
+    
 }

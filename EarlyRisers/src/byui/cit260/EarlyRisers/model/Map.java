@@ -20,42 +20,42 @@ public class Map implements Serializable {
      * @return 
      */
     
-        public static Scene getScene() {
-        Scene scene = new Scene();
-        return scene;   
-    }
-        
-    private static Scene map;
+//        public static Scene getScene() {
+//        Scene scene = new Scene();
+//        return scene;   
+//    }
+//        
+//    private Scene map;
+//    
     
-    
-    public static void setMap(int currentMap) {
+    public void setMap(int currentMap) {
         System.out.println("Your Map is being created");
     }
 
-    private static Location [][] locations;
-    private static Location currentLocation;
-    private static int rowCount;
-    private static int colCount;
-    private static int currentRow = 0;
-    private static int currentColumn = 0;
+    private Location [][] locations;
+    private Location currentLocation;
+    private int rowCount;
+    private int colCount;
+    private int currentRow = 0;
+    private int currentColumn = 0;
 
     public Map() {
     
     }
     
-    public static Location getCurrentLocation() {
+    public Location getCurrentLocation() {
         return currentLocation;
     }
-    public static void setCurrentLocation(Location currentLocation) {
-        Map.currentLocation = currentLocation;
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
-    public static void setCurrentRow(int currentRow) {
-        Map.currentRow = currentRow;
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
     }
 
-    public static void setCurrentColumn(int currentColumn) {
-        Map.currentColumn = currentColumn;
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
     }
 
     public void setVisited(Boolean visited) {
@@ -64,9 +64,9 @@ public class Map implements Serializable {
 
     private Boolean visited;
 
-    public Map(int MAX_ROW, int MAX_COL) {
-        MAX_ROW = 5;
-        MAX_COL = 5;
+    public Map(int maxRow, int maxCol) {
+        this.rowCount = maxRow;
+        this.colCount = maxCol;
 
     }
 
@@ -75,7 +75,7 @@ public class Map implements Serializable {
      *
      * @return the value of locations
      */
-    public static Location[][] getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 
@@ -84,8 +84,8 @@ public class Map implements Serializable {
      *
      * @param locations new value of locations
      */
-    public static void setLocations(Location[][] locations) {
-        Map.locations = locations;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
       public int getRowCount() {
@@ -104,7 +104,7 @@ public class Map implements Serializable {
         this.colCount = colCount;
     }
     
-    public static void setLocation(int row, int column, Location loc) {
+    public void setLocation(int row, int column, Location loc) {
         locations[row][column] = loc;
         loc.setRow(row);
         loc.setColumn(column);

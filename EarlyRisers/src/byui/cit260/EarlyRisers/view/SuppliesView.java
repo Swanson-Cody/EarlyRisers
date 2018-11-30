@@ -5,6 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -51,8 +52,11 @@ public class SuppliesView extends View {
         return choice;
     }
 
-    private void calculateMoney() {
-        System.out.println("You currently have this much money.");
+    private void calculateMoney(){
+        InventoryItem wheat = new InventoryItem();
+        GameControl.createWheat();
+                
+        System.out.println("You currently have " +  "this much money.");
     }
 
     private void calculatePopulation() {

@@ -65,7 +65,34 @@ public class GameControl {
 //BEGIN  
 //if name is null OR length of name is < 1 THEN   
 //RETURN null 
-    public static void createTools() {
+    
+    public static InventoryItem getInventoryItemByName(String name) {
+        ArrayList<InventoryItem> items = EarlyRisers.getCurrentGame().getInventory();
+        for (InventoryItem item : items) {
+            if (item.getName().equals(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList<InventoryItem> getInventoryItemsByType(String type) {
+        ArrayList<InventoryItem> items = EarlyRisers.getCurrentGame().getInventory();
+        ArrayList<InventoryItem> itemsByType = new ArrayList<>();
+        boolean found = false;
+        for (InventoryItem item : items) {
+            if (item.getItemType().equals(type)) {
+                found = true;
+                itemsByType.add(item);
+            }
+        }
+        if (found) {
+            return itemsByType;
+        } else {
+            return null;
+        }
+    }
+public static void createTools() {
         ArrayList<InventoryItem> tools = new ArrayList<>();
         tools.add(new InventoryItem("Plows", 1));
         tools.add(new InventoryItem("", 0));
@@ -74,7 +101,7 @@ public class GameControl {
         tools.add(new InventoryItem("", 3));
 
         EarlyRisers.getCurrentGame().setInventory(tools);
-       
+
     }
 
     public static void createWheat() {
@@ -85,15 +112,15 @@ public class GameControl {
 
     public static void createAnimals() {
         ArrayList<InventoryItem> animals = new ArrayList<>();
-        animals.add(new InventoryItem("Rats", 50));
-        animals.add(new InventoryItem("Oxs", 0));
-        animals.add(new InventoryItem("Horses", 0));
+        animals.add(new InventoryItem("Animal", "Rat", 50));
+        animals.add(new InventoryItem("Animal", "Ox", 0));
+        animals.add(new InventoryItem("Animal", "Horse", 0));
         EarlyRisers.getCurrentGame().addToInventory(animals);
     }
 
     public static void createPopulation() {
         ArrayList<InventoryItem> population = new ArrayList<>();
-        population.add(new InventoryItem("Population", 100));
+        population.add(new InventoryItem("Utility", "Population", 100));
         EarlyRisers.getCurrentGame().addToInventory(population);
     }
 
@@ -117,14 +144,5 @@ public class GameControl {
         cropData.add(new InventoryItem("Acres Planted", 0));
         EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
-    public static void createScenes() {
-        ArrayList<Scene> scenes = new ArrayList<>();
-    scenes.add(new Scene("Your wheat fields."));
-    scenes.add(new Scene("Ask a question."));
-    scenes.add(new Scene("Harvest time"));
-    scenes.add(new Scene("Church"));
-      for (int i = 0; i< 3; i++){
-      } 
-      
-    }
+
 }
