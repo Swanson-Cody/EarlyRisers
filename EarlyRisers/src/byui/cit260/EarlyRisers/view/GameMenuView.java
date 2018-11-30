@@ -48,7 +48,7 @@ public class GameMenuView extends View {
 
         switch (choice) {
             case "1":
-                getReportsMenuView();
+                reportsMenuView();
                 break;
             case "2":
                 movePlayer();
@@ -77,9 +77,9 @@ public class GameMenuView extends View {
     }
 //scene of the church where you have the option to pay tithing
 
-    private void getReportsMenuView() {
-        ReportsMenuView menu = new ReportsMenuView();
-        menu.display();
+    private void reportsMenuView() {
+        ReportsMenuView reports = new ReportsMenuView();
+        reports.display();
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored

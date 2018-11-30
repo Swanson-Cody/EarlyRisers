@@ -94,11 +94,11 @@ public class GameControl {
     }
 public static void createTools() {
         ArrayList<InventoryItem> tools = new ArrayList<>();
-        tools.add(new InventoryItem("Plows", 1));
-        tools.add(new InventoryItem("", 0));
-        tools.add(new InventoryItem("Shovel", 2));
-        tools.add(new InventoryItem("Scythe", 1));
-        tools.add(new InventoryItem("", 3));
+        tools.add(new InventoryItem("Tools", "Plows", 1));
+        tools.add(new InventoryItem("Tools", "", 0));
+        tools.add(new InventoryItem("Tools", "Shovel", 2));
+        tools.add(new InventoryItem("Tools", "Scythe", 1));
+        tools.add(new InventoryItem("Tools", "", 3));
 
         EarlyRisers.getCurrentGame().setInventory(tools);
 
@@ -106,7 +106,7 @@ public static void createTools() {
 
     public static void createWheat() {
         ArrayList<InventoryItem> wheat = new ArrayList<>();
-        wheat.add(new InventoryItem("Wheat Bushels", 3000));
+        wheat.add(new InventoryItem("Wheat", "Wheat Bushels", 3000));
         EarlyRisers.getCurrentGame().addToInventory(wheat);
     }
 

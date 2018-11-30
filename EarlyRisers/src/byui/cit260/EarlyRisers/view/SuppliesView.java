@@ -6,6 +6,9 @@
 package byui.cit260.EarlyRisers.view;
 
 import byui.cit260.EarlyRisers.control.GameControl;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.InventoryItem;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -32,16 +35,12 @@ public class SuppliesView extends View {
             (){
         String[] inputs = new String[10];
             String selection = this.getInput(
-                    "+-------------------------------------------+"
-                    + "|                                           |"
-                    + "|                 Supplies                  |"
-                    + "|                                           |"
-                    + "|                                           |"
-                    + "+-------------------------------------------+"
-                    + "1: How much Money You have"
-                    + "2: What is the current population"
-                    + "3: How much wheat do you have"
-                    + "4: Exit supplies screen");
+                    "\n+-------------------------------------------+"
+                   + "\n|                 Supplies                  |"
+                    + "\n+-------------------------------------------+"
+                    + "\n1: What is the current population"
+                    + "\n2: How much wheat do you have"
+                    + "\n3: Exit supplies screen");
             inputs[0] = selection;
             return inputs;
         }
@@ -51,19 +50,13 @@ public class SuppliesView extends View {
         String choice = keyboard.nextLine();
         return choice;
     }
-
-    private void calculateMoney(){
-        InventoryItem wheat = new InventoryItem();
-        GameControl.createWheat();
-                
-        System.out.println("You currently have " +  "this much money.");
-    }
-
     private void calculatePopulation() {
-        System.out.println("The current population is: ");
+         int population = new InventoryItem().getPopulation();
+                 System.out.println("The current population is" + population);
     }
 
     private void calculateWheat() {
+        String wheat = new InventoryItem().getName();
         System.out.println("You currently have this much wheat in storage.");
 
     }
@@ -74,17 +67,14 @@ public class SuppliesView extends View {
         String choice = input[0].toUpperCase();
         choice = choice.toUpperCase();
         switch (choice) {
-            case "4":
+            case "3":
                 System.out.println("You have exited the supplies screen."
                         + "Have fun with the game!");
                 return true;
             case "1":
-                calculateMoney();
-                break;
-            case "2":
                 calculatePopulation();
                 break;
-            case "3":
+            case "2":
                 calculateWheat();
                 break;
             default:

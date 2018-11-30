@@ -6,7 +6,7 @@
 package byui.cit260.EarlyRisers.view;
 
 import java.util.Scanner;
-
+import byui.cit260.EarlyRisers.model.InventoryItem;
 /**
  *
  * @author Family
@@ -15,8 +15,7 @@ public class ReportsMenuView extends View {
 
     boolean exit;
 
-    public void display() {
-    }
+   
 
     //Get number input from user 
     @Override
@@ -24,10 +23,7 @@ public class ReportsMenuView extends View {
         String[] inputs = new String[10];
         String selection = this.getInput(
                 "\n+-------------------------------------------+"
-                + "\n|                                           |"
                 + "\n|                Reports Menu               |"
-                + "\n|                                           |"
-                + "\n|                                           |"
                 + "\n+-------------------------------------------+"
                 + "\n1: View the animals in the storehouse"
                 + "\n2: View the tools in the storehouse"
@@ -39,19 +35,14 @@ public class ReportsMenuView extends View {
 
     }
 
-    //Get input from user 
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
-    }
-
     private void viewAnimals() {
-        System.out.println("You're Viewing Animals!");
+        String animals = new InventoryItem().getAnimals();
+        System.out.println(animals + " You're Viewing Animals!");
     }
 
     private void viewTools() {
-        System.out.println("You're Viewing Tools!");
+        String tools = new InventoryItem().getName();
+        System.out.println(tools + " 1You're Viewing Tools!");
     }
 
     private void viewProvisions() {

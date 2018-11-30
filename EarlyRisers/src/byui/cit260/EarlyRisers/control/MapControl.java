@@ -26,7 +26,7 @@ public class MapControl {
 
         Map map = new Map(MAX_ROW, MAX_COL);
         
-        Scene scene = new Scene();
+        
         Location[][] locations = new Location[MAX_ROW][MAX_COL];
         map.setLocations(locations);
         
