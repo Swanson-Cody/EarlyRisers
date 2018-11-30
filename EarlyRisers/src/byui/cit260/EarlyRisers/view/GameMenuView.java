@@ -37,7 +37,8 @@ public class GameMenuView extends View {
                 + "\n5) Go to fields"
                 + "\n6) Admire God's Creations"
                 + "\n7) Display Map"
-                + "\n8) Return to Main Menu");
+                + "\n8) Supplies View"       
+                + "\n9) Return to Main Menu");
         inputs[0] = selection;
         return inputs;
     }
@@ -69,6 +70,10 @@ public class GameMenuView extends View {
                 displayMap();
                 break;
             case "8":
+                suppliesView();
+                  
+                break;
+            case "9":
                 return true;
             default:
                 System.out.println("\nInvalid selection.");
@@ -83,7 +88,10 @@ public class GameMenuView extends View {
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
-
+private void suppliesView(){
+            SuppliesView view = new SuppliesView();
+            view.display();
+}      
     private void movePlayer() {
         MovePlayerView move = new MovePlayerView();
         move.display();

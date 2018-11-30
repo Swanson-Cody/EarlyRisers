@@ -42,15 +42,16 @@ public class ReportsMenuView extends View {
 
     private void viewTools() {
         String tools = new InventoryItem().getName();
-        System.out.println(tools + " 1You're Viewing Tools!");
+        System.out.println(tools + " You're Viewing Tools!");
     }
 
     private void viewProvisions() {
-        System.out.println("You're Viewing Provisions!");
+        String provisions = new InventoryItem().getProvisions();
+        System.out.println(provisions + " You're Viewing Provisions!");
     }
 
     private void viewAuthors() {
-        System.out.println("You're Viewing Authors!");
+        System.out.println("Cody, Rachel and Heather! hfYou're Viewing Authors!");
     }
 
     private void goToGameMenu() {
