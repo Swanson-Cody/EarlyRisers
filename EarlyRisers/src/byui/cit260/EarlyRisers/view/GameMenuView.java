@@ -6,9 +6,7 @@
 package byui.cit260.EarlyRisers.view;
 //import byui.cit260.EarlyRisers.model.Player;
 
-import byui.cit260.EarlyRisers.control.GameControl;
-import byui.cit260.EarlyRisers.control.MapControl;
-import byui.cit260.EarlyRisers.control.BuyLand;
+
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;

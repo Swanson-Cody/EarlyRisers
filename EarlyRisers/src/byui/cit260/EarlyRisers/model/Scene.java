@@ -21,7 +21,23 @@ public class Scene implements Serializable {
         private Question question;
         private String item;
         private String symbol;
-        
+        private String scene;
+
+    public void setScene() {
+        this.scene = scene;
+    }
+
+    public Scene(String itemtype) {
+            }
+    public Scene(){}
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
      
         
     /**
@@ -58,10 +74,10 @@ public class Scene implements Serializable {
      *
      * @param description new value of description
      */
-    public void setScene(String description) {
-        this.description = description;
-    }
-    
+//    public void setScene(String description) {
+//        this.description = description;
+//    }
+//    
 //    public static void getMapSymbol(int MAX_ROW, int MAX_COL){
 //        EarlyRisers theGame = new EarlyRisers();
 //        //public static void getMapSymbol(int MAX_ROW, int MAX_COL){

@@ -9,12 +9,7 @@ package byui.cit260.EarlyRisers.main;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Game;
-import byui.cit260.EarlyRisers.model.InventoryItem;
-import byui.cit260.EarlyRisers.model.Map;
-import byui.cit260.EarlyRisers.model.Scene;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /**
  *

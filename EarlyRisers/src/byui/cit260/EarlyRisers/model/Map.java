@@ -25,7 +25,7 @@ public class Map implements Serializable {
         return scene;   
     }
         
-    private static Scene theMap;
+    private static Scene map;
     
     
     public static void setMap(int currentMap) {
@@ -40,7 +40,7 @@ public class Map implements Serializable {
     private static int currentColumn = 0;
 
     public Map() {
-//      s  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
     
     public static Location getCurrentLocation() {

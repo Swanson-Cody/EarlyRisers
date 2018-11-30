@@ -20,7 +20,6 @@ public class Location implements Serializable{
     private String symbol;
     private Question question;
     private InventoryItem item;
-    
     public Location(){
         
     }

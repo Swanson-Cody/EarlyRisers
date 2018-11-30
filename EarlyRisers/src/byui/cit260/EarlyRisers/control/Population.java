@@ -6,10 +6,6 @@
 
 //import java.util.Random;
 package byui.cit260.EarlyRisers.control;
-import byui.cit260.EarlyRisers.main.EarlyRisers;
-import byui.cit260.EarlyRisers.model.InventoryItem;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -21,17 +17,14 @@ public class Population {
      * @param population
      * @return
      */
-    public double calcGrowth() {
-      int population = InventoryItem.this.population;
-      
-      public void setSetItems(ArrayList<InventoryItem> setItems) {
-        this.setItems = setItems;
-    }
-      
-      
-      public void addToList( int i ) { list.add(i); }
-      public int getValueAtIndex( int index ) { return list.get( index ); }
-        
+    public double calcGrowth(double population) {
+  
+    /**
+     * Set the value of itemType
+     *
+     * @param itemType new value of itemType
+     */
+    
 //Get random number 1-5 for percent of population increase
            Random percent = new Random();
            int w = percent.nextInt(5);
@@ -57,11 +50,8 @@ public class Population {
         return Math.round(result);
  
 }
-    public static double calcGrowthTithes(){
-    ArrayList<InventoryItem> population = null;
-    ArrayList<InventoryItem> tithes = null;
-    ArrayList<InventoryItem> wheat = null;
-        if (tithes >= wheat*.10) {
+    public static double calcGrowthTithes(double population, double tithes, double wheat){
+          if (tithes >= wheat*.10) {
         Random percent = new Random();
            int random = percent.nextInt(10);
            ++random;

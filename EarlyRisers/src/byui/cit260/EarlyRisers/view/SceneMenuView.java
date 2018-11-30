@@ -5,8 +5,10 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.control.GameControl;
 import java.util.Scanner;
 import byui.cit260.EarlyRisers.view.SuppliesView;
+import byui.cit260.EarlyRisers.model.Scene;
 
 /**
  *
@@ -14,35 +16,35 @@ import byui.cit260.EarlyRisers.view.SuppliesView;
  */
 public class SceneMenuView extends View {
 
-    public SceneMenuView() {}
-        @Override
-        public String[] getInputs(){
-        String[] inputs = new String [10];
+    public SceneMenuView() {
+    }
+
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[10];
         String selection = this.getInput(
-    
-    "+-------------------------------------------+" +
-    "|                                           |" +
-    "|                Welcome to                 |" +
-    "|              Scene Selection              |" +
-    "|                                           |" +
-    "+-------------------------------------------+" +
-	    
-    "\nPlease make a scene selection: " +
-    "1) Go to the Church" +
-    "2) Go to the Warehouse" +
-    "3) Go to the Fields" +
-    "4) Buy tools from the shop" +
-    "5) Go home"
+                "+-------------------------------------------+"
+                + "|                                           |"
+                + "|                Welcome to                 |"
+                + "|              Scene Selection              |"
+                + "|                                           |"
+                + "+-------------------------------------------+"
+                + "\nPlease make a scene selection: "
+                + "1) Go to the Church"
+                + "2) Go to the Warehouse"
+                + "3) Go to the Fields"
+                + "4) Buy tools from the shop"
+                + "5) Go home"
         );
-       inputs[0] = selection;
+        inputs[0] = selection;
         return inputs;
     }
 
-        @Override
-    public boolean doAction(String[] input){
+    @Override
+    public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
-        switch(choice){
- 
+        switch (choice) {
+
             case "1":
                 church();
                 break;
@@ -56,7 +58,7 @@ public class SceneMenuView extends View {
                 tools();
                 break;
             case "5":
-             return true;
+                return true;
             default:
                 System.out.println("\nInvalid selection.");
         }
@@ -65,7 +67,7 @@ public class SceneMenuView extends View {
 //scene of the church where you have the option to pay tithing
 
     private void church() {
-        System.out.println("\nYou have chosen to visit the Church.  It is beautiful."
+            System.out.println("\nYou have chosen to visit the Church.  It is beautiful."
                 + "\nYour church leader explained they would appreciate your paying"
                 + "\nyour tithes. Would you like to pay your tithing today?"
                 + "\nPlease enter 'y' for yes and 'n' for no.");
@@ -92,6 +94,5 @@ public class SceneMenuView extends View {
                 + "\nready to assist you. What would you like to do today?  Buy tools,"
                 + "\nsell tools, or exit. ");
     }
-
 
 }

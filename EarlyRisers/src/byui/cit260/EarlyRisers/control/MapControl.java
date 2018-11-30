@@ -9,9 +9,8 @@ import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
-import java.util.Scanner;
-import java.util.*;
-import java.lang.String;
+import byui.cit260.EarlyRisers.model.Scene;
+
 
 /**
  *
@@ -24,8 +23,10 @@ public class MapControl {
         int MAX_COL = 5;
 
         Map map = new Map();
+        Scene scene = new Scene();
         Location[][] locations = new Location[MAX_ROW][MAX_COL];
         map.setLocations(locations);
+        scene.setScene();
 //    }
 //
 //    public static void showMap(String[][] map) {
@@ -41,6 +42,7 @@ public class MapControl {
             loc1.setDescription("Wheat Field " + (i + 1));
             loc1.setSymbol("W" + (i + 1));
             map.setLocation(i, 1, loc1);
+            
         }
 //        Location loc = Map.getLocations()[0][1];
 
@@ -50,6 +52,7 @@ public class MapControl {
             loc2.setDescription("Church" + (i + 1));
             loc2.setSymbol("C" + (i + 1));
             map.setLocation(i, 2, loc2);
+           
         }
 
 //Create the Tool Shop        
@@ -66,6 +69,7 @@ public class MapControl {
             loc4.setDescription("For the Beauty of the Earth" + (i + 1));
             loc4.setSymbol("B" + (i + 1));
             map.setLocation(i, 4, loc4);
+          
         }
 //Create the inventory shop
         for (int i = 0; i < MAX_ROW; i++) {

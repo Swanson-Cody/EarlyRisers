@@ -8,6 +8,7 @@ package byui.cit260.EarlyRisers.view;
 import java.util.Scanner;
 import byui.cit260.EarlyRisers.control.GameControl;
 
+
 /**
  *
  * @author Heather
@@ -57,17 +58,19 @@ public class ToolShopView extends View {
     //Get number input from user 
     @Override
     public boolean doAction(String[] input) {
-        String choice = input[0];
-        switch (choice) {
-            case "1":
+        String choice = input[0].toUpperCase();
+        choice = choice.toUpperCase();
+   
+       switch (choice) {
+           case "1":
                 buyPlow();
                 break;
-            case "2":
-                buyHorse();
-                break;
-            case "3":
-                buyOx();
-                break;
+          case "2":
+               buyHorse();
+              break;
+          case "3":
+              buyOx();
+               break;
             case "4":
                 buyScythe();
                 break;
@@ -143,5 +146,4 @@ public class ToolShopView extends View {
         System.out.println("You have successfully sold your Shovel.");
     }
 
-    
 }

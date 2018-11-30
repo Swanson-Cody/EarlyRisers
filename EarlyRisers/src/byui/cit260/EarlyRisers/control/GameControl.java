@@ -93,7 +93,7 @@ public class GameControl {
 
     public static void createPopulation() {
         ArrayList<InventoryItem> population = new ArrayList<>();
-        population.add(1, new InventoryItem("Population", 100));
+        population.add(new InventoryItem("Population", 100));
         EarlyRisers.getCurrentGame().addToInventory(population);
     }
 
@@ -123,6 +123,8 @@ public class GameControl {
     scenes.add(new Scene("Ask a question."));
     scenes.add(new Scene("Harvest time"));
     scenes.add(new Scene("Church"));
+      for (int i = 0; i< 3; i++){
+      } 
       
     }
 }

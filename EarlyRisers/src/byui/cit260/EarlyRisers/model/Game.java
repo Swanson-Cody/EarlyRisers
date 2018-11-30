@@ -22,6 +22,7 @@ public class Game implements Serializable {
       private int tithing;
       private static double totalTime;
       private static ArrayList<InventoryItem> inventory;
+      
 
     public static double getTotalTime() {
         return totalTime;
