@@ -18,7 +18,7 @@ public class Population {
      * @param population
      * @return
      */
-    private static double calcGrowth(double population) throws PopulationException{
+    private static void calcGrowth(double population) throws PopulationException{
 
         /**
          * Set the value of itemType
@@ -48,20 +48,33 @@ public class Population {
 //random percent times it by 100 times the population and adding that number to 
 //the total. 
         double result = population + ((w / 100) * population);
-        return Math.round(result);
+        Math.round(result);
 
     }
 
-    public static double calcGrowthTithes  (double population, double tithes, double wheat) throws PopulationException{
+    /**
+     *
+     * @param population
+     * @param tithes
+     * @param wheat
+     * @throws PopulationException
+     */
+    public static void calcGrowthTithes  (double population, double tithes, double wheat) throws PopulationException{
         double newPopulation = calcGrowth(population);
-
+        if (population <= 0) { //if population is under 0
+            throw new PopulationException ("The population can not be negative.");
+        }
+        if (population > 300) {//if population grows bigger than 300
+            throw new PopulationException ("The population cannot be larger than 300.");
+        }
+     
         if (tithes >= wheat * .10) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;
             System.out.println(random);
             double result = newPopulation + ((random / 100) * newPopulation);
-            return Math.round(result);
+            Math.round(result);
         }
         if (tithes <= wheat * .06) {
             Random percent = new Random();
@@ -69,16 +82,16 @@ public class Population {
             ++random;
             System.out.println(random);
             double result = newPopulation + ((random / 100) * newPopulation);
-            return Math.round(result);
+            Math.round(result);
         } else if (tithes >= wheat * .04) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;
             System.out.println(random);
-            double result = newPopulation - ((random / 100) * newPopulation);
-            return Math.round(result);
+           double result = newPopulation - ((random / 100) * newPopulation);
+           Math.round(result);
         }
-        return newPopulation;
+      
     }
 
 }
