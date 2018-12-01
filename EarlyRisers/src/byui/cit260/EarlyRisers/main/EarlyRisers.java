@@ -10,7 +10,6 @@ import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Game;
 
-
 /**
  *
  * @author Heather
@@ -18,15 +17,20 @@ import byui.cit260.EarlyRisers.model.Game;
 public class EarlyRisers {
 
     private static Game currentGame = null;
+
     private static Player player = null;
 
 //    private static double totalTime;
 //    private static ArrayList<InventoryItem> inventory;
-
     public static void main(String[] args) {
-        StartProgramViewNew menu = new StartProgramViewNew();
-        menu.display();
+        try {
+            StartProgramViewNew menu = new StartProgramViewNew();
+            menu.display();
+        } catch (Throwable e) {
+            System.out.println("Not valid input.");
+        }
     }
+}
 
 //
 //    public void setTotalTime(double totalTime) {
@@ -46,7 +50,6 @@ public class EarlyRisers {
 //            EarlyRisers.inventory.add(inventory.get(i));
 //        }
 //    }
-
 //    public static double getTotalTime() {
 //        return totalTime;
 //    }
@@ -58,19 +61,17 @@ public class EarlyRisers {
 //    public static ArrayList<InventoryItem> getInventory() {
 //        return inventory;
 //    }
-
-    /**
-     *
-     * @param args
-     */
+/**
+ *
+ * @param args
+ */
 //    public static void main(String []args){
 //       
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-    public static Game getCurrentGame() {
+public static Game getCurrentGame() {
         return currentGame;
-    }
 
     public static void setCurrentGame(Game currentGame) {
         EarlyRisers.currentGame = currentGame;

@@ -5,6 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 import byui.cit260.EarlyRisers.control.MapControl;
+import byui.cit260.EarlyRisers.exceptions.MapControlException;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
@@ -41,35 +42,44 @@ public class MovePlayerView extends View {
         switch (choice) {
 
             case "1": //Right
+                try{
                 if(map.getCurrentLocation().getColumn() < map.getColCount() - 1){
                     MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() + 1);
                     return true;
-                } else {
+                } 
+                              }
+                catch (MapControlException e){
                     System.out.println("You can't move any further to the right.");
                 }
                 break;
             case "2": //Left
+                try{
                  if(map.getCurrentLocation().getColumn() > 0){
                     MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn()-1);
                     return true;
-                } else {
+                 }
+                } catch (MapControlException e) {
                     System.out.println("You can't move any further to the left.");
                 }
                 
                 break;
             case "3": //Up
+                try{
                   if(map.getCurrentLocation().getRow() > 0){
                     MapControl.movePlayer(map, map.getCurrentLocation().getRow() -1, map.getCurrentLocation().getColumn());
                     return true;
-                } else {
+                }
+                }catch (MapControlException e) {
                     System.out.println("You can't move any further up.");
                 }
                 break;
             case "4": //Down
+                try{
                if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
                     MapControl.movePlayer(map, map.getCurrentLocation().getRow() +1 , map.getCurrentLocation().getColumn());
                     return true;
-                } else {
+               }
+                } catch (MapControlException e) {
                     System.out.println("You can't move any further down.");
                 }
                 break;

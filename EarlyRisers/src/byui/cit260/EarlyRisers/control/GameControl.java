@@ -12,6 +12,7 @@ import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
 import byui.cit260.EarlyRisers.exceptions.GameControlException;
+import byui.cit260.EarlyRisers.exceptions.MapControlException;
 import java.util.Scanner;
 
 /**
@@ -27,14 +28,14 @@ public class GameControl {
     // reference to a Game object
     public static EarlyRisers Game;
 
-    public static void startNewGame(Player player) throws GameControlException{
+   public static void startNewGame(Player player) throws GameControlException {
         double returnValue = GameControl.createNewGame(Game.getPlayer());
         if (returnValue < 0) {
-            throw new GameControlException ("Return value cannot be less than zero.");
+            throw new GameControlException ("You must enter player to start game.");
         }
     }
 
-    public static void createNewGame(Player player) throws GameControlException{
+    public static void createNewGame(Player player) throws GameControlException, MapControlException{
         if (player == null) {
             throw new GameControlException ("You must have a player.");
         }
@@ -66,7 +67,7 @@ public class GameControl {
 //if name is null OR length of name is < 1 THEN   
 //RETURN null 
     
-    public static InventoryItem getInventoryItemByName(String name) {
+    public static InventoryItem getInventoryItemByName(String name) throws GameControlException{
         ArrayList<InventoryItem> items = EarlyRisers.getCurrentGame().getInventory();
         for (InventoryItem item : items) {
             if (item.getName().equals(name)) {
@@ -76,7 +77,7 @@ public class GameControl {
         return null;
     }
 
-    public static ArrayList<InventoryItem> getInventoryItemsByType(String type) {
+    public static ArrayList<InventoryItem> getInventoryItemsByType(String type) throws GameControlException{
         ArrayList<InventoryItem> items = EarlyRisers.getCurrentGame().getInventory();
         ArrayList<InventoryItem> itemsByType = new ArrayList<>();
         boolean found = false;
@@ -92,7 +93,7 @@ public class GameControl {
             return null;
         }
     }
-public static void createTools() {
+public static void createTools() throws GameControlException{
         ArrayList<InventoryItem> tools = new ArrayList<>();
         tools.add(new InventoryItem("Tools", "Plows", 1));
         tools.add(new InventoryItem("Tools", "", 0));
@@ -104,13 +105,13 @@ public static void createTools() {
 
     }
 
-    public static void createWheat() {
+    public static void createWheat() throws GameControlException{
         ArrayList<InventoryItem> wheat = new ArrayList<>();
         wheat.add(new InventoryItem("Wheat", "Wheat Bushels", 3000));
         EarlyRisers.getCurrentGame().addToInventory(wheat);
     }
 
-    public static void createAnimals() {
+    public static void createAnimals() throws GameControlException{
         ArrayList<InventoryItem> animals = new ArrayList<>();
         animals.add(new InventoryItem("Animal", "Rat", 50));
         animals.add(new InventoryItem("Animal", "Ox", 0));
@@ -118,19 +119,19 @@ public static void createTools() {
         EarlyRisers.getCurrentGame().addToInventory(animals);
     }
 
-    public static void createPopulation() {
+    public static void createPopulation() throws GameControlException{
         ArrayList<InventoryItem> population = new ArrayList<>();
         population.add(new InventoryItem("Utility", "Population", 100));
         EarlyRisers.getCurrentGame().addToInventory(population);
     }
 
-    public static void createTithing() {
+    public static void createTithing() throws GameControlException{
         ArrayList<InventoryItem> tithing = new ArrayList<>();
         tithing.add(new InventoryItem("Tithing", 0));
         EarlyRisers.getCurrentGame().addToInventory(tithing);
     }
 
-    public static void createLand() {
+    public static void createLand() throws GameControlException{
         ArrayList<InventoryItem> land = new ArrayList<>();
         land.add(new InventoryItem("Land", 1000));
         EarlyRisers.getCurrentGame().addToInventory(land);

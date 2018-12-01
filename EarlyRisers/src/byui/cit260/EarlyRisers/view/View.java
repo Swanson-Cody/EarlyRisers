@@ -22,8 +22,10 @@ public abstract class View implements ViewInterface {
             if (inputs[0] == null || inputs[0] == "Q"){
                 return;
             }
-            
+           try{ 
             endView = doAction(inputs);
+           } catch (NumberFormatException e){
+           System.out.println("Unacceptable Value. Try again.");}
         } while(endView != true);
     }
 
