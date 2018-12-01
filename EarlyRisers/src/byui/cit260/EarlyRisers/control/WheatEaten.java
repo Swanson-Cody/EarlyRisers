@@ -5,19 +5,24 @@
  */
 package byui.cit260.EarlyRisers.control;
 import java.util.Random;
-
+import byui.cit260.EarlyRisers.exceptions.WheatEatenException;
 /**
  *
  * @author rache
  */
 public class WheatEaten {
 
-     public static double calcGrowth(int[] ratsEatWheat, double tithing, double wheatStorage) {
+     public static void calcGrowth(int[] ratsEatWheat, double tithing, double wheatStorage) extends WheatEatenException {
          Random random = new Random();
          int ran = random.nextInt(5);
          ran++;
          int total = 0;
-         
+           if (tithing < 0) { //if tithing is under 0
+            throw new WheatEatenException ("Tithing can not be negative.");
+        }
+        if (wheatStorage < 0) {//if wheat storage is negative
+            throw new WheatEatenException ("Wheat storage cannot be negative.");
+        }
          if(tithing > 12){
              wheatStorage = wheatStorage - ran;
          } else if(tithing >= 8 && tithing <= 12){
@@ -33,7 +38,8 @@ public class WheatEaten {
        
          
      }
-            return wheatStorage;
+     }
+          
      }
 }
 /**

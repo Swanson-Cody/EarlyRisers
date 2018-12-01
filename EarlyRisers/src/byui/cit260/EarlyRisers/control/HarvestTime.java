@@ -1,26 +1,26 @@
 package byui.cit260.EarlyRisers.control;
-
+import byui.cit260.EarlyRisers.exceptions.HarvestTimeException;
 /**
  *
  * @author Early Risers
  */
 public class HarvestTime{
-    public static int calcHarvest(int percent, int acresOwned, int highTithesYieldPerAcre, int medTithesYieldPerAcre, int lowTithesYieldPerAcre) {      
+    public static void calcHarvest(int percent, int acresOwned, int highTithesYieldPerAcre, int medTithesYieldPerAcre, int lowTithesYieldPerAcre) throws HarvestTimeException{      
         if (percent < 0) {
-            return -1;
+           throw new HarvestTimeException ("Percent cannot be less than zero.");
         } 
         else if (percent > 100) {
-            return -2;
+            throw new HarvestTimeException ("Harvest percent cannot be less than 100.");
         }
         else if (percent > 12) {
 		int result = acresOwned * highTithesYieldPerAcre;
-                return result;
+                
 	} else if (percent >= 8) {
 		int result = acresOwned * medTithesYieldPerAcre;
-                return result;
+                
 	} else {
 		int result = acresOwned * lowTithesYieldPerAcre;
-                return result;
+                
 	}
     }
 }
