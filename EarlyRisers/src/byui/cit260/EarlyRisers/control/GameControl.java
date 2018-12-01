@@ -10,8 +10,8 @@ import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Map;
-import byui.cit260.EarlyRisers.model.Scene;
 import java.util.ArrayList;
+import byui.cit260.EarlyRisers.exceptions.GameControlException;
 import java.util.Scanner;
 
 /**
@@ -27,16 +27,16 @@ public class GameControl {
     // reference to a Game object
     public static EarlyRisers Game;
 
-    public static void startNewGame(Player player) {
+    public static void startNewGame(Player player) throws GameControlException{
         double returnValue = GameControl.createNewGame(Game.getPlayer());
         if (returnValue < 0) {
-            System.out.println("ERROR - Failed to create new game.");
+            throw new GameControlException ("Return value cannot be less than zero.");
         }
     }
 
-    public static int createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException{
         if (player == null) {
-            return -1;
+            throw new GameControlException ("You must have a player.");
         }
 
         //create game object
@@ -58,7 +58,7 @@ public class GameControl {
         createTithing();
         createLand();
         createCropData();
-        return 1;
+       
     }
 
     //savePlayer(name): Player  
