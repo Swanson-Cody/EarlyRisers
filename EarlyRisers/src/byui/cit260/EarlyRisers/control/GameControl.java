@@ -28,14 +28,7 @@ public class GameControl {
     // reference to a Game object
     public static EarlyRisers Game;
 
-   public static void startNewGame(Player player) throws GameControlException {
-        double returnValue = GameControl.createNewGame(Game.getPlayer());
-        if (returnValue < 0) {
-            throw new GameControlException ("You must enter player to start game.");
-        }
-    }
-
-    public static void createNewGame(Player player) throws GameControlException, MapControlException{
+      public static void createNewGame(Player player) throws GameControlException, MapControlException{
         if (player == null) {
             throw new GameControlException ("You must have a player.");
         }

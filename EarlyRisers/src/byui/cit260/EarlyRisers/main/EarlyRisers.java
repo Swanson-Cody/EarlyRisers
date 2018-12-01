@@ -23,14 +23,19 @@ public class EarlyRisers {
 //    private static double totalTime;
 //    private static ArrayList<InventoryItem> inventory;
     public static void main(String[] args) {
+          
         try {
-            StartProgramViewNew menu = new StartProgramViewNew();
-            menu.display();
-        } catch (Throwable e) {
-            System.out.println("Not valid input.");
+           StartProgramViewNew menu = new StartProgramViewNew();
+           menu.display();
+           }
+           catch (Throwable te) {
+          System.out.println(te.getMessage());
+          te.printStackTrace();
+        
         }
+      
     }
-}
+
 
 //
 //    public void setTotalTime(double totalTime) {
@@ -72,7 +77,7 @@ public class EarlyRisers {
 //    }
 public static Game getCurrentGame() {
         return currentGame;
-
+}
     public static void setCurrentGame(Game currentGame) {
         EarlyRisers.currentGame = currentGame;
     }
