@@ -5,13 +5,18 @@
  */
 package byui.cit260.EarlyRisers.control;
 
+import byui.cit260.EarlyRisers.exceptions.GameControlException;
+import byui.cit260.EarlyRisers.exceptions.MapControlException;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
+import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Question;
 import byui.cit260.EarlyRisers.model.Scene;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -114,49 +119,20 @@ public class MapControl {
     }
 
     public static void movePlayer(Map map, int row, int column) {
+        
+        Player player = new Player();
+        if (player != null){
+        } else {
+            try {
+                throw new MapControlException("You need to enter "
+                        + "a location");
+            } catch (MapControlException ex) {
+                Logger.getLogger(MapControl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
         map.getCurrentLocation().setVisited(true);
     }
 }
-//
-
-//// call setter to assign value to description in map
-////call setter to assign value to noOfRows in the map
-////call setter to assign value to noOfColumns in map
-////call setter to save the map in game object   
-//// create the map object and assign values to it
-////locations = createLocations(noOfRows, noOfColumns)
-////if (locations is null) then
-//// return null
-////endif
-////public static Location[][] createLocations(int rows, int columns)
-////Create the fields
-//
-////call setter to save a locations array in the map object
-//
-////success = assignIemsToLocations(locations)
-////private static int assignItemsToLocations(
-////Location[][] locations,
-////InventoryItem[] itemsInGame)
-////if (success < 0) then
-//// return null
-////endif
-//        return null;
-//    }
-//        return null;
-//}
-//}
-// Assign all other types objects to locations (e.g., questions, spells)
-//public static void CreateMap (String [][] map, int rows, int colums)
-//String[][] map = new String [5][5]
-//createMap (map);
-//linkLocations (map);
-//public static void createBoard (String [][] board) {
-//for (int r=0; r< map.length; r++)
-//{
-//for (int c=0; c < map0.length; c++)
-//{
-//board [r][c] = "*";
-
