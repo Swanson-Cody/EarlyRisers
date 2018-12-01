@@ -9,6 +9,25 @@ package exceptions;
  *
  * @author Heather
  */
-public class PopulationException {
+public class PopulationException extends Exception {
+
+    public PopulationException() {
+    }
+
+    public PopulationException(String message) {
+        super(message);
+    }
+
+    public PopulationException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public PopulationException(Throwable cause) {
+        super(cause);
+    }
+
+    public PopulationException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

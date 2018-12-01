@@ -9,6 +9,25 @@ package exceptions;
  *
  * @author Heather
  */
-public class BuyLandException {
+public class BuyLandException extends Exception {
+
+    public BuyLandException() {
+    }
+
+    public BuyLandException(String message) {
+        super(message);
+    }
+
+    public BuyLandException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public BuyLandException(Throwable cause) {
+        super(cause);
+    }
+
+    public BuyLandException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

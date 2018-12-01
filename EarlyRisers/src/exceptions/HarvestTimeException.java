@@ -9,6 +9,25 @@ package exceptions;
  *
  * @author Heather
  */
-public class HarvestTimeException {
+public class HarvestTimeException extends Exception {
+
+    public HarvestTimeException() {
+    }
+
+    public HarvestTimeException(String message) {
+        super(message);
+    }
+
+    public HarvestTimeException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public HarvestTimeException(Throwable cause) {
+        super(cause);
+    }
+
+    public HarvestTimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

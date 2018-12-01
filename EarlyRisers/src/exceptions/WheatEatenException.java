@@ -9,6 +9,25 @@ package exceptions;
  *
  * @author Heather
  */
-public class WheatEatenException {
+public class WheatEatenException extends Exception {
+
+    public WheatEatenException() {
+    }
+
+    public WheatEatenException(String message) {
+        super(message);
+    }
+
+    public WheatEatenException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public WheatEatenException(Throwable cause) {
+        super(cause);
+    }
+
+    public WheatEatenException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }
