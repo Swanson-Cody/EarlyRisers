@@ -59,12 +59,12 @@ public class Population {
      * @param wheat
      * @throws PopulationException
      */
-    public static void calcGrowthTithes  (double population, double tithes, double wheat) throws PopulationException{
-        double newPopulation = calcGrowth(population);
-        if (population <= 0) { //if population is under 0
+    private static void calcGrowthTithes (double newPopulation, double tithes, double wheat) throws PopulationException {
+        newPopulation = calcGrowth(population);
+        if (newPopulation <= 0) { //if population is under 0
             throw new PopulationException ("The population can not be negative.");
         }
-        if (population > 300) {//if population grows bigger than 300
+        if (newPopulation > 300) {//if population grows bigger than 300
             throw new PopulationException ("The population cannot be larger than 300.");
         }
      
