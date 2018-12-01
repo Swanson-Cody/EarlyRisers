@@ -17,6 +17,7 @@ import byui.cit260.EarlyRisers.model.Question;
 import byui.cit260.EarlyRisers.model.Scene;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import byui.cit260.EarlyRisers.exceptions.MapControlException;
 
 
 /**
@@ -25,7 +26,7 @@ import java.util.logging.Logger;
  */
 public class MapControl {
 
-    public static Map createMap() {
+    public static Map createMap() throws MapControlException {
         int MAX_ROW = 5;
         int MAX_COL = 5;
 
@@ -113,23 +114,19 @@ public class MapControl {
         return map;
     }
 
-    public static void movePlayerToStartingLocation(Map map) {
+    public static void movePlayerToStartingLocation(Map map) throws MapControlException {
         // If starting location is not supposed to be 0,0 then use the correct values here.
         movePlayer(map, 0, 0);
     }
 
-    public static void movePlayer(Map map, int row, int column) {
+    public static void movePlayer(Map map, int row, int column) throws MapControlException {
         
         Player player = new Player();
-        if (player != null){
-        } else {
-            try {
-                throw new MapControlException("You need to enter "
-                        + "a location");
-            } catch (MapControlException ex) {
-                Logger.getLogger(MapControl.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        if (player == null){
+            throw new MapControlException("You must have a player");
         }
+            
+        
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
