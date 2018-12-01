@@ -75,7 +75,7 @@ public class EarlyRisers {
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-public static Game getCurrentGame() {
+public static Game getCurrentGame(currentGame) {
         return currentGame;
 }
     public static void setCurrentGame(Game currentGame) {
