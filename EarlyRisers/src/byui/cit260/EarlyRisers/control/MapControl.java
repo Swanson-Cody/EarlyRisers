@@ -5,18 +5,12 @@
  */
 package byui.cit260.EarlyRisers.control;
 
-import byui.cit260.EarlyRisers.exceptions.GameControlException;
-import byui.cit260.EarlyRisers.exceptions.MapControlException;
-import byui.cit260.EarlyRisers.main.EarlyRisers;
-import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Question;
-import byui.cit260.EarlyRisers.model.Scene;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import byui.cit260.EarlyRisers.exceptions.MapControlException;
 
 
