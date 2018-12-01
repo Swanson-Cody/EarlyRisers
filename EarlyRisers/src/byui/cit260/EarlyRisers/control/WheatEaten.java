@@ -12,7 +12,7 @@ import byui.cit260.EarlyRisers.exceptions.WheatEatenException;
  */
 public class WheatEaten {
 
-     public static void calcGrowth(int[] ratsEatWheat, double tithing, double wheatStorage) extends WheatEatenException {
+     public static void calcGrowth(int[] ratsEatWheat, double tithing, double wheatStorage) throws WheatEatenException  {
          Random random = new Random();
          int ran = random.nextInt(5);
          ran++;
@@ -41,7 +41,7 @@ public class WheatEaten {
      }
           
      }
-}
+
 /**
  *
  * @author rache
