@@ -3,30 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exceptions;
+package byui.cit260.EarlyRisers.exceptions;
 
 /**
  *
  * @author Heather
  */
-public class HarvestTimeException extends Exception {
+public class WheatEatenException extends Exception {
 
-    public HarvestTimeException() {
+    public WheatEatenException() {
     }
 
-    public HarvestTimeException(String message) {
+    public WheatEatenException(String message) {
         super(message);
     }
 
-    public HarvestTimeException(String message, Throwable cause) {
+    public WheatEatenException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public HarvestTimeException(Throwable cause) {
+    public WheatEatenException(Throwable cause) {
         super(cause);
     }
 
-    public HarvestTimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public WheatEatenException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
     

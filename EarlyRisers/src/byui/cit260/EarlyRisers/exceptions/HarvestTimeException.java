@@ -3,30 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package exceptions;
+package byui.cit260.EarlyRisers.exceptions;
 
 /**
  *
  * @author Heather
  */
-public class BuyLandException extends Exception {
+public class HarvestTimeException extends Exception {
 
-    public BuyLandException() {
+    public HarvestTimeException() {
     }
 
-    public BuyLandException(String message) {
+    public HarvestTimeException(String message) {
         super(message);
     }
 
-    public BuyLandException(String message, Throwable cause) {
+    public HarvestTimeException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public BuyLandException(Throwable cause) {
+    public HarvestTimeException(Throwable cause) {
         super(cause);
     }
 
-    public BuyLandException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public HarvestTimeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
     
