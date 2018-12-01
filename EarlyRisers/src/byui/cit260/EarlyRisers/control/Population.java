@@ -5,7 +5,7 @@
  */
 //import java.util.Random;
 package byui.cit260.EarlyRisers.control;
-
+import byui.cit260.EarlyRisers.exceptions.PopulationException;
 import java.util.Random;
 
 /**
@@ -18,7 +18,7 @@ public class Population {
      * @param population
      * @return
      */
-    private static double calcGrowth(double population) {
+    private static double calcGrowth(double population) throws PopulationException{
 
         /**
          * Set the value of itemType
@@ -32,17 +32,18 @@ public class Population {
         System.out.println(w);
 //Define invalid variables
         if (population <= 0) { //if population is under 0
-            return -1;
+            throw new PopulationException ("The population can not be negative.");
         }
         if (population > 300) {//if population grows bigger than 300
-            return -2;
+            throw new PopulationException ("The population cannot be larger than 300.");
         }
         if (w <= 0) {//if percent is less than or equal to 0
-            return -3;
+            throw new PopulationException ("The return percent cannot be less than 0.");
         }
         if (w > 5) {//if percent is greater than 5
-            return -4;
-        }
+            throw new PopulationException ("The return percent cannot be larger than 5.");
+                    
+       }
         //Calculate population by taking the beginning population number and taking the 
 //random percent times it by 100 times the population and adding that number to 
 //the total. 
@@ -51,7 +52,7 @@ public class Population {
 
     }
 
-    public static double calcGrowthTithes(double population, double tithes, double wheat) {
+    public static double calcGrowthTithes  (double population, double tithes, double wheat) throws PopulationException{
         double newPopulation = calcGrowth(population);
 
         if (tithes >= wheat * .10) {
