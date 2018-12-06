@@ -4,36 +4,70 @@
  * and open the template in the editor. Testing
  */
 package byui.cit260.EarlyRisers.main;
- //import Model.*;
+//import Model.*;
+
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Game;
+
 /**
  *
  * @author Heather
  */
-public class game  {
-    
+public class game {
+
     /**
      *
      * @param args
      */
     private static Game currentGame = null;
     private static Player player = null;
-    
+
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
 //    public static void main(String []args){
 //       
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-    public static void main(String []args){
-        StartProgramViewNew menu = new StartProgramViewNew();
-        menu.display();    
+    public static void main(String[] args) {
+
+        try {
+
+            game.inFile
+                    = new BufferedReader(new InputStreamReader(Systen.in));
+            game.outFile = new PrintWriter(System.out, true);
+            StartProgramViewNew menu = new StartProgramViewNew();
+            menu.display();
+        } catch (Throwable e) {
+            System.out.println("Ecepetion: " + e.toString()
+                    + "\nCause: " + e.getCause()
+                    + "\nMessage: " + e.getMessage());
+
+            e.printStackTrace();;
+        } finally {
+            try {
+                if (game.inFile != null) {
+                    game.inFile.close();
+                }
+                if (game.outFile != null) {
+                    game.outFile.close();
+                }
+
+            } catch (IOExcepion ex) {
+                System.out.println("Invalid input/output "
+                        + "whichever the ccase may be");
+                return;
+            }
+        }
 
     }
-  public static Game getCurrentGame() {
+
+    public static Game getCurrentGame() {
         return currentGame;
     }
+
     public static void setCurrentGame(Game currentGame) {
         game.currentGame = currentGame;
     }
@@ -46,15 +80,28 @@ public class game  {
         game.player = player;
     }
 
-    
-    
-}
-   
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
 
-    /**
-     * 
-    / * @param args the command line arguments
-     */
+    public static void setOutFile(PrintWriter outFile) {
+        game.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        game.inFile = inFile;
+    }
+
+}
+
+/**
+ *
+ * / * @param args the command line arguments
+ */
 //    public static void testTeamClasses(){
 //       InventoryItem inventoryItem = new InventoryItem();
 //       inventoryItem.setAnimals("Rats");

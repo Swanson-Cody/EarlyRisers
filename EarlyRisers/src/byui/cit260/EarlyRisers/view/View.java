@@ -12,6 +12,9 @@ import java.util.Scanner;
  * @author EarlyRisers
  */
 public abstract class View implements ViewInterface {
+    
+    protected final BufferedReader keyboard = game.getInFile();
+    protected final PrintWriter console = game.getOutFile();
     @Override
     public void display() {
         boolean endView = false;
