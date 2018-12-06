@@ -13,6 +13,11 @@ import byui.cit260.EarlyRisers.model.Map;
 import java.util.ArrayList;
 import byui.cit260.EarlyRisers.exceptions.GameControlException;
 import byui.cit260.EarlyRisers.exceptions.MapControlException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -140,4 +145,15 @@ public static void createTools() throws GameControlException{
         EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
 
+    public static void saveGame(Game game, String fileName) throws GameControlException, FileNotFoundException, IOException {
+        if(fileName == null || fileName.length() < 1){
+            throw new GameControlException("This is an exception");
+        }
+        
+        try (FileOutputStream fileStream = new FileOutputStream(fileName + ".dat"); ObjectOutputStream objectStream = new ObjectOutputStream(fileStream)) {
+            objectStream.writeObject(game);
+        }
+        
+        System.out.println("Your game has been saved to: " + new File("").getAbsolutePath() + '\\' + fileName + ".dat");
+    }
 }

@@ -37,8 +37,9 @@ public class GameMenuView extends View {
                 + "\n5) Go to fields"
                 + "\n6) Admire God's Creations"
                 + "\n7) Display Map"
-                + "\n8) Supplies View"       
-                + "\n9) Return to Main Menu");
+                + "\n8) Supplies View"
+                + "\n9) Save the Game"
+                + "\n10) Return to Main Menu");
         inputs[0] = selection;
         return inputs;
     }
@@ -71,9 +72,10 @@ public class GameMenuView extends View {
                 break;
             case "8":
                 suppliesView();
-                  
-                break;
             case "9":
+                saveGameView();
+                break;
+            case "10":
                 return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
@@ -195,5 +197,10 @@ private void suppliesView(){
             System.out.println("Invalid entry, must be a number.");
             return;
         }
+    }
+    
+    private void saveGameView() {
+        SaveGameView save = new SaveGameView();
+        save.display();
     }
 }

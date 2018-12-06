@@ -50,7 +50,7 @@ public abstract class View implements ViewInterface {
         
         while (!valid){
             try {
-                input = this.keyboard.readLine();
+                input = this.keyboard.readLine().trim();
             } catch (IOException ex) {
                 Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             }
