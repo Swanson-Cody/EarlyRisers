@@ -9,6 +9,10 @@ package byui.cit260.EarlyRisers.main;
 import byui.cit260.EarlyRisers.view.StartProgramViewNew;
 import byui.cit260.EarlyRisers.model.Player;
 import byui.cit260.EarlyRisers.model.Game;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -33,7 +37,7 @@ public class EarlyRisers {
 
         try {
             EarlyRisers.inFile
-                    = new BufferedReader(new InputStreamReader(Systen.in));
+                    = new BufferedReader(new InputStreamReader(System.in));
             EarlyRisers.outFile = new PrintWriter(System.out, true);
             logFile = new PrintWriter("logFile.txt");
             StartProgramViewNew menu = new StartProgramViewNew();
@@ -54,7 +58,7 @@ public class EarlyRisers {
                     logFile.close();
                 }
 
-            } catch (IOExcepion ex) {
+            } catch (IOException ex) {
                 System.out.println("Invalid input/output "
                         + "whichever the ccase may be");
                 return;

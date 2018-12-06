@@ -5,7 +5,15 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Scanner;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -41,8 +49,12 @@ public abstract class View implements ViewInterface {
         String input = "";
         
         while (!valid){
-            input = this.keyboard.readLine();
-            input = keyboard.nextLine().trim();
+            try {
+                input = this.keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //input = keyboard.nextLine().trim();
             
             if(input.length() < 1){
                 ErrorView.display(this.getClass().getName(), "Unacceptable Value. Try again.");

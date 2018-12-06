@@ -5,13 +5,14 @@
  */
 package byui.cit260.EarlyRisers.view;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
+import java.io.PrintWriter;
 
 /**
  *
  * @author rache
  */
 public class ErrorView {
-    private static PrintWriter console = EarlyRisers.getOutput();
+    private static PrintWriter console = EarlyRisers.getOutFile();
     private static PrintWriter log = EarlyRisers.getLogFile();
     
     public static void display(String className, String errorMessage){
