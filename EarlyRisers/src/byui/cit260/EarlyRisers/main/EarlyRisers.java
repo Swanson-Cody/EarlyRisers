@@ -16,6 +16,9 @@ import byui.cit260.EarlyRisers.model.Game;
  */
 public class EarlyRisers {
 
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
     private static Game currentGame = null;
 
     private static Player player = null;
@@ -23,19 +26,34 @@ public class EarlyRisers {
 //    private static double totalTime;
 //    private static ArrayList<InventoryItem> inventory;
     public static void main(String[] args) {
-          
-        try {
-           StartProgramViewNew menu = new StartProgramViewNew();
-           menu.display();
-           }
-           catch (Throwable te) {
-          System.out.println(te.getMessage());
-          te.printStackTrace();
-        
-        }
-      
-    }
 
+        try {
+            EarlyRisers.inFile
+                    = new BufferedReader(new InputStreamReader(Systen.in));
+            EarlyRisers.outFile = new PrintWriter(System.out, true);
+            StartProgramViewNew menu = new StartProgramViewNew();
+            menu.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+
+        } finally {
+            try {
+                if (EarlyRisers.inFile != null) {
+                    EarlyRisers.inFile.close();
+                }
+                if (EarlyRisers.outFile != null) {
+                    EarlyRisers.outFile.close();
+                }
+
+            } catch (IOExcepion ex) {
+                System.out.println("Invalid input/output "
+                        + "whichever the ccase may be");
+                return;
+            }
+        }
+
+    }
 
 //
 //    public void setTotalTime(double totalTime) {
@@ -66,18 +84,19 @@ public class EarlyRisers {
 //    public static ArrayList<InventoryItem> getInventory() {
 //        return inventory;
 //    }
-/**
- *
- * @param args
- */
+    /**
+     *
+     * @param args
+     */
 //    public static void main(String []args){
 //       
 //        StartProgramViewNew menu = new StartProgramViewNew();
 //        menu.display();
 //    }
-public static Game getCurrentGame() {
+    public static Game getCurrentGame() {
         return currentGame;
-}
+    }
+
     public static void setCurrentGame(Game currentGame) {
         EarlyRisers.currentGame = currentGame;
     }
@@ -90,6 +109,22 @@ public static Game getCurrentGame() {
         EarlyRisers.player = player;
     }
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        EarlyRisers.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        EarlyRisers.inFile = inFile;
+    }
+
 //    public static Map getMap() {
 //        return EarlyRisers.theMap;
 //    }
@@ -97,7 +132,6 @@ public static Game getCurrentGame() {
 //    public static void setMap(Map map) {
 //        EarlyRisers.theMap = map;
 //    }
-
 }
 
 /**

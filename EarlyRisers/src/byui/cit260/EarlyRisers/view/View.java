@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
     
-    protected final BufferedReader keyboard = game.getInFile();
-    protected final PrintWriter console = game.getOutFile();
+    protected final BufferedReader keyboard = EarlyRisers.getInFile();
+    protected final PrintWriter console = EarlyRisers.getOutFile();
     @Override
     public void display() {
         boolean endView = false;
@@ -39,7 +39,7 @@ public abstract class View implements ViewInterface {
         String input = "";
         
         while (!valid){
-            Scanner keyboard = new Scanner(System.in);
+            input = this.keyboard.readLine();
             input = keyboard.nextLine().trim();
             
             if(input.length() < 1){
