@@ -25,12 +25,17 @@ public class EarlyRisers {
 
 //    private static double totalTime;
 //    private static ArrayList<InventoryItem> inventory;
+    
+    private static PrintWriter logFile = null;
+
+    
     public static void main(String[] args) {
 
         try {
             EarlyRisers.inFile
                     = new BufferedReader(new InputStreamReader(Systen.in));
             EarlyRisers.outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
             StartProgramViewNew menu = new StartProgramViewNew();
             menu.display();
         } catch (Throwable te) {
@@ -44,6 +49,9 @@ public class EarlyRisers {
                 }
                 if (EarlyRisers.outFile != null) {
                     EarlyRisers.outFile.close();
+                }
+                if(logFile != null){
+                    logFile.close();
                 }
 
             } catch (IOExcepion ex) {
@@ -124,6 +132,16 @@ public class EarlyRisers {
     public static void setInFile(BufferedReader inFile) {
         EarlyRisers.inFile = inFile;
     }
+    
+        
+    public static PrintWriter getLogFile(){
+        return logFile;
+    }
+    
+    public static void setLogFile(PrintWriter logFile){
+        EarlyRisers.logFile = logFile;
+    }
+    
 
 //    public static Map getMap() {
 //        return EarlyRisers.theMap;

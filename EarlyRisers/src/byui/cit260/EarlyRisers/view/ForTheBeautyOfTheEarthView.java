@@ -108,7 +108,7 @@ public class ForTheBeautyOfTheEarthView extends View{
             case "6":
              return true;
              default:
-                System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }

@@ -42,7 +42,8 @@ public class HelpMenuView extends View {
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
-        Scanner keyboard = new Scanner(System.in);
+        //Scanner keyboard = new Scanner(System.in);
+        
 //        int choice = -1;
 //        do {
 //            System.out.print("\nEnter a Number: ");
@@ -94,7 +95,7 @@ public class HelpMenuView extends View {
 
               
             default:
-                System.out.println("\nAn unknown error has occured.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }

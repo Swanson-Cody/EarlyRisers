@@ -48,7 +48,8 @@ public class ChurchView extends View {
             case "3":
                return true;
             default:
-                System.out.println("\nInvalid selection.");
+                //System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }
@@ -56,12 +57,12 @@ public class ChurchView extends View {
 
     public void payTithing() {
     
-     Scanner keyboard = new Scanner(System.in);
-    int tithing;
-    System.out.print("How much wheat would you like to pay for your tithing?");
-            tithing = keyboard.nextInt();
-    System.out.println("You have paid " + tithing +" for your tithes and offerings."
-            + "Thank you.");
+//    Scanner keyboard = new Scanner(System.in);
+//    int tithing;
+//    System.out.print("How much wheat would you like to pay for your tithing?");
+//            tithing = keyboard.nextInt();
+//    System.out.println("You have paid " + tithing +" for your tithes and offerings."
+//            + "Thank you.");
     
     }
 //sit and rest in the church and pray

@@ -23,18 +23,20 @@ public abstract class View implements ViewInterface {
             String[] inputs = getInputs();
             
             if (inputs[0] == null || inputs[0] == "Q"){
+                ErrorView.display(this.getClass().getName(), "Please enter a value.");
                 return;
             }
            try{ 
             endView = doAction(inputs);
            } catch (NumberFormatException e){
-           System.out.println("Unacceptable Value. Try again.");}
+            ErrorView.display(this.getClass().getName(), "Unacceptable Value. Try again.");}
         } while(endView != true);
     }
 
     @Override
     public String getInput(String promptMessage) {
-        System.out.println(promptMessage);
+        
+        this.console.println(promptMessage);
         boolean valid = false;
         String input = "";
         
@@ -43,9 +45,10 @@ public abstract class View implements ViewInterface {
             input = keyboard.nextLine().trim();
             
             if(input.length() < 1){
-                System.out.println("You must enter a value.");
+                ErrorView.display(this.getClass().getName(), "Unacceptable Value. Try again.");
                 continue;
             }
+            
             
             valid = true;
         }

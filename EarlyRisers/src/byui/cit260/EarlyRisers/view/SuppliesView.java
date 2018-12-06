@@ -45,11 +45,11 @@ public class SuppliesView extends View {
     }
     //Get input from user 
 
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String choice = keyboard.nextLine();
-        return choice;
-    }
+//    private String getInput() {
+//        Scanner keyboard = new Scanner(System.in);
+//        String choice = keyboard.nextLine();
+//        return choice;
+//    }
 
     private void calculatePopulation() {
         int population = new InventoryItem().getPopulation();
@@ -82,7 +82,7 @@ public class SuppliesView extends View {
                 displayToolsInventoryView();
                 break;
             default:
-                System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }

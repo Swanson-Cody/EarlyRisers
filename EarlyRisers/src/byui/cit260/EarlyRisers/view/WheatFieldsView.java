@@ -50,26 +50,26 @@ public class WheatFieldsView extends View{
             case "3":
               return true;
             default:
-                System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }
 //scene of the church where you have the option to pay tithing
 
     public void plantWheat() {
-    
-     Scanner keyboard = new Scanner(System.in);
-    int wheat;
-    System.out.print("How much wheat would you like to plant?");
-            wheat = keyboard.nextInt();
-    System.out.println("You planted " + wheat + " more bussles of wheat.");
-    
+//    
+//    Scanner keyboard = new Scanner(System.in);
+//    int wheat;
+//    System.out.print("How much wheat would you like to plant?");
+//            wheat = keyboard.nextInt();
+//    System.out.println("You planted " + wheat + " more bussles of wheat.");
+//    
     }
 //sit and rest in the church and pray
 
     private void rats() {
         WheatEaten wheatEaten = new WheatEaten();
-        System.out.println("Those rats are such pesky things, but you manged"
+        System.out.println("Those rats are such pesky things, but you managed"
                 + " to scare of a few");
         System.out.println("They did eat" + wheatEaten + " bussels of wheat though.");
     }

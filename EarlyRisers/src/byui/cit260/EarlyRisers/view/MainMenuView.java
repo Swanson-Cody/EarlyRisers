@@ -63,7 +63,7 @@ public class MainMenuView extends View {
             case "4":
                 saveGame();
             default:
-                System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }

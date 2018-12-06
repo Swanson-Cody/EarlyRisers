@@ -51,7 +51,7 @@ public class ReportsMenuView extends View {
     }
 
     private void viewAuthors() {
-        System.out.println("Cody, Rachel and Heather! hfYou're Viewing Authors!");
+        System.out.println("Cody, Rachel and Heather! You're Viewing Authors!");
     }
 
     private void goToGameMenu() {
@@ -77,7 +77,7 @@ public class ReportsMenuView extends View {
         } else if ("4".equals(choice)) {
             viewAuthors();
         } else {
-            System.out.println("\nInvalid selection.");
+            ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
 
         return false;

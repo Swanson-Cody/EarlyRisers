@@ -49,7 +49,7 @@ public class MovePlayerView extends View {
                 } 
                               }
                 catch (MapControlException e){
-                    System.out.println("You can't move any further to the right.");
+                    ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
                 }
                 break;
             case "2": //Left
@@ -59,7 +59,7 @@ public class MovePlayerView extends View {
                     return true;
                  }
                 } catch (MapControlException e) {
-                    System.out.println("You can't move any further to the left.");
+                     ErrorView.display(this.getClass().getName(), "You can't move any further to the left.");
                 }
                 
                 break;
@@ -70,7 +70,7 @@ public class MovePlayerView extends View {
                     return true;
                 }
                 }catch (MapControlException e) {
-                    System.out.println("You can't move any further up.");
+                     ErrorView.display(this.getClass().getName(), "You can't move any further up.");
                 }
                 break;
             case "4": //Down
@@ -80,14 +80,14 @@ public class MovePlayerView extends View {
                     return true;
                }
                 } catch (MapControlException e) {
-                    System.out.println("You can't move any further down.");
+                     ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
                 }
                 break;
                       
             case "5":
                 return true;
             default:
-                System.out.println("\nInvalid input.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
 
         }
         return false;

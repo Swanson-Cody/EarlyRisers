@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public class GameControl {
 
-    Scanner keyboard = new Scanner(System.in);
+    //Scanner keyboard = new Scanner(System.in);
     
     // size of the Locations array
     private static final int MAX_ROW = 5;

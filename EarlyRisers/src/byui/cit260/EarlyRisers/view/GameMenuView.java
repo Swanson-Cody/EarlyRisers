@@ -76,7 +76,7 @@ public class GameMenuView extends View {
             case "9":
                 return true;
             default:
-                System.out.println("\nInvalid selection.");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }
