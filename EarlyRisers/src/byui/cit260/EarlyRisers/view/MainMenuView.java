@@ -34,9 +34,8 @@ public class MainMenuView extends View {
                 + "\n|                                           |"
                 + "\n+-------------------------------------------+\n"
                 + "\n1: Start a new game"
-                + "\n2: Start a saved game"
+                + "\n2: Load a saved game"
                 + "\n3: Display the Help Menu"
-                + "\n4: Save Game"
                 + "\nQ: Quit"
         );
 
@@ -60,8 +59,6 @@ public class MainMenuView extends View {
             case "3":
                 helpMenu();
                 break;
-            case "4":
-                saveGame();
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
@@ -96,16 +93,13 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("This will display available saved games eligible to load.");
+        StartSavedGameView loadGame = new StartSavedGameView();
+        loadGame.display();
     }
 
     private void helpMenu() {
         HelpMenuView menu = new HelpMenuView();
         menu.display();
-    }
-
-    private void saveGame() {
-
     }
 
 }

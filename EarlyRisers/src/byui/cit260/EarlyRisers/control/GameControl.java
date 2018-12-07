@@ -14,9 +14,11 @@ import java.util.ArrayList;
 import byui.cit260.EarlyRisers.exceptions.GameControlException;
 import byui.cit260.EarlyRisers.exceptions.MapControlException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
@@ -155,5 +157,22 @@ public static void createTools() throws GameControlException{
         }
         
         System.out.println("Your game has been saved to: " + new File("").getAbsolutePath() + '\\' + fileName + ".dat");
+    }
+    
+    public static Game getGame(String fileName) throws GameControlException, IOException, ClassNotFoundException {
+        if(fileName == null || fileName.length() < 1){
+            throw new GameControlException("File name cannot be null.");
+        }
+        
+        Game game = new Game();
+        
+        try (FileInputStream fileStream = new FileInputStream(fileName); ObjectInputStream objectStream = new ObjectInputStream(fileStream)){
+            game = (Game) objectStream.readObject();
+        }
+        
+        EarlyRisers.setCurrentGame(game);
+        EarlyRisers.setPlayer(game.getPlayer());
+        
+        return game;
     }
 }
