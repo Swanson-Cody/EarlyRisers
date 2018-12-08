@@ -33,9 +33,9 @@ public class ReportsMenuView extends View {
                 + "\n+-------------------------------------------+"
                 + "\n1: View the animals in the storehouse"
                 + "\n2: View the tools in the storehouse"
-                + "\n3: View the provisions in the storehouse"
+                + "\n3: View the wheat in the storehouse"
                 + "\n4: View the authors of this game"
-                + "\n5: View inventory report"
+                + "\n5: View entire inventory report"
                 + "\n6: Exit Reports Menu screen");
         inputs[0] = selection;
         return inputs;
@@ -44,25 +44,47 @@ public class ReportsMenuView extends View {
 
     private void viewAnimals() {
 
-//        ArrayList<InventoryItems>
-//        
-//        String animals = new InventoryItem().getAnimals();
-//        System.out.println(animals + " You're Viewing Animals!");
+        String reportInventory = Reports.getInventoryReport("Animal");
+        System.out.println(reportInventory);
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     private void viewTools() {
-     
-            String reportInventory = Reports.getInventoryReport("Tools");
-            System.out.println(reportInventory);
-//       
-        
+
+        String reportInventory = Reports.getInventoryReport("Tools");
+        System.out.println(reportInventory);
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     private void viewProvisions() {
-        String reportInventory = Reports.getInventoryReport("Provisions");
+        String reportInventory = Reports.getInventoryReport("Wheat");
         System.out.println(reportInventory);
-//     
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
+        }
     }
 
     private void viewAuthors() {
@@ -83,19 +105,17 @@ public class ReportsMenuView extends View {
             }
         }
 
-//       
+     
     }
 
-//        int population = new InventoryItem().getPopulation();
-//        System.out.println("The current population is " + population);
 
-private void goToGameMenu() {
+    private void goToGameMenu() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     @Override
-        public boolean doAction(String[] input) {
+    public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
         choice = choice.toUpperCase();
 

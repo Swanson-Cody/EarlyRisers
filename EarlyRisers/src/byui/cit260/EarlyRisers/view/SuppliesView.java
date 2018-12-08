@@ -54,15 +54,21 @@ public class SuppliesView extends View {
     private void calculatePopulation() {
         Game game = EarlyRisers.getCurrentGame();
         game.getInventory();
-        int population = new InventoryItem().getPopulation();
-        System.out.println("The current population is " + population);
+        ArrayList<InventoryItem> population = game.getInventory();
+        for (InventoryItem item : population) {
+            if (item.getItemType().equals("Utility")) {
+                System.out.println(item.getName() + ", " + item.getItemType());
+            }
+        }
+
+//        int population = new InventoryItem().getPopulation();
+//        System.out.println("The current population is " + population);
     }
 
     public void printToolsView() {
         Game game = EarlyRisers.getCurrentGame();
         game.getInventory();
         ArrayList<InventoryItem> tools = game.getInventory();
-        //      System.out.println("Items available in the tool array " + tools); 
         for (InventoryItem item : tools) {
             if (item.getItemType().equals("Tools")) {
                 System.out.println(item.getName() + ", " + item.getItemType());
