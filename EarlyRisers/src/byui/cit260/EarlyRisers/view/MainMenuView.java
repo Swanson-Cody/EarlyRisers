@@ -80,13 +80,11 @@ public class MainMenuView extends View {
 
         try {
             GameControl.createNewGame(EarlyRisers.getPlayer());
-        } catch (GameControlException ex) {
-            System.out.println(ex.getMessage());
+        } catch (GameControlException | MapControlException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
             //          Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (MapControlException ex) {
-            System.out.println(ex.getMessage());
-            //        Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //        Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
 
         GameMenuView menu = new GameMenuView();
         menu.display();

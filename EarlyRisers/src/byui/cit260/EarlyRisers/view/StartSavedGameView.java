@@ -42,9 +42,7 @@ public class StartSavedGameView extends View {
         catch(GameControlException e) {
             ErrorView.display(this.getClass().getName(), "\nFailed to load game. Exception: " + e.getMessage());
             return false;
-        } catch (IOException ex) {
-            Logger.getLogger(StartSavedGameView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(StartSavedGameView.class.getName()).log(Level.SEVERE, null, ex);
         }
         

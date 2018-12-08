@@ -5,8 +5,16 @@
  */
 package byui.cit260.EarlyRisers.view;
 
+import static byui.cit260.EarlyRisers.control.GameControl.Game;
+import byui.cit260.EarlyRisers.control.Reports;
+import byui.cit260.EarlyRisers.exceptions.ReportsException;
 import java.util.Scanner;
 import byui.cit260.EarlyRisers.model.InventoryItem;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Family
@@ -14,8 +22,6 @@ import byui.cit260.EarlyRisers.model.InventoryItem;
 public class ReportsMenuView extends View {
 
     boolean exit;
-
-   
 
     //Get number input from user 
     @Override
@@ -29,41 +35,71 @@ public class ReportsMenuView extends View {
                 + "\n2: View the tools in the storehouse"
                 + "\n3: View the provisions in the storehouse"
                 + "\n4: View the authors of this game"
-                + "\n5: Exit Reports Menu screen");
+                + "\n5: View inventory report"
+                + "\n6: Exit Reports Menu screen");
         inputs[0] = selection;
         return inputs;
 
     }
 
     private void viewAnimals() {
-        String animals = new InventoryItem().getAnimals();
-        System.out.println(animals + " You're Viewing Animals!");
+
+//        ArrayList<InventoryItems>
+//        
+//        String animals = new InventoryItem().getAnimals();
+//        System.out.println(animals + " You're Viewing Animals!");
     }
 
     private void viewTools() {
-        String tools = new InventoryItem().getName();
-        System.out.println(tools + " You're Viewing Tools!");
+     
+            String reportInventory = Reports.getInventoryReport("Tools");
+            System.out.println(reportInventory);
+//       
+        
     }
 
     private void viewProvisions() {
-        String provisions = new InventoryItem().getProvisions();
-        System.out.println(provisions + " You're Viewing Provisions!");
+        String reportInventory = Reports.getInventoryReport("Provisions");
+        System.out.println(reportInventory);
+//     
+
     }
 
     private void viewAuthors() {
         System.out.println("Cody, Rachel and Heather! You're Viewing Authors!");
     }
 
-    private void goToGameMenu() {
+    private void viewReports() {
+
+        String reportInventory = Reports.getInventoryReport("");
+        System.out.println(reportInventory);
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+//       
+    }
+
+//        int population = new InventoryItem().getPopulation();
+//        System.out.println("The current population is " + population);
+
+private void goToGameMenu() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
+
     @Override
-    public boolean doAction(String[] input){
+        public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
         choice = choice.toUpperCase();
 
-        if ("5".equals(choice)) {
+        if ("6".equals(choice)) {
             System.out.println("You have exited the Reports Menu. "
                     + "Have fun with the game!");
             goToGameMenu();
@@ -76,6 +112,8 @@ public class ReportsMenuView extends View {
             viewProvisions();
         } else if ("4".equals(choice)) {
             viewAuthors();
+        } else if ("5".equals(choice)) {
+            viewReports();
         } else {
             ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }

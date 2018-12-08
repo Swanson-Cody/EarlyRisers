@@ -5,13 +5,14 @@
  */
 package byui.cit260.EarlyRisers.view;
 
-import byui.cit260.EarlyRisers.control.GameControl;
-import static byui.cit260.EarlyRisers.control.GameControl.Game;
-import byui.cit260.EarlyRisers.main.EarlyRisers;
-import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.lang.String;
+import byui.cit260.EarlyRisers.control.Reports;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 
 /**
  *
@@ -50,20 +51,24 @@ public class SuppliesView extends View {
 //        String choice = keyboard.nextLine();
 //        return choice;
 //    }
-
     private void calculatePopulation() {
+        Game game = EarlyRisers.getCurrentGame();
+        game.getInventory();
         int population = new InventoryItem().getPopulation();
         System.out.println("The current population is " + population);
     }
 
-    private void displayToolsInventoryView() {
-         Game game = EarlyRisers.getCurrentGame();
-         game.getInventory();
-         ArrayList<InventoryItem> tools = game.getInventory();
-        System.out.println("Items available in the tool array " + tools); 
-  
-       
-        
+    public void printToolsView() {
+        Game game = EarlyRisers.getCurrentGame();
+        game.getInventory();
+        ArrayList<InventoryItem> tools = game.getInventory();
+        //      System.out.println("Items available in the tool array " + tools); 
+        for (InventoryItem item : tools) {
+            if (item.getItemType().equals("Tools")) {
+                System.out.println(item.getName() + ", " + item.getItemType());
+            }
+        }
+
     }
 
     @Override
@@ -79,12 +84,11 @@ public class SuppliesView extends View {
                 calculatePopulation();
                 break;
             case "2":
-                displayToolsInventoryView();
+                printToolsView();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
     }
-
 }
