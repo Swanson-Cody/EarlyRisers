@@ -19,6 +19,7 @@ public class InventoryItem implements Serializable{
     private int tithing;
     private int population;
     private int quantity;
+    private int land;
     private String name;
    
     
@@ -41,6 +42,13 @@ public class InventoryItem implements Serializable{
         this.name = name;
     }
     
+        public int getLand() {
+        return land;
+    }
+
+    public void setLand(int acresOfLand) {
+        this.land = acresOfLand;
+    }
 
     public int getQuantity() {
         return quantity;

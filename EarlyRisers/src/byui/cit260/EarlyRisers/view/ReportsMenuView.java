@@ -34,9 +34,10 @@ public class ReportsMenuView extends View {
                 + "\n1: View the animals in the storehouse"
                 + "\n2: View the tools in the storehouse"
                 + "\n3: View the wheat in the storehouse"
-                + "\n4: View the authors of this game"
-                + "\n5: View entire inventory report"
-                + "\n6: Exit Reports Menu screen");
+                + "\n4: View the acres of land owned"        
+                + "\n5: View the authors of this game"
+                + "\n6: View entire inventory report"
+                + "\n7: Exit Reports Menu screen");
         inputs[0] = selection;
         return inputs;
 
@@ -83,7 +84,20 @@ public class ReportsMenuView extends View {
             } catch (ReportsException ex) {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+        }
+    }
+    
+    private void viewLand() {
+        String reportInventory = Reports.getInventoryReport("Land");
+        System.out.println(reportInventory);
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -104,7 +118,6 @@ public class ReportsMenuView extends View {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
      
     }
 
@@ -119,7 +132,7 @@ public class ReportsMenuView extends View {
         String choice = input[0].toUpperCase();
         choice = choice.toUpperCase();
 
-        if ("6".equals(choice)) {
+        if ("7".equals(choice)) {
             System.out.println("You have exited the Reports Menu. "
                     + "Have fun with the game!");
             goToGameMenu();
@@ -131,8 +144,10 @@ public class ReportsMenuView extends View {
         } else if ("3".equals(choice)) {
             viewProvisions();
         } else if ("4".equals(choice)) {
-            viewAuthors();
+            viewLand();
         } else if ("5".equals(choice)) {
+            viewAuthors();
+        } else if ("6".equals(choice)) {
             viewReports();
         } else {
             ErrorView.display(this.getClass().getName(), "\nInvalid selection");

@@ -134,7 +134,7 @@ public static void createTools() throws GameControlException{
 
     public static void createLand() throws GameControlException{
         ArrayList<InventoryItem> land = new ArrayList<>();
-        land.add(new InventoryItem("Land", 1000));
+        land.add(new InventoryItem("Land", "Acres", 1000));
         EarlyRisers.getCurrentGame().addToInventory(land);
     }
 
