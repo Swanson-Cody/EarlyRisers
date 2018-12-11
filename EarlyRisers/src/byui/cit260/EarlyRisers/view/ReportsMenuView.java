@@ -49,14 +49,19 @@ public class ReportsMenuView extends View {
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
+            if (response.isEmpty()){
+            ErrorView.display(this.getClass().getName(), "You must enter a file name.");
+            }
             try {
                 Reports.printReport(response, reportInventory);
             } catch (ReportsException ex) {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
             }
         }
     }
-
+//  for (InventoryItem item : inventoryItems) {
+//            if (type.equals("") || (type.equals(item.getItemType())))
     private void viewTools() {
 
         String reportInventory = Reports.getInventoryReport("Tools");
@@ -68,6 +73,7 @@ public class ReportsMenuView extends View {
                 Reports.printReport(response, reportInventory);
             } catch (ReportsException ex) {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
             }
         }
     }
@@ -82,6 +88,7 @@ public class ReportsMenuView extends View {
                 Reports.printReport(response, reportInventory);
             } catch (ReportsException ex) {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
             }
 
         }
@@ -102,12 +109,11 @@ public class ReportsMenuView extends View {
                 Reports.printReport(response, reportInventory);
             } catch (ReportsException ex) {
                 Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection");
             }
         }
 
-     
     }
-
 
     private void goToGameMenu() {
         GameMenuView gameMenu = new GameMenuView();
