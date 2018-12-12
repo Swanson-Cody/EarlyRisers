@@ -266,6 +266,71 @@ public class MapControl {
             map.setLocation(row, 4, loc4);
 
         }
+        
+        loc = map.getLocations()[0][4];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("When Ishmeal died, he was buried here?");
+        question.setAnswer1("Nephihah");
+        question.setAnswer2("Ninevah");
+        question.setAnswer3("Nowhere, he was taken to heaven");
+        question.setAnswer4("Nahom");
+        question.setCorrectAnswer(4);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[1][4];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("I was on of the 4 sons of Mosiah'");
+        question.setAnswer1("Onidah");
+        question.setAnswer2("Onnon");
+        question.setAnswer3("Mosiah only had 3 sons");
+        question.setAnswer4("Omner");
+        question.setCorrectAnswer(4);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[2][4];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Corniantumr killed me against the walls of the city?");
+        question.setAnswer1("Paanchi");
+        question.setAnswer2("Pahoran");
+        question.setAnswer3("Pacumeni");
+        question.setAnswer4("Pachus");
+        question.setCorrectAnswer(3);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[3][4];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Amalakiah took this Lamanite queen as his wife?");
+        question.setAnswer1("Abish");
+        question.setAnswer2("Isabel");
+        question.setAnswer3("Saria");
+        question.setAnswer4("We were not told her name");
+        question.setCorrectAnswer(4);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[4][4];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Name meaning 'holy stand'");
+        question.setAnswer1("Rameumptom");
+        question.setAnswer2("Ripliancum");
+        question.setAnswer3("Rabbana");
+        question.setAnswer4("Roshana");
+        question.setCorrectAnswer(1);
+        question.setPoints(5);
+        loc.setQuestion(question);
 //Create the inventory shop
         for (int row = 0; row < MAX_ROW; row++) {
             Location loc0 = new Location();
