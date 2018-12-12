@@ -13,7 +13,6 @@ import java.util.Random;
  * @author Heather
  */
 public class Population {
-
     /**
      *
      * @param population
@@ -90,7 +89,7 @@ public class Population {
             int random = percent.nextInt(10);
             ++random;
             System.out.println(random);
-            result = newPopulation - ((random / 100) * newPopulation);
+            result = ((random / 100) * newPopulation)- newPopulation; 
             Math.round(result);
         }
         return result;

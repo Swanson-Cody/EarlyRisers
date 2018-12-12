@@ -22,9 +22,9 @@ public class MovePlayerView extends View {
     public String[] getInputs() {
         String[] inputs = new String[10];
         String selection = this.getInput(
-                "+-------------------------------------------+"
-                + "|       How to move around the Game         |"
-                + "+-------------------------------------------+"
+                "\n+-------------------------------------------+"
+                + "\n|       How to move around the Game         |"
+                + "\n+-------------------------------------------+"
                 + "\nPlease make a menu selection: "
                 + "\n1: Move to the right"
                 + "\n2: Move to the left"
