@@ -339,7 +339,72 @@ public class MapControl {
             loc0.setSymbol("I" + (row + 1));
             map.setLocation(row, 0, loc0);
         }
+loc = map.getLocations()[0][0];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Ammon defended the flocks after being in the service of the king for how long?");
+        question.setAnswer1("1: 3 days");
+        question.setAnswer2("2: 3 weeks");
+        question.setAnswer3("3: 3 months");
+        question.setAnswer4("4: 3 years");
+        question.setCorrectAnswer(1);
+        question.setPoints(5);
+        loc.setQuestion(question);
 
+        loc = map.getLocations()[1][0];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("Who was one of the 12 Nephite disciples");
+        question.setAnswer1("1: Judas");
+        question.setAnswer2("2: Jonah");
+        question.setAnswer3("3: Jonas");
+        question.setAnswer4("4: Judah");
+        question.setCorrectAnswer(3);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[2][0];
+        item = new InventoryItem("shovel", 1);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("What farewell phrase is used in the Book of Mormon?");
+        question.setAnswer1("1: adios");
+        question.setAnswer2("2: adieu");
+        question.setAnswer3("3: goodbye");
+        question.setAnswer4("4: ciao");
+        question.setCorrectAnswer(2);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[3][0];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("What term is used in the Book of Mormon?");
+        question.setAnswer1("1: lagoon");
+        question.setAnswer2("2: bay");
+        question.setAnswer3("3: ocean");
+        question.setAnswer4("4: gulf");
+        question.setCorrectAnswer(4);
+        question.setPoints(5);
+        loc.setQuestion(question);
+
+        loc = map.getLocations()[4][0];
+        item = new InventoryItem("potato", 3);
+        loc.setItem(item);
+        question = new Question();
+        question.setQuestionText("What mountain did the brother of Jared say 'Remove' and it removed?");
+        question.setAnswer1("1: Zerin");
+        question.setAnswer2("2: Serphim");
+        question.setAnswer3("3: Jershap");
+        question.setAnswer4("4: Shimrod");
+        question.setCorrectAnswer(1);
+        question.setPoints(5);
+        loc.setQuestion(question);
+        
+        
         movePlayerToStartingLocation(map);
         return map;
     }
