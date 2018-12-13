@@ -10,7 +10,8 @@ import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -90,10 +91,12 @@ public class GameMenuView extends View {
     }
 //scene of the warehouse where you can buy and sell wheat and extra supplies
 //are stored
-private void suppliesView(){
-            SuppliesView view = new SuppliesView();
-            view.display();
-}      
+
+    private void suppliesView() {
+        SuppliesView view = new SuppliesView();
+        view.display();
+    }
+
     private void movePlayer() {
         MovePlayerView move = new MovePlayerView();
         move.display();
@@ -178,10 +181,19 @@ private void suppliesView(){
             System.out.println(currentLocation.getQuestion().getAnswer2());
             System.out.println(currentLocation.getQuestion().getAnswer3());
             System.out.println(currentLocation.getQuestion().getAnswer4());
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the correct answer 1-4.");
-           int choice = Integer.parseInt(System.console().readLine());
-          
-            
+            String input = scanner.nextLine();
+            int number = Integer.parseInt(input);
+            if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
+                
+                System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
+            } else {
+                System.out.println("That is the correct answer! You have earned 5 points.");
+            }
+            {
+            }
+
         }
     }
 
@@ -206,7 +218,7 @@ private void suppliesView(){
             return;
         }
     }
-    
+
     private void saveGameView() {
         SaveGameView save = new SaveGameView();
         save.display();
