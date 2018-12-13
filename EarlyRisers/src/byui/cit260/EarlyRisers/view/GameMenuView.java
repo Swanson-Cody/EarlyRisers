@@ -169,11 +169,19 @@ private void suppliesView(){
         Location currentLocation = map.getCurrentLocation();
         System.out.println("You are currently at " + currentLocation.getDescription());
         if (currentLocation.getItem() != null) {
-            System.out.println("There is a " + currentLocation.getItem().getItemType() + "at this location.");
+            System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
         }
         if (currentLocation.getQuestion() != null) {
             System.out.println("I have a question for you.");
             System.out.println(currentLocation.getQuestion().getQuestionText());
+            System.out.println(currentLocation.getQuestion().getAnswer1());
+            System.out.println(currentLocation.getQuestion().getAnswer2());
+            System.out.println(currentLocation.getQuestion().getAnswer3());
+            System.out.println(currentLocation.getQuestion().getAnswer4());
+            System.out.println("Enter the correct answer 1-4.");
+           int choice = Integer.parseInt(System.console().readLine());
+          
+            
         }
     }
 

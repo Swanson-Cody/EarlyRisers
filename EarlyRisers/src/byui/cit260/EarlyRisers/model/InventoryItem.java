@@ -19,19 +19,9 @@ public class InventoryItem implements Serializable{
     private int tithing;
     private int population;
     private int quantity;
+    private int land;
     private String name;
    
-    
-//    public static void createTools() throws GameControlException{
-//        ArrayList<InventoryItem> tools = new ArrayList<>();
-//        tools.add(new InventoryItem("Tools", "Plows", 1));
-//        tools.add(new InventoryItem("Tools", "", 0));
-//        tools.add(new InventoryItem("Tools", "Shovel", 2));
-//        tools.add(new InventoryItem("Tools", "Scythe", 1));
-//        tools.add(new InventoryItem("Tools", "", 3));
-//
-//        EarlyRisers.getCurrentGame().setInventory(tools);
-//
 
     public String getName() {
         return name;
@@ -41,6 +31,13 @@ public class InventoryItem implements Serializable{
         this.name = name;
     }
     
+        public int getLand() {
+        return land;
+    }
+
+    public void setLand(int acresOfLand) {
+        this.land = acresOfLand;
+    }
 
     public int getQuantity() {
         return quantity;

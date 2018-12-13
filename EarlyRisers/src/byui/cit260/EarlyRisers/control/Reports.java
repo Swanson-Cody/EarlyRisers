@@ -24,9 +24,9 @@ public class Reports {
     public static void printReport(String outputLocation, String reportString) throws ReportsException {
         try (PrintWriter out = new PrintWriter(outputLocation)) {
             out.println(reportString);
-            
+
         } catch (IOException ex) {
-            throw new ReportsException ("Error printing report: " +ex.getMessage());
+            throw new ReportsException("Error printing report: " + ex.getMessage());
         }
 
     }
@@ -36,16 +36,34 @@ public class Reports {
         ArrayList<InventoryItem> inventoryItems = game.getInventory();
         String reportString;
 
-        reportString = "\r\n          "+ type +" Inventory Report             ";
+        reportString = "\r\n          " + type + " Inventory Report             ";
         reportString += String.format("\r%n%-20s%-10s%-10s", "Type", "Quantity", "Name");
         reportString += String.format("\r%n%-20s%-10s%-10s", "----", "--------", "----");
         for (InventoryItem item : inventoryItems) {
-            if (type.equals("") || (type.equals(item.getItemType())))
-            reportString += String.format("\r%n%-20s%-10s%-10s", item.getItemType(),
-                    item.getQuantity(),
-                    item.getName());
+            if (type.equals("") || (type.equals(item.getItemType()))) {
+                reportString += String.format("\r%n%-20s%-10s%-10s", item.getItemType(),
+                        item.getQuantity(),
+                        item.getName());
+            }
         }
 
         return reportString;
     }
+
+//    public static String endYearReport(String name) {
+//        Game game = EarlyRisers.getCurrentGame();
+//        ArrayList<InventoryItem> inventoryItems = game.getInventory();
+//        String endYearReport;
+//        endYearReport = "\r\n         Year Inventory Report             ";
+//        endYearReport += String.format("\r%n%-10s%-10s", "Name", "Quantity");
+//        endYearReport += String.format("\r%n%-10s%-10s", "----", "--------");
+//        for (InventoryItem item : inventoryItems) {
+//            if (name.equals("") || (name.equals(item.getItemType()))) {
+//                endYearReport += String.format("\r%n%-10s%-10s",
+//                        item.getName(),
+//                        item.getQuantity());
+//            }
+//
+//        }return endYearReport;
+//    }
 }

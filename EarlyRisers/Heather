@@ -1,0 +1,20 @@
+
+           Inventory Report             
+Type                Quantity  Name      
+----                --------  ----      
+Tools               1         Plows     
+Tools               0                   
+Tools               2         Shovel    
+Tools               1         Scythe    
+Tools               3                   
+Wheat               3000      Wheat Bushels
+Animal              50        Rat       
+Animal              0         Ox        
+Animal              0         Horse     
+Utility             100       Population
+Tithing             0         null      
+Land                1000      Acres     
+Year                0         null      
+CropYield           0         null      
+Dead                0         null      
+Acres Planted       0         null      

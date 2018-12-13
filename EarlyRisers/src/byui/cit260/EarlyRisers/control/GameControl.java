@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -134,7 +134,7 @@ public static void createTools() throws GameControlException{
 
     public static void createLand() throws GameControlException{
         ArrayList<InventoryItem> land = new ArrayList<>();
-        land.add(new InventoryItem("Land", 1000));
+        land.add(new InventoryItem("Land", "Acres", 1000));
         EarlyRisers.getCurrentGame().addToInventory(land);
     }
 
@@ -146,7 +146,7 @@ public static void createTools() throws GameControlException{
         cropData.add(new InventoryItem("Acres Planted", 0));
         EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
-
+  
     public static void saveGame(Game game, String fileName) throws GameControlException, FileNotFoundException, IOException {
         if(fileName == null || fileName.length() < 1){
             throw new GameControlException("This is an exception");
