@@ -12,6 +12,7 @@ import java.util.Scanner;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -109,6 +110,7 @@ public class ReportsMenuView extends View {
     }
 
     private void viewAuthors() {
+                   
         System.out.println("Cody, Rachel and Heather! You're Viewing Authors!");
     }
 

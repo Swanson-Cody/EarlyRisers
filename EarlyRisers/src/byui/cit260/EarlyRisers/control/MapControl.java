@@ -266,7 +266,7 @@ public class MapControl {
             map.setLocation(row, 4, loc4);
 
         }
-        
+
         loc = map.getLocations()[0][4];
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
@@ -294,7 +294,7 @@ public class MapControl {
         loc.setQuestion(question);
 
         loc = map.getLocations()[2][4];
-        item = new InventoryItem("potato", 3);
+        item = new InventoryItem("shovel", 1);
         loc.setItem(item);
         question = new Question();
         question.setQuestionText("Corniantumr killed me against the walls of the city?");
@@ -331,6 +331,7 @@ public class MapControl {
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+
 //Create the inventory shop
         for (int row = 0; row < MAX_ROW; row++) {
             Location loc0 = new Location();
@@ -338,6 +339,7 @@ public class MapControl {
             loc0.setSymbol("I" + (row + 1));
             map.setLocation(row, 0, loc0);
         }
+
         movePlayerToStartingLocation(map);
         return map;
     }

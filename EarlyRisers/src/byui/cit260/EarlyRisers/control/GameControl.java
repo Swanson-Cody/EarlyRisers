@@ -146,7 +146,7 @@ public static void createTools() throws GameControlException{
         cropData.add(new InventoryItem("Acres Planted", 0));
         EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
-
+  
     public static void saveGame(Game game, String fileName) throws GameControlException, FileNotFoundException, IOException {
         if(fileName == null || fileName.length() < 1){
             throw new GameControlException("This is an exception");

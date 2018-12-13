@@ -7,9 +7,9 @@
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/GameMenuView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/model/Map.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/exceptions/ReportsException.java</file>
+            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/Reports.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/GameControl.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/exceptions/BuyLandException.java</file>
-            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/test/Control/HarvestTimeTest.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/ReportsMenuView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/main/EarlyRisers.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/model/Location.java</file>
@@ -20,12 +20,10 @@
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/control/BuyLand.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/ErrorView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/SaveGameView.java</file>
-            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/test/Control/PopulationTest.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/ForTheBeautyOfTheEarthView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/ViewInterface.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/ChurchView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/exceptions/GameControlException.java</file>
-            <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/test/Control/BuyLandTest.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/SceneMenuView.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/view/View.java</file>
             <file>file:/C:/Users/Heather/Documents/NetBeansProjects/EarlyRisers/EarlyRisers/src/byui/cit260/EarlyRisers/exceptions/HarvestTimeException.java</file>

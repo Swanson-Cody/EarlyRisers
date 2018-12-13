@@ -57,7 +57,7 @@ public class SuppliesView extends View {
         ArrayList<InventoryItem> population = game.getInventory();
         for (InventoryItem item : population) {
             if (item.getItemType().equals("Utility")) {
-                System.out.println(item.getName() + ", " + item.getItemType());
+                System.out.println(item.getName() + ", " + item.getQuantity());
             }
         }
 
@@ -69,9 +69,14 @@ public class SuppliesView extends View {
         Game game = EarlyRisers.getCurrentGame();
         game.getInventory();
         ArrayList<InventoryItem> tools = game.getInventory();
+//        ArrayList<InventoryItem> population = game.getInventory();
+//        ArrayList<InventoryItem> land = game.getInventory();
+//        ArrayList<InventoryItem> wheat = game.getInventory();
+//         ArrayList<InventoryItem> tithing = game.getInventory();
+//          ArrayList<InventoryItem> cropData = game.getInventory();
         for (InventoryItem item : tools) {
             if (item.getItemType().equals("Tools")) {
-                System.out.println(item.getName() + ", " + item.getItemType());
+                System.out.println(item.getName() + ", " + item.getItemType() + item.getQuantity());
             }
         }
 
