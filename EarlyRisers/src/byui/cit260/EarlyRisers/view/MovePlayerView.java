@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.view;
+
 import byui.cit260.EarlyRisers.control.MapControl;
 import byui.cit260.EarlyRisers.exceptions.MapControlException;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
+import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
 import byui.cit260.EarlyRisers.model.Map;
 import java.util.Scanner;
@@ -16,6 +18,7 @@ import java.util.Scanner;
  * @author rache
  */
 public class MovePlayerView extends View {
+
     //Get number input from user 
 
     @Override
@@ -34,62 +37,83 @@ public class MovePlayerView extends View {
         inputs[0] = selection;
         return inputs;
     }
-    
+
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
-        Map map = EarlyRisers.getCurrentGame().getMap();
+        Game game = EarlyRisers.getCurrentGame();
+        Map map = game.getMap();
+        int moves = game.getMoves();
         switch (choice) {
 
             case "1": //Right
-                try{
-                if(map.getCurrentLocation().getColumn() < map.getColCount() - 1){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() + 1);
-                    return true;
-                } 
-                              }
-                catch (MapControlException e){
+                try {
+                    if (map.getCurrentLocation().getColumn() < map.getColCount() - 1) {
+                        MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() + 1);
+                        moves++;
+                        game.setMoves(moves);
+                        return true;
+                    }
+                } catch (MapControlException e) {
                     ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
                 }
                 break;
             case "2": //Left
-                try{
-                 if(map.getCurrentLocation().getColumn() > 0){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn()-1);
-                    return true;
-                 }
+                try {
+                    if (map.getCurrentLocation().getColumn() > 0) {
+                        MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() - 1);
+                        moves++;
+                        game.setMoves(moves);
+                        return true;
+                    }
                 } catch (MapControlException e) {
-                     ErrorView.display(this.getClass().getName(), "You can't move any further to the left.");
+                    ErrorView.display(this.getClass().getName(), "You can't move any further to the left.");
                 }
-                
+
                 break;
             case "3": //Up
-                try{
-                  if(map.getCurrentLocation().getRow() > 0){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() -1, map.getCurrentLocation().getColumn());
-                    return true;
-                }
-                }catch (MapControlException e) {
-                     ErrorView.display(this.getClass().getName(), "You can't move any further up.");
+                try {
+                    if (map.getCurrentLocation().getRow() > 0) {
+                        MapControl.movePlayer(map, map.getCurrentLocation().getRow() - 1, map.getCurrentLocation().getColumn());
+                        moves++;
+                        game.setMoves(moves);
+                        return true;
+                    }
+                } catch (MapControlException e) {
+                    ErrorView.display(this.getClass().getName(), "You can't move any further up.");
                 }
                 break;
             case "4": //Down
-                try{
-               if(map.getCurrentLocation().getRow() < map.getRowCount() - 1){
-                    MapControl.movePlayer(map, map.getCurrentLocation().getRow() +1 , map.getCurrentLocation().getColumn());
-                    return true;
-               }
+                try {
+                    if (map.getCurrentLocation().getRow() < map.getRowCount() - 1) {
+                        MapControl.movePlayer(map, map.getCurrentLocation().getRow() + 1, map.getCurrentLocation().getColumn());
+                        moves++;
+                        game.setMoves(moves);
+                        return true;
+                    }
                 } catch (MapControlException e) {
-                     ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
+                    ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
                 }
                 break;
-                      
+
             case "5":
                 return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
 
         }
-        return false;
+
+        while(game.getYear() != 10){
+        if (moves % 3 == 0) {
+            game.setYear(game.getYear()+1);
+            System.out.println("Congratulation you have made it to year " + game.getYear());
+        }
+        }
+        if (game.getYear() == 10){
+            System.out.println("You made it to the end of the game. Congratulations!!!");
+        }
+            return false;
+
+        }
+
     }
-}

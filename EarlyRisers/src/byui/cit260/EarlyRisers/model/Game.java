@@ -22,6 +22,24 @@ public class Game implements Serializable {
       private int tithing;
       private double totalTime;
       private ArrayList<InventoryItem> inventory;
+      private int moves = 0;
+      private int year = 1;
+
+    public int getMoves() {
+        return moves;
+    }
+
+    public void setMoves(int moves) {
+        this.moves = moves;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
       
 
     public double getTotalTime() {
