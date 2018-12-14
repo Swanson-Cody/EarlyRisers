@@ -4,25 +4,27 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.control;
+
 import byui.cit260.EarlyRisers.exceptions.BuyLandException;
+
 /**
  *
- * @author Family
+ * @author rache
  */
-public class BuyLand {    
-    public static int buyLand(int pricePerAcre, int acresToBuy, int acresOwned, int wheatInStorage, int population)throws BuyLandException{
-        int wheatNeeded = acresToBuy * pricePerAcre;
-        double peopleNeeded = Math.ceil((acresToBuy + acresOwned) / 10.0);
+public class SellLand {
+    public static int sellLand(int pricePerAcre, int acresToSell, int acresOwned, int wheatInStorage, int population)throws BuyLandException{
+        int wheatNeeded = acresToSell * pricePerAcre;
+        double peopleNeeded = Math.ceil((acresOwned - acresToSell) / 10.0);
         
         pricePerAcre = 10;
         acresOwned = 100;
         wheatInStorage = 500;
         population = 100;
-        acresToBuy = 0;
+        acresToSell = 0;
         
-        if (acresToBuy < 0)
+        if (acresToSell < 0)
 	{
-            throw new BuyLandException ("You cannot have less than 0 acres of land.");
+            throw new BuyLandException ("You cannot sell less than 0 acres of land.");
 	}
         else if (wheatNeeded > wheatInStorage)
         {
@@ -36,8 +38,8 @@ public class BuyLand {
 //            
 //        }
         int remainingWheat = wheatInStorage - wheatNeeded;
-        int totalAcresOwned = acresOwned + acresToBuy;
+        int totalAcresOwned = acresOwned - acresToSell;
         
-        return acresToBuy;
+        return acresToSell;
 }
 }

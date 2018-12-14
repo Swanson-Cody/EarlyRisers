@@ -4,15 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.EarlyRisers.control;
+
 import byui.cit260.EarlyRisers.exceptions.BuyLandException;
+
 /**
  *
- * @author Family
+ * @author rache
  */
-public class BuyLand {    
+public class PlantCrops {
     public static int buyLand(int pricePerAcre, int acresToBuy, int acresOwned, int wheatInStorage, int population)throws BuyLandException{
         int wheatNeeded = acresToBuy * pricePerAcre;
         double peopleNeeded = Math.ceil((acresToBuy + acresOwned) / 10.0);
+        int plantCrops = 0;
         
         pricePerAcre = 10;
         acresOwned = 100;
@@ -20,9 +23,9 @@ public class BuyLand {
         population = 100;
         acresToBuy = 0;
         
-        if (acresToBuy < 0)
+        if (plantCrops < 0)
 	{
-            throw new BuyLandException ("You cannot have less than 0 acres of land.");
+            throw new BuyLandException ("You cannot plant less than 0 crops");
 	}
         else if (wheatNeeded > wheatInStorage)
         {
@@ -38,6 +41,6 @@ public class BuyLand {
         int remainingWheat = wheatInStorage - wheatNeeded;
         int totalAcresOwned = acresOwned + acresToBuy;
         
-        return acresToBuy;
+        return plantCrops;
 }
 }

@@ -67,12 +67,14 @@ public class ManageCropsView extends View {
     }
     
     private void calculateSellLand(){
+        SellLandView menu = new SellLandView();
         System.out.println("You're going to sell land!");
     }
     private void calculateFeedPeople(){
         System.out.println("You're going to feed the people!");
     }
     private void calculatePlantCrops(){
+        PlantCropsView menu = new PlantCropsView();
         System.out.println("You're going to plant crops!");
     }
     private void calculateTithesAndOfferings(){
