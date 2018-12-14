@@ -22,22 +22,14 @@ public class MapControl {
     public static Map createMap() throws MapControlException {
         int MAX_ROW = 5;
         int MAX_COL = 5;
-
+        
+        
         Map map = new Map(MAX_ROW, MAX_COL);
 
         Location[][] locations = new Location[MAX_ROW][MAX_COL];
         map.setLocations(locations);
+        
 
-//    }
-//
-//    public static void showMap(String[][] map) {
-//
-//        for (int r = 0; r < map.length; r++) {
-//            for (int c = 0; c < map[0].length; c++) {
-//
-//            }
-//        }
-//    Location[][] locations = Map.getLocations();
         for (int row = 0; row < MAX_ROW; row++) {
             Location loc1 = new Location();
             loc1.setDescription("Wheat Field " + (row + 1));
@@ -46,7 +38,7 @@ public class MapControl {
 
         }
         Location loc = map.getLocations()[0][1];
-        InventoryItem item = new InventoryItem("potato", 3);
+        InventoryItem item = new InventoryItem("rat", 3);
         loc.setItem(item);
         Question question = new Question();
         question.setQuestionText("Who is the mayor of this town?");

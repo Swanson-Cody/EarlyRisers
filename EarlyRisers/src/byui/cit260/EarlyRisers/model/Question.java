@@ -22,6 +22,16 @@ public class Question implements Serializable {
     private String answer4;
     private int correctAnswer;
     private int points;
+    private int totalPoints;
+
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
+    
 
     public int getPoints() {
         return points;

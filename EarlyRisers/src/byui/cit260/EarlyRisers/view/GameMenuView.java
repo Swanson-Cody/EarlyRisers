@@ -5,7 +5,7 @@
  */
 package byui.cit260.EarlyRisers.view;
 //import byui.cit260.EarlyRisers.model.Player;
-
+import byui.cit260.EarlyRisers.model.Question;
 import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.Game;
 import byui.cit260.EarlyRisers.model.Location;
@@ -13,6 +13,9 @@ import byui.cit260.EarlyRisers.model.Map;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import byui.cit260.EarlyRisers.model.InventoryItem;
+
+
 
 /**
  *
@@ -131,9 +134,11 @@ public class GameMenuView extends View {
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
+        
 //  CreateNewGame game = GameControl.CreateNewGame.getCurrentGame(); // retreive the game
         Map map = EarlyRisers.getCurrentGame().getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
+        Question question = new Question();
         // Build the heading of the map
         System.out.print("  |");
         for (int column = 0; column < locations[0].length; column++) {
@@ -171,10 +176,12 @@ public class GameMenuView extends View {
         }
         Location currentLocation = map.getCurrentLocation();
         System.out.println("You are currently at " + currentLocation.getDescription());
-        if (currentLocation.getItem() != null) {
+        do  {
+        
+        if (currentLocation.getItem() != null ) {
             System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
         }
-        if (currentLocation.getQuestion() != null) {
+        if (currentLocation.getQuestion() != null  ) {
             System.out.println("I have a question for you.");
             System.out.println(currentLocation.getQuestion().getQuestionText());
             System.out.println(currentLocation.getQuestion().getAnswer1());
@@ -185,16 +192,30 @@ public class GameMenuView extends View {
             System.out.println("Enter the correct answer 1-4.");
             String input = scanner.nextLine();
             int number = Integer.parseInt(input);
-            if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
+            if (number != (currentLocation.getQuestion().getCorrectAnswer())){
                 
                 System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
-            } else {
-                System.out.println("That is the correct answer! You have earned 5 points.");
             }
+            if (number <= 0) {
+                System.out.println ("That is not a valid number");
+            }
+            if (number >= 5) {
+                System.out.println ("That is not a valid number");
+            } else if 
+                     (number == (currentLocation.getQuestion().getCorrectAnswer())) {
+              currentLocation.setVisited(true);
+              int tp = question.getTotalPoints();
+              int pt = question.getPoints();
+              tp = tp + pt;
+              question.setTotalPoints(tp);
+              
+              System.out.println("That is the correct answer! You have earned 5 points.");
+            } 
             {
             }
-
         }
+        } while (map.getCurrentLocation().isVisited() != true);
+        
     }
 
     public void newLocation() {
