@@ -24,6 +24,15 @@ public class Game implements Serializable {
       private ArrayList<InventoryItem> inventory;
       private int moves = 0;
       private int year = 1;
+      private int totalPoints = 0;
+
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
 
     public int getMoves() {
         return moves;

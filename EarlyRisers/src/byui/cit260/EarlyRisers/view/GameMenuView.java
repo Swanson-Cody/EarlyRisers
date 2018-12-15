@@ -109,7 +109,7 @@ public class GameMenuView extends View {
     private void tithes() {
         ChurchView church = new ChurchView();
         church.display();
-        System.out.println("This will take us to the church to pay tithing.");
+        this.console.println("This will take us to the church to pay tithing.");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
 
@@ -137,17 +137,18 @@ public class GameMenuView extends View {
 //  CreateNewGame game = GameControl.CreateNewGame.getCurrentGame(); // retreive the game
         Map map = EarlyRisers.getCurrentGame().getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
-        Question question = new Question();
+        Question question;
+        Game game = EarlyRisers.getCurrentGame();
         // Build the heading of the map
-        System.out.print("  |");
+        this.console.print("  |");
         for (int column = 0; column < locations[0].length; column++) {
             // print col numbers to side of map
-            System.out.print("  " + column + " |");
+            this.console.print("  " + column + " |");
         }
         // Now build the map.  For each row, show the column information
-        System.out.println();
+        this.console.println();
         for (int row = 0; row < locations.length; row++) {
-            System.out.print(row + " "); // print row numbers to side of map
+            this.console.print(row + " "); // print row numbers to side of map
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
                 leftIndicator = " ";
@@ -161,64 +162,68 @@ public class GameMenuView extends View {
                     leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "<"; // same as above
                 }
-                System.out.print("|"); // start map with a |
+                this.console.print("|"); // start map with a |
                 if (locations[row][column] == null) {
                     // No scene assigned here so use ?? for the symbol
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    this.console.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    System.out.print(leftIndicator
+                    this.console.print(leftIndicator
                             + locations[row][column].getSymbol()
                             + rightIndicator);
                 }
             }
-            System.out.println("|");
+            this.console.println("|");
         }
         Location currentLocation = map.getCurrentLocation();
-        System.out.println("You are currently at " + currentLocation.getDescription());
-        do {
+        this.console.println("You are currently at " + currentLocation.getDescription());
+        
             if (map.getCurrentLocation().isLocVisited()) {
                 return;
             }
+            do {
             if (currentLocation.getItem() != null) {
-                System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
+                this.console.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
             }
             if (currentLocation.getQuestion() != null) {
-                System.out.println("I have a question for you.");
-                System.out.println(currentLocation.getQuestion().getQuestionText());
-                System.out.println(currentLocation.getQuestion().getAnswer1());
-                System.out.println(currentLocation.getQuestion().getAnswer2());
-                System.out.println(currentLocation.getQuestion().getAnswer3());
-                System.out.println(currentLocation.getQuestion().getAnswer4());
+                question = currentLocation.getQuestion();
+                this.console.println("I have a question for you.");
+                this.console.println(question.getQuestionText());
+                this.console.println(question.getAnswer1());
+                this.console.println(question.getAnswer2());
+                this.console.println(question.getAnswer3());
+                this.console.println(question.getAnswer4());
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("Enter the correct answer 1-4.");
+                this.console.println("Enter the correct answer 1-4.");
                 String input = scanner.nextLine();
                 int number = Integer.parseInt(input);
-                map.getCurrentLocation().setVisited(true);
+                
                 if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
 
-                    System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
+                    this.console.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
                 }
                 if (number <= 0) {
-                    System.out.println("That is not a valid number");
+                    this.console.println("That is not a valid number");
                 }
                 if (number >= 5) {
-                    System.out.println("That is not a valid number");
+                    this.console.println("That is not a valid number");
                 } else if (number == (currentLocation.getQuestion().getCorrectAnswer())) {
-
-                    int tp = question.getTotalPoints();
+                    map.getCurrentLocation().setVisited(true);
+                    int tp = game.getTotalPoints();
                     int pt = question.getPoints();
+                    this.console.println("That is the correct answer! You have earned " + pt + " points.");
+                    
                     tp = tp + pt;
-                    question.setTotalPoints(tp);
-                    int totalPoints = question.getTotalPoints();
-                    if (totalPoints >= 110) {
-                        System.out.println("Congrats!  You are smart and know the history of the City of Aaron."
+                    game.setTotalPoints(tp);
+                    currentLocation.setQuestion(null);
+                    if (tp >= 110) {
+                        this.console.println("Congrats!  You are smart and know the history of the City of Aaron."
                                 + "Please come back and play again ");
 
-                        if (totalPoints < 110) {
-                            System.out.println("I am sorry.  You have failed and have lost the game.  Please try again.");
+                        if (tp < 110) {
+                            this.console.println("I am sorry.  You have failed and have lost the game.  Please try again.");
                         }
 
-                        System.out.println("That is the correct answer! You have earned 5 points.");
+                        
                     }
                     {
                     }

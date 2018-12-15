@@ -99,6 +99,7 @@ public class EarlyRisers {
     /**
      *
      * @param args
+     * @return 
      */
 //    public static void main(String []args){
 //       
