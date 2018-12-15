@@ -175,47 +175,59 @@ public class GameMenuView extends View {
         }
         Location currentLocation = map.getCurrentLocation();
         System.out.println("You are currently at " + currentLocation.getDescription());
-        do  {
-        
-        if (currentLocation.getItem() != null ) {
-            System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
-        }
-        if (currentLocation.getQuestion() != null  ) {
-            System.out.println("I have a question for you.");
-            System.out.println(currentLocation.getQuestion().getQuestionText());
-            System.out.println(currentLocation.getQuestion().getAnswer1());
-            System.out.println(currentLocation.getQuestion().getAnswer2());
-            System.out.println(currentLocation.getQuestion().getAnswer3());
-            System.out.println(currentLocation.getQuestion().getAnswer4());
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the correct answer 1-4.");
-            String input = scanner.nextLine();
-            int number = Integer.parseInt(input);
-            if (number != (currentLocation.getQuestion().getCorrectAnswer())){
-                
-                System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
+        do {
+            if (map.getCurrentLocation().isLocVisited()) {
+                return;
             }
-            if (number <= 0) {
-                System.out.println ("That is not a valid number");
+            if (currentLocation.getItem() != null) {
+                System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
             }
-            if (number >= 5) {
-                System.out.println ("That is not a valid number");
-            } else if 
-                     (number == (currentLocation.getQuestion().getCorrectAnswer())) {
-              currentLocation.setVisited(true);
-              int tp = question.getTotalPoints();
-              int pt = question.getPoints();
-              tp = tp + pt;
-              question.setTotalPoints(tp);
-              
-              System.out.println("That is the correct answer! You have earned 5 points.");
-            } 
-            {
+            if (currentLocation.getQuestion() != null) {
+                System.out.println("I have a question for you.");
+                System.out.println(currentLocation.getQuestion().getQuestionText());
+                System.out.println(currentLocation.getQuestion().getAnswer1());
+                System.out.println(currentLocation.getQuestion().getAnswer2());
+                System.out.println(currentLocation.getQuestion().getAnswer3());
+                System.out.println(currentLocation.getQuestion().getAnswer4());
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Enter the correct answer 1-4.");
+                String input = scanner.nextLine();
+                int number = Integer.parseInt(input);
+                map.getCurrentLocation().setVisited(true);
+                if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
+
+                    System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
+                }
+                if (number <= 0) {
+                    System.out.println("That is not a valid number");
+                }
+                if (number >= 5) {
+                    System.out.println("That is not a valid number");
+                } else if (number == (currentLocation.getQuestion().getCorrectAnswer())) {
+
+                    int tp = question.getTotalPoints();
+                    int pt = question.getPoints();
+                    tp = tp + pt;
+                    question.setTotalPoints(tp);
+                    int totalPoints = question.getTotalPoints();
+                    if (totalPoints >= 110) {
+                        System.out.println("Congrats!  You are smart and know the history of the City of Aaron."
+                                + "Please come back and play again ");
+
+                        if (totalPoints < 110) {
+                            System.out.println("I am sorry.  You have failed and have lost the game.  Please try again.");
+                        }
+
+                        System.out.println("That is the correct answer! You have earned 5 points.");
+                    }
+                    {
+                    }
+                }
             }
-        }
+
         } while (map.getCurrentLocation().isVisited() != true);
-        
     }
+
     public void newLocation() {
         String row = getInput("Enter Row (Q to quit); ");
         if (row.toUpperCase().trim().equals("Q")) {

@@ -111,7 +111,17 @@ public class ReportsMenuView extends View {
 
     private void viewAuthors() {
                    
-        System.out.println("Cody, Rachel and Heather! You're Viewing Authors!");
+          String reportInventory = Reports.endYearReport("");
+        System.out.println(reportInventory);
+        String response = getInput("Do you want to save this to a file? Y or N");
+        if (response.equalsIgnoreCase("Y")) {
+            response = getInput("Enter a file name.");
+            try {
+                Reports.printReport(response, reportInventory);
+            } catch (ReportsException ex) {
+                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     private void viewReports() {

@@ -66,4 +66,49 @@ public class Reports {
 //
 //        }return endYearReport;
 //    }
+//}
+public static String endYearReport(String name) {
+        Game game = EarlyRisers.getCurrentGame();
+        ArrayList<InventoryItem> inventoryItems = game.getInventory();
+        String endYearReport;
+        endYearReport = "\r\n         Year Inventory Report             ";
+        endYearReport += String.format("\r%n%-10s%-10s", "Name", "Quantity");
+        endYearReport += String.format("\r%n%-10s%-10s", "Year ", "1");
+ endYearReport += String.format("\r%n%-10s%-10s", "Starved ", "0");
+ endYearReport += String.format("\r%n%-10s%-10s", "Added people ", "5");
+ endYearReport += String.format("\r%n%-10s%-10s", "Population ", "100");
+ endYearReport += String.format("\r%n%-10s%-10s", "Acres ", "1000");
+ endYearReport += String.format("\r%n%-10s%-10s", "Bushels per acre ", "3");
+ endYearReport += String.format("\r%n%-10s%-10s", "Tithes paid ", "300");
+ endYearReport += String.format("\r%n%-10s%-10s", "Rats Ate ", "200");
+ endYearReport += String.format("\r%n%-10s%-10s", "Total Wheat ", "2800");
+ 
+        for (InventoryItem item : inventoryItems){
+if (name.equals("") || (name.equals(item.getItemType()))) {
+                endYearReport += String.format("\r%n%-10s%-10s",
+                        item.getName(),
+                        item.getQuantity());
 }
+}return endYearReport;
+}
+}
+        
+//The year number  "Year"
+//
+//How many people starved "Dead"
+//
+//How many people came to the city "CalcGrowth" + "CalcGrowthTithes" 
+//
+//The current population "Population" + "CalcGrowth" + "CalcGrowthTithes" 
+//
+//The number of acres of crop land owned by the city "Land"
+//
+//The number of bushels per acre in this years harvest "CropYield"
+//
+//The total number of bushels of wheat harvested "Cropyield" + "Wheat"
+//
+//The number of bushels paid in tithes and offerings "Tithing"
+//
+//The number of bushels of wheat eaten by rats "Rats"
+//
+//The number of bushels of wheat in store (2700)

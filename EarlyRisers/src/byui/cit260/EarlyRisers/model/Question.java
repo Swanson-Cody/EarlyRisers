@@ -23,6 +23,7 @@ public class Question implements Serializable {
     private int correctAnswer;
     private int points;
     private int totalPoints;
+    
 
     public int getTotalPoints() {
         return totalPoints;
