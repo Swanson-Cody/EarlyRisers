@@ -109,7 +109,7 @@ public class GameMenuView extends View {
     private void tithes() {
         ChurchView church = new ChurchView();
         church.display();
-        this.console.println("This will take us to the church to pay tithing.");
+        System.out.println("This will take us to the church to pay tithing.");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
 
@@ -139,15 +139,15 @@ public class GameMenuView extends View {
         Location[][] locations = map.getLocations(); // retreive the locations from map
         Question question = new Question();
         // Build the heading of the map
-        this.console.println("  |");
+        System.out.print("  |");
         for (int column = 0; column < locations[0].length; column++) {
             // print col numbers to side of map
-            this.console.println("  " + column + " |");
+            System.out.print("  " + column + " |");
         }
         // Now build the map.  For each row, show the column information
-        this.console.println();
+        System.out.println();
         for (int row = 0; row < locations.length; row++) {
-            this.console.println(row + " "); // print row numbers to side of map
+            System.out.print(row + " "); // print row numbers to side of map
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
                 leftIndicator = " ";
@@ -164,54 +164,57 @@ public class GameMenuView extends View {
                 System.out.print("|"); // start map with a |
                 if (locations[row][column] == null) {
                     // No scene assigned here so use ?? for the symbol
-                    this.console.println(leftIndicator + "??" + rightIndicator);
+                    System.out.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    this.console.println(leftIndicator
+                    System.out.print(leftIndicator
                             + locations[row][column].getSymbol()
                             + rightIndicator);
                 }
             }
-            this.console.println("|");
+            System.out.println("|");
         }
         Location currentLocation = map.getCurrentLocation();
-        this.console.println("You are currently at " + currentLocation.getDescription());
-      
-do{
-            if (currentLocation.getItem() != null) {
-                this.console.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
+        System.out.println("You are currently at " + currentLocation.getDescription());
+        do  {
+        
+        if (currentLocation.getItem() != null ) {
+            System.out.println("There is a " + currentLocation.getItem().getItemType() + " at this location.");
+        }
+        if (currentLocation.getQuestion() != null  ) {
+            System.out.println("I have a question for you.");
+            System.out.println(currentLocation.getQuestion().getQuestionText());
+            System.out.println(currentLocation.getQuestion().getAnswer1());
+            System.out.println(currentLocation.getQuestion().getAnswer2());
+            System.out.println(currentLocation.getQuestion().getAnswer3());
+            System.out.println(currentLocation.getQuestion().getAnswer4());
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the correct answer 1-4.");
+            String input = scanner.nextLine();
+            int number = Integer.parseInt(input);
+            if (number != (currentLocation.getQuestion().getCorrectAnswer())){
+                
+                System.out.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
             }
-            if (currentLocation.getQuestion() != null) {
-                this.console.println("I have a question for you.");
-                this.console.println(currentLocation.getQuestion().getQuestionText());
-                this.console.println(currentLocation.getQuestion().getAnswer1());
-                this.console.println(currentLocation.getQuestion().getAnswer2());
-                this.console.println(currentLocation.getQuestion().getAnswer3());
-                this.console.println(currentLocation.getQuestion().getAnswer4());
-                Scanner scanner = new Scanner(System.in);
-                this.console.println("Enter the correct answer 1-4.");
-                String input = scanner.nextLine();
-                int number = Integer.parseInt(input);
-                if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
-
-                    this.console.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
-                }
-                if (number <= 0) {
-                    ErrorView.display(this.getClass().getName(), "That is not a valid number");
-                }
-                if (number >= 5) {
-                    ErrorView.display(this.getClass().getName(), "That is not a valid number");
-                } else if (number == (currentLocation.getQuestion().getCorrectAnswer())) {
-//                    currentLocation.setVisited(true);
-                    int tp = question.getTotalPoints();
-                    int pt = question.getPoints();
-                    tp = tp + pt;
-                    question.setTotalPoints(tp);
-                    map.getCurrentLocation().setLocVisited(true);
-                    this.console.println("That is the correct answer! You have earned 5 points.");
-                }
-
+            if (number <= 0) {
+                System.out.println ("That is not a valid number");
             }
-            }while(map.getCurrentLocation().isLocVisited() != true);
+            if (number >= 5) {
+                System.out.println ("That is not a valid number");
+            } else if 
+                     (number == (currentLocation.getQuestion().getCorrectAnswer())) {
+              currentLocation.setVisited(true);
+              int tp = question.getTotalPoints();
+              int pt = question.getPoints();
+              tp = tp + pt;
+              question.setTotalPoints(tp);
+              
+              System.out.println("That is the correct answer! You have earned 5 points.");
+            } 
+            {
+            }
+        }
+        } while (map.getCurrentLocation().isVisited() != true);
+        
     }
     public void newLocation() {
         String row = getInput("Enter Row (Q to quit); ");

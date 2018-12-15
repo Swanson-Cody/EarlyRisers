@@ -22,22 +22,19 @@ public class MapControl {
     public static Map createMap() throws MapControlException {
         int MAX_ROW = 5;
         int MAX_COL = 5;
-        
-        
+
         Map map = new Map(MAX_ROW, MAX_COL);
 
         Location[][] locations = new Location[MAX_ROW][MAX_COL];
         map.setLocations(locations);
-        
 
         for (int row = 0; row < MAX_ROW; row++) {
             Location loc1 = new Location();
             loc1.setDescription("Wheat Field " + (row + 1));
             loc1.setSymbol("W" + (row + 1));
             map.setLocation(row, 1, loc1);
-            loc1.setVisited(false);
-            loc1.setLocVisited(false);
-          
+            
+
         }
         Location loc = map.getLocations()[0][1];
         InventoryItem item = new InventoryItem("rat", 3);
@@ -51,7 +48,9 @@ public class MapControl {
         question.setCorrectAnswer(2);
         question.setPoints(5);
         loc.setQuestion(question);
-       
+        loc.setVisited(false);
+        loc.setLocVisited(false);
+
         loc = map.getLocations()[1][1];
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
@@ -64,6 +63,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[2][1];
         item = new InventoryItem("potato", 3);
@@ -77,6 +78,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[3][1];
         item = new InventoryItem("potato", 3);
@@ -90,6 +93,8 @@ public class MapControl {
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[4][1];
         item = new InventoryItem("potato", 3);
@@ -103,6 +108,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         //Create the Church       
         for (int row = 0; row < MAX_ROW; row++) {
@@ -110,7 +117,7 @@ public class MapControl {
             loc2.setDescription("Church" + (row + 1));
             loc2.setSymbol("C" + (row + 1));
             map.setLocation(row, 2, loc2);
-            loc2.setLocVisited(false);
+            
 
         }
 //               
@@ -126,6 +133,8 @@ public class MapControl {
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[1][2];
         item = new InventoryItem("potato", 3);
@@ -139,6 +148,8 @@ public class MapControl {
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[2][2];
         item = new InventoryItem("potato", 3);
@@ -152,6 +163,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[3][2];
         item = new InventoryItem("potato", 3);
@@ -165,6 +178,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[4][2];
         item = new InventoryItem("potato", 3);
@@ -178,6 +193,8 @@ public class MapControl {
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         //Create the Tool Shop        
         for (int row = 0; row < MAX_ROW; row++) {
@@ -185,7 +202,7 @@ public class MapControl {
             loc3.setDescription("Tool Shop" + (row + 1));
             loc3.setSymbol("T" + (row + 1));
             map.setLocation(row, 3, loc3);
-            loc3.setLocVisited(false);
+            
         }
 
         loc = map.getLocations()[0][3];
@@ -200,6 +217,8 @@ public class MapControl {
         question.setCorrectAnswer(2);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[1][3];
         item = new InventoryItem("potato", 3);
@@ -213,6 +232,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[2][3];
         item = new InventoryItem("potato", 3);
@@ -227,6 +248,8 @@ public class MapControl {
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[3][3];
         item = new InventoryItem("potato", 3);
@@ -240,6 +263,8 @@ public class MapControl {
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[4][3];
         item = new InventoryItem("potato", 3);
@@ -253,6 +278,8 @@ public class MapControl {
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
 //Create the beauty of the Earth        
         for (int row = 0; row < MAX_ROW; row++) {
@@ -260,7 +287,7 @@ public class MapControl {
             loc4.setDescription("For the Beauty of the Earth" + (row + 1));
             loc4.setSymbol("B" + (row + 1));
             map.setLocation(row, 4, loc4);
-            loc4.setLocVisited(false);
+           
 
         }
 
@@ -276,6 +303,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[1][4];
         item = new InventoryItem("potato", 3);
@@ -289,6 +318,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[2][4];
         item = new InventoryItem("shovel", 1);
@@ -302,6 +333,8 @@ public class MapControl {
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[3][4];
         item = new InventoryItem("potato", 3);
@@ -315,6 +348,8 @@ public class MapControl {
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[4][4];
         item = new InventoryItem("potato", 3);
@@ -328,6 +363,8 @@ public class MapControl {
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
 //Create the inventory shop
         for (int row = 0; row < MAX_ROW; row++) {
@@ -335,9 +372,9 @@ public class MapControl {
             loc0.setDescription("Inventory" + (row + 1));
             loc0.setSymbol("I" + (row + 1));
             map.setLocation(row, 0, loc0);
-            loc0.setLocVisited(false);
+           
         }
-loc = map.getLocations()[0][0];
+        loc = map.getLocations()[0][0];
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
         question = new Question();
@@ -349,6 +386,8 @@ loc = map.getLocations()[0][0];
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[1][0];
         item = new InventoryItem("potato", 3);
@@ -362,6 +401,8 @@ loc = map.getLocations()[0][0];
         question.setCorrectAnswer(3);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[2][0];
         item = new InventoryItem("shovel", 1);
@@ -375,6 +416,8 @@ loc = map.getLocations()[0][0];
         question.setCorrectAnswer(2);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[3][0];
         item = new InventoryItem("potato", 3);
@@ -388,6 +431,8 @@ loc = map.getLocations()[0][0];
         question.setCorrectAnswer(4);
         question.setPoints(5);
         loc.setQuestion(question);
+        loc.setVisited(false);
+        loc.setLocVisited(false);
 
         loc = map.getLocations()[4][0];
         item = new InventoryItem("potato", 3);
@@ -401,8 +446,9 @@ loc = map.getLocations()[0][0];
         question.setCorrectAnswer(1);
         question.setPoints(5);
         loc.setQuestion(question);
-        
-        
+        loc.setVisited(false);
+        loc.setLocVisited(false);
+
         movePlayerToStartingLocation(map);
         return map;
     }
