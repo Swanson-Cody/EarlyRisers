@@ -58,7 +58,7 @@ public class WheatFieldsView extends View{
 
     public void plantWheat() {
 //    
-//    Scanner keyboard = new Scanner(System.in);
+//    Scanner keyboard = new Scanner(this.keyboard.readline(););
 //    int wheat;
 //    this.console.print("How much wheat would you like to plant?");
 //            wheat = keyboard.nextInt();

@@ -42,7 +42,7 @@ public class HelpMenuView extends View {
     @Override
     public boolean doAction(String[] input) {
         String choice = input[0].toUpperCase();
-        //Scanner keyboard = new Scanner(System.in);
+        //Scanner keyboard = new Scanner(this.keyboard.readline(););
         
 //        int choice = -1;
 //        do {
