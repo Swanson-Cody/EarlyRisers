@@ -35,7 +35,9 @@ public class MapControl {
             loc1.setDescription("Wheat Field " + (row + 1));
             loc1.setSymbol("W" + (row + 1));
             map.setLocation(row, 1, loc1);
-
+            loc1.setVisited(false);
+            loc1.setLocVisited(false);
+          
         }
         Location loc = map.getLocations()[0][1];
         InventoryItem item = new InventoryItem("rat", 3);
@@ -49,7 +51,7 @@ public class MapControl {
         question.setCorrectAnswer(2);
         question.setPoints(5);
         loc.setQuestion(question);
-
+       
         loc = map.getLocations()[1][1];
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
@@ -93,7 +95,7 @@ public class MapControl {
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
         question = new Question();
-        question.setQuestionText("The following were all in the box that Joseph found in the hill...?");
+        question.setQuestionText("The following were all in the box that Joseph found in the hill except...?");
         question.setAnswer1("1: Gold Plates");
         question.setAnswer2("2: A breastplate");
         question.setAnswer3("3: Urim and Thummim");
@@ -108,6 +110,7 @@ public class MapControl {
             loc2.setDescription("Church" + (row + 1));
             loc2.setSymbol("C" + (row + 1));
             map.setLocation(row, 2, loc2);
+            loc2.setLocVisited(false);
 
         }
 //               
@@ -182,6 +185,7 @@ public class MapControl {
             loc3.setDescription("Tool Shop" + (row + 1));
             loc3.setSymbol("T" + (row + 1));
             map.setLocation(row, 3, loc3);
+            loc3.setLocVisited(false);
         }
 
         loc = map.getLocations()[0][3];
@@ -214,7 +218,7 @@ public class MapControl {
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
         question = new Question();
-        question.setQuestionText("What city was named that was destroyed and known for its murders, "
+        question.setQuestionText("What city was destroyed but known for its murders, "
                 + "secret combinations, and the fact they destroyed the government?");
         question.setAnswer1("1: Jacobugath");
         question.setAnswer2("2: Jershon");
@@ -256,6 +260,7 @@ public class MapControl {
             loc4.setDescription("For the Beauty of the Earth" + (row + 1));
             loc4.setSymbol("B" + (row + 1));
             map.setLocation(row, 4, loc4);
+            loc4.setLocVisited(false);
 
         }
 
@@ -276,7 +281,7 @@ public class MapControl {
         item = new InventoryItem("potato", 3);
         loc.setItem(item);
         question = new Question();
-        question.setQuestionText("I was on of the 4 sons of Mosiah'");
+        question.setQuestionText("I was one of the 4 sons of Mosiah'");
         question.setAnswer1("1: Onidah");
         question.setAnswer2("2: Onnon");
         question.setAnswer3("3: Mosiah only had 3 sons");
@@ -330,6 +335,7 @@ public class MapControl {
             loc0.setDescription("Inventory" + (row + 1));
             loc0.setSymbol("I" + (row + 1));
             map.setLocation(row, 0, loc0);
+            loc0.setLocVisited(false);
         }
 loc = map.getLocations()[0][0];
         item = new InventoryItem("potato", 3);
