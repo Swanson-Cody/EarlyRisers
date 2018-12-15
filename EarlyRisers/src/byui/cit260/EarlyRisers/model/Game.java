@@ -17,14 +17,16 @@ public class Game implements Serializable {
       private Player player;
       private Map map;
 //      private InventoryItem inventoryItem;
-      private int acresOwned;
-      private int wheatStorage;
-      private int tithing;
+//      private int population;
+//      private int acresOwned;
+//      private int wheatStorage;
+//      private int tithing;
       private double totalTime;
       private ArrayList<InventoryItem> inventory;
       private int moves = 0;
       private int year = 1;
       private int totalPoints = 0;
+      private int totalWrongAnswers = 0;
 
     public int getTotalPoints() {
         return totalPoints;
@@ -32,6 +34,14 @@ public class Game implements Serializable {
 
     public void setTotalPoints(int totalPoints) {
         this.totalPoints = totalPoints;
+    }
+    
+    public int getTotalWrongAnswers() {
+        return totalWrongAnswers;
+    }
+
+    public void setTotalWrongAnswers(int totalWrongAnswers) {
+        this.totalWrongAnswers = totalWrongAnswers;
     }
 
     public int getMoves() {
@@ -84,13 +94,21 @@ public class Game implements Serializable {
 //       System.out.println(game.toString());
 //      }
 
-    public int getTithing() {
-        return tithing;
-    }
-
-    public void setTithing(int tithing) {
-        this.tithing = tithing;
-    }
+//    public int getTithing() {
+//        return tithing;
+//    }
+//
+//    public void setTithing(int tithing) {
+//        this.tithing = tithing;
+//    }
+//    
+//    public int getPopulation() {
+//        return population;
+//    }
+//
+//    public void setPopulation(int population) {
+//        this.population = population;
+//    }
       
     /**
      * Get the value of player
@@ -151,43 +169,43 @@ public class Game implements Serializable {
 
     
 
-    /**
-     * Get the value of acresOwned
-     *
-     * @return the value of acresOwned
-     */
-    public int getAcresOwned() {
-        return acresOwned;
-    }
-
-    /**
-     * Set the value of acresOwned
-     *
-     * @param acresOwned new value of acresOwned
-     */
-    public void setAcresOwned(int acresOwned) {
-        this.acresOwned = acresOwned;
-    }
-
-    
-
-    /**
-     * Get the value of wheatStorage
-     *
-     * @return the value of wheatStorage
-     */
-    public int getWheatStorage() {
-        return wheatStorage;
-    }
-
-    /**
-     * Set the value of wheatStorage
-     *
-     * @param wheatStorage new value of wheatStorage
-     */
-    public void setWheatStorage(int wheatStorage) {
-        this.wheatStorage = wheatStorage;
-    }
+//    /**
+//     * Get the value of acresOwned
+//     *
+//     * @return the value of acresOwned
+//     */
+//    public int getAcresOwned() {
+//        return acresOwned;
+//    }
+//
+//    /**
+//     * Set the value of acresOwned
+//     *
+//     * @param acresOwned new value of acresOwned
+//     */
+//    public void setAcresOwned(int acresOwned) {
+//        this.acresOwned = acresOwned;
+//    }
+//
+//    
+//
+//    /**
+//     * Get the value of wheatStorage
+//     *
+//     * @return the value of wheatStorage
+//     */
+//    public int getWheatStorage() {
+//        return wheatStorage;
+//    }
+//
+//    /**
+//     * Set the value of wheatStorage
+//     *
+//     * @param wheatStorage new value of wheatStorage
+//     */
+//    public void setWheatStorage(int wheatStorage) {
+//        this.wheatStorage = wheatStorage;
+//    }
 
     @Override
     public int hashCode() {
@@ -195,8 +213,8 @@ public class Game implements Serializable {
         hash = 83 * hash + Objects.hashCode(this.player);
         hash = 83 * hash + Objects.hashCode(this.map);
 //        hash = 83 * hash + Objects.hashCode(this.inventoryItem);
-        hash = 83 * hash + this.acresOwned;
-        hash = 83 * hash + this.wheatStorage;
+//        hash = 83 * hash + this.acresOwned;
+//        hash = 83 * hash + this.wheatStorage;
         return hash;
     }
 
@@ -212,12 +230,12 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (this.acresOwned != other.acresOwned) {
-            return false;
-        }
-        if (this.wheatStorage != other.wheatStorage) {
-            return false;
-        }
+//        if (this.acresOwned != other.acresOwned) {
+//            return false;
+//        }
+//        if (this.wheatStorage != other.wheatStorage) {
+//            return false;
+//        }
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
@@ -230,7 +248,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + player + ", map=" + map + ", acresOwned=" + acresOwned + ", wheatStorage=" + wheatStorage +  '}';
+        return "Game{" + "thePlayer=" + player + ", map=" + map + '}';
     }
   
 }

@@ -97,10 +97,10 @@ public class GameControl {
 public static void createTools() throws GameControlException{
         ArrayList<InventoryItem> tools = new ArrayList<>();
         tools.add(new InventoryItem("Tools", "Plows", 1));
-        tools.add(new InventoryItem("Tools", "", 0));
+        tools.add(new InventoryItem("Tools", "Hammer", 0));
         tools.add(new InventoryItem("Tools", "Shovel", 2));
         tools.add(new InventoryItem("Tools", "Scythe", 1));
-        tools.add(new InventoryItem("Tools", "", 3));
+        tools.add(new InventoryItem("Tools", "Axe", 3));
 
         EarlyRisers.getCurrentGame().setInventory(tools);
 
@@ -122,13 +122,13 @@ public static void createTools() throws GameControlException{
 
     public static void createPopulation() throws GameControlException{
         ArrayList<InventoryItem> population = new ArrayList<>();
-        population.add(new InventoryItem("Utility", "Population", 100));
+        population.add(new InventoryItem("Utility", "Population", 1000));
         EarlyRisers.getCurrentGame().addToInventory(population);
     }
 
     public static void createTithing() throws GameControlException{
         ArrayList<InventoryItem> tithing = new ArrayList<>();
-        tithing.add(new InventoryItem("Tithing", 0));
+        tithing.add(new InventoryItem("Offerings", "Tithing", 0));
         EarlyRisers.getCurrentGame().addToInventory(tithing);
     }
 
@@ -140,10 +140,10 @@ public static void createTools() throws GameControlException{
 
     public static void createCropData() {
         ArrayList<InventoryItem> cropData = new ArrayList<>();
-        cropData.add(new InventoryItem("Year", 0));
-        cropData.add(new InventoryItem("CropYield", 0));
-        cropData.add(new InventoryItem("Dead", 0));
-        cropData.add(new InventoryItem("Acres Planted", 0));
+        cropData.add(new InventoryItem("Crops", "Year", 0));
+        cropData.add(new InventoryItem("Crops", "CropYield", 0));
+        cropData.add(new InventoryItem("Crops", "Dead", 0));
+        cropData.add(new InventoryItem("Crops", "Acres Planted", 0));
         EarlyRisers.getCurrentGame().addToInventory(cropData);
     }
   

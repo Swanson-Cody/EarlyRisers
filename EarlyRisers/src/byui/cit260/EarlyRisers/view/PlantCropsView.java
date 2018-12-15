@@ -5,7 +5,6 @@
  */
 package byui.cit260.EarlyRisers.view;
 import byui.cit260.EarlyRisers.control.PlantCrops;
-import byui.cit260.EarlyRisers.control.SellLand;
 
 /**
  *

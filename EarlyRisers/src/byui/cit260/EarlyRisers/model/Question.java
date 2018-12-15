@@ -23,6 +23,7 @@ public class Question implements Serializable {
     private int correctAnswer;
     private int points;
     private int totalPoints;
+    private int incorrectAnswers;
     
 
     public int getTotalPoints() {
@@ -159,6 +160,7 @@ public class Question implements Serializable {
         hash = 97 * hash + Objects.hashCode(this.answer3);
         hash = 97 * hash + Objects.hashCode(this.answer4);
         hash = 97 * hash + this.correctAnswer;
+
         return hash;
     }
 

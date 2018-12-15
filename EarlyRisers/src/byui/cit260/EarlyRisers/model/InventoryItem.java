@@ -14,14 +14,14 @@ import java.util.Objects;
 public class InventoryItem implements Serializable{
     
     private String itemType;
-    private String provisions;
-    private String animals;
-    private int tithing;
-    private int population;
+//    private String provisions;
+//    private String animals;
+//    private int tithing;
+//    private int population;
     private int quantity;
-    private int land;
+//    private int land;
+//    private int wheat;
     private String name;
-   
 
     public String getName() {
         return name;
@@ -31,13 +31,21 @@ public class InventoryItem implements Serializable{
         this.name = name;
     }
     
-        public int getLand() {
-        return land;
-    }
-
-    public void setLand(int acresOfLand) {
-        this.land = acresOfLand;
-    }
+//    public int getLand() {
+//        return land;
+//    }
+//
+//    public void setLand(int acresOfLand) {
+//        this.land = acresOfLand;
+//    }
+//    
+//    public int getWheat() {
+//        return wheat;
+//    }
+//
+//    public void setWheat(int wheat) {
+//        this.wheat = wheat;
+//    }
 
     public int getQuantity() {
         return quantity;
@@ -46,7 +54,6 @@ public class InventoryItem implements Serializable{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-   
  
 //public static void testInventoryItemClasses(){
 //       InventoryItem item = new InventoryItem();
@@ -94,82 +101,84 @@ public class InventoryItem implements Serializable{
 
    
 
-    /**
-     * Get the value of provisions
-     *
-     * @return the value of provisions
-     */
-    public String getProvisions() {
-        return provisions;
-    }
-
-    /**
-     * Set the value of provisions
-     *
-     * @param provisions new value of provisions
-     */
-    public void setProvisions(String provisions) {
-        this.provisions = provisions;
-    }
-
+//    /**
+//     * Get the value of provisions
+//     *
+//     * @return the value of provisions
+//     */
+//    public String getProvisions() {
+//        return provisions;
+//    }
+//
+//    /**
+//     * Set the value of provisions
+//     *
+//     * @param provisions new value of provisions
+//     */
+//    public void setProvisions(String provisions) {
+//        this.provisions = provisions;
+//    }
+//
+//    
+//
+//    /**
+//     * Get the value of animals
+//     *
+//     * @return the value of animals
+//     */
+//    public String getAnimals() {
+//        return animals;
+//    }
+//
+//    /**
+//     * Set the value of animals
+//     *
+//     * @param animals new value of animals
+//     */
+//    public void setAnimals(String animals) {
+//        this.animals = animals;
+//    }
+//
+//    
+//
+//    /**
+//     * Get the value of tithing
+//     *
+//     * @return the value of tithing
+//     */
+//    public int getTithing() {
+//        return tithing;
+//    }
+//
+//    /**
+//     * Set the value of tithing
+//     *
+//     * @param tithing new value of tithing
+//     */
+//    public void setTithing(int tithing) {
+//        this.tithing = tithing;
+//    }
+//    
+//    public int getPopulation() {
+//        return population;
+//    }
+//
+//    public void setPopulation(int population) {
+//        this.population = population;
+//    }
     
-
-    /**
-     * Get the value of animals
-     *
-     * @return the value of animals
-     */
-    public String getAnimals() {
-        return animals;
-    }
-
-    /**
-     * Set the value of animals
-     *
-     * @param animals new value of animals
-     */
-    public void setAnimals(String animals) {
-        this.animals = animals;
-    }
-
-    
-
-    /**
-     * Get the value of tithing
-     *
-     * @return the value of tithing
-     */
-    public int getTithing() {
-        return tithing;
-    }
-
-    /**
-     * Set the value of tithing
-     *
-     * @param tithing new value of tithing
-     */
-    public void setTithing(int tithing) {
-        this.tithing = tithing;
-    }
-    public int getPopulation() {
-        return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
     @Override
     public String toString() {
-        return "InventoryItem{" + "itemType=" + itemType + ", provisions=" + provisions + ", animals=" + animals + '}';
+        return "InventoryItem{" + "itemType=" + itemType + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 23 * hash + Objects.hashCode(this.itemType);
-        hash = 23 * hash + Objects.hashCode(this.provisions);
-        hash = 23 * hash + Objects.hashCode(this.animals);
-        hash = 23 * hash + this.tithing;
+//        hash = 23 * hash + Objects.hashCode(this.provisions);
+//        hash = 23 * hash + Objects.hashCode(this.animals);
+//        hash = 23 * hash + this.tithing;
         return hash;
     }
 
@@ -185,18 +194,18 @@ public class InventoryItem implements Serializable{
             return false;
         }
         final InventoryItem other = (InventoryItem) obj;
-        if (this.tithing != other.tithing) {
-            return false;
-        }
+//        if (this.tithing != other.tithing) {
+//            return false;
+//        }
         if (!Objects.equals(this.itemType, other.itemType)) {
             return false;
         }
-        if (!Objects.equals(this.provisions, other.provisions)) {
-            return false;
-        }
-        if (!Objects.equals(this.animals, other.animals)) {
-            return false;
-        }
+//        if (!Objects.equals(this.provisions, other.provisions)) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.animals, other.animals)) {
+//            return false;
+//        }
         return true;
     }
 

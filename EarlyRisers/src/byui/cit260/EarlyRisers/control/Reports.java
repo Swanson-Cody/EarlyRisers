@@ -49,6 +49,13 @@ public class Reports {
 
         return reportString;
     }
+    
+    public static String getPointReport(){
+        Game game = EarlyRisers.getCurrentGame();
+        String reportString = "\r\n         Points Report           \r\n";
+        reportString += "Points Earned: " + game.getTotalPoints();
+        return reportString;
+    }
 
 //    public static String endYearReport(String name) {
 //        Game game = EarlyRisers.getCurrentGame();
@@ -74,14 +81,14 @@ public static String endYearReport(String name) {
         endYearReport = "\r\n         Year Inventory Report             ";
         endYearReport += String.format("\r%n%-10s%-10s", "Name", "Quantity");
         endYearReport += String.format("\r%n%-10s%-10s", "Year ", "1");
- endYearReport += String.format("\r%n%-10s%-10s", "Starved ", "0");
- endYearReport += String.format("\r%n%-10s%-10s", "Added people ", "5");
- endYearReport += String.format("\r%n%-10s%-10s", "Population ", "100");
- endYearReport += String.format("\r%n%-10s%-10s", "Acres ", "1000");
- endYearReport += String.format("\r%n%-10s%-10s", "Bushels per acre ", "3");
- endYearReport += String.format("\r%n%-10s%-10s", "Tithes paid ", "300");
- endYearReport += String.format("\r%n%-10s%-10s", "Rats Ate ", "200");
- endYearReport += String.format("\r%n%-10s%-10s", "Total Wheat ", "2800");
+        endYearReport += String.format("\r%n%-10s%-10s", "Starved ", "0");
+        endYearReport += String.format("\r%n%-10s%-10s", "Added people ", "5");
+        endYearReport += String.format("\r%n%-10s%-10s", "Population ", "100");
+        endYearReport += String.format("\r%n%-10s%-10s", "Acres ", "1000");
+        endYearReport += String.format("\r%n%-10s%-10s", "Bushels per acre ", "3");
+        endYearReport += String.format("\r%n%-10s%-10s", "Tithes paid ", "300");
+        endYearReport += String.format("\r%n%-10s%-10s", "Rats Ate ", "200");
+        endYearReport += String.format("\r%n%-10s%-10s", "Total Wheat ", "2800");
  
         for (InventoryItem item : inventoryItems){
 if (name.equals("") || (name.equals(item.getItemType()))) {

@@ -49,7 +49,7 @@ public class MainMenuView extends View {
         switch (choice) {
             case "Q":
                 this.console.println("Have a good day.  Goodbye!");
-                return true;
+                System.exit(0);
             case "1":
                 newGame();
                 break;
@@ -99,5 +99,4 @@ public class MainMenuView extends View {
         HelpMenuView menu = new HelpMenuView();
         menu.display();
     }
-
 }

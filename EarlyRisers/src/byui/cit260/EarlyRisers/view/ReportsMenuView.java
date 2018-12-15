@@ -38,7 +38,7 @@ public class ReportsMenuView extends View {
                 + "\n4: View the acres of land owned"        
                 + "\n5: View the authors of this game"
                 + "\n6: View entire inventory report"
-                + "\n7: Exit Reports Menu screen");
+                + "\n7: Exit Reports Menu screen and go to Manage Crops Menu Screen.");
         inputs[0] = selection;
         return inputs;
 
@@ -124,8 +124,7 @@ public class ReportsMenuView extends View {
         }
     }
 
-    private void viewReports() {
-
+    public void viewReports() {
         String reportInventory = Reports.getInventoryReport("");
         this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
@@ -140,10 +139,15 @@ public class ReportsMenuView extends View {
         }
 
     }
+    
+    public void viewPoints(){
+        String report = Reports.getPointReport();
+        this.console.println(report);
+    }
 
-    private void goToGameMenu() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+    private void goToManageCropsView() {
+        ManageCropsView manage = new ManageCropsView();
+        manage.display();
     }
 
     @Override
@@ -153,8 +157,8 @@ public class ReportsMenuView extends View {
 
         if ("7".equals(choice)) {
             this.console.println("You have exited the Reports Menu. "
-                    + "Have fun with the game!");
-            goToGameMenu();
+                    + "Please make some decisions on how to govern the city!");
+            goToManageCropsView();
             return true;
         } else if ("1".equals(choice)) {
             viewAnimals();

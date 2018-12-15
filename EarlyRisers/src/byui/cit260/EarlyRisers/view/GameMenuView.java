@@ -79,7 +79,7 @@ public class GameMenuView extends View {
                 saveGameView();
                 break;
             case "10":
-                return true;
+                goToMainMenu();
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
@@ -198,15 +198,24 @@ public class GameMenuView extends View {
                 int number = Integer.parseInt(input);
                 
                 if (number != (currentLocation.getQuestion().getCorrectAnswer())) {
-
+                    int numWrong = game.getTotalWrongAnswers();
                     this.console.println("That is not correct!  The answer is " + currentLocation.getQuestion().getCorrectAnswer());
+                    game.setTotalWrongAnswers(numWrong + 1);
+                    numWrong = game.getTotalWrongAnswers();
+                    this.console.println("***Careful, you have gotten " + numWrong + " wrong answer(s) so far. If you get " + (4 - numWrong) + " more you will lose the game.***");
+
+                    if (numWrong > 3){
+                        this.console.println("I am sorry.  You have failed the game due to getting more than 3 questions wrong.  Please try again.");
+                        System.exit(0);
+                    }
                 }
                 if (number <= 0) {
                     this.console.println("That is not a valid number");
                 }
                 if (number >= 5) {
                     this.console.println("That is not a valid number");
-                } else if (number == (currentLocation.getQuestion().getCorrectAnswer())) {
+                } 
+                else if (number == (currentLocation.getQuestion().getCorrectAnswer())) {
                     map.getCurrentLocation().setVisited(true);
                     int tp = game.getTotalPoints();
                     int pt = question.getPoints();
@@ -215,17 +224,13 @@ public class GameMenuView extends View {
                     tp = tp + pt;
                     game.setTotalPoints(tp);
                     currentLocation.setQuestion(null);
-                    if (tp >= 110) {
+                    if (tp >= 80) {
                         this.console.println("Congrats!  You are smart and know the history of the City of Aaron."
                                 + "Please come back and play again ");
-
-                        if (tp < 110) {
-                            this.console.println("I am sorry.  You have failed and have lost the game.  Please try again.");
-                        }
-
-                        
-                    }
-                    {
+                        ReportsMenuView reports = new ReportsMenuView();
+                        reports.viewReports();
+                        reports.viewPoints();
+                        System.exit(0);
                     }
                 }
             }
@@ -258,5 +263,10 @@ public class GameMenuView extends View {
     private void saveGameView() {
         SaveGameView save = new SaveGameView();
         save.display();
+    }
+    
+    private void goToMainMenu(){
+        MainMenuView menu = new MainMenuView();
+        menu.display();
     }
 }

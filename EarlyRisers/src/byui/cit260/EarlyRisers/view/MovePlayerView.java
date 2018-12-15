@@ -52,7 +52,10 @@ public class MovePlayerView extends View {
                         MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() + 1);
                         moves++;
                         game.setMoves(moves);
-                        return true;
+                    }
+                    else{
+                        ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
+                        return false;
                     }
                 } catch (MapControlException e) {
                     ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
@@ -64,7 +67,10 @@ public class MovePlayerView extends View {
                         MapControl.movePlayer(map, map.getCurrentLocation().getRow(), map.getCurrentLocation().getColumn() - 1);
                         moves++;
                         game.setMoves(moves);
-                        return true;
+                    }
+                    else{
+                        ErrorView.display(this.getClass().getName(), "You can't move any further to the left.");
+                        return false;
                     }
                 } catch (MapControlException e) {
                     ErrorView.display(this.getClass().getName(), "You can't move any further to the left.");
@@ -77,7 +83,10 @@ public class MovePlayerView extends View {
                         MapControl.movePlayer(map, map.getCurrentLocation().getRow() - 1, map.getCurrentLocation().getColumn());
                         moves++;
                         game.setMoves(moves);
-                        return true;
+                    }
+                    else{
+                        ErrorView.display(this.getClass().getName(), "You can't move any further up.");
+                        return false;
                     }
                 } catch (MapControlException e) {
                     ErrorView.display(this.getClass().getName(), "You can't move any further up.");
@@ -89,10 +98,13 @@ public class MovePlayerView extends View {
                         MapControl.movePlayer(map, map.getCurrentLocation().getRow() + 1, map.getCurrentLocation().getColumn());
                         moves++;
                         game.setMoves(moves);
-                        return true;
+                    }
+                    else{
+                        ErrorView.display(this.getClass().getName(), "You can't move any further down.");
+                        return false;
                     }
                 } catch (MapControlException e) {
-                    ErrorView.display(this.getClass().getName(), "You can't move any further to the right.");
+                    ErrorView.display(this.getClass().getName(), "You can't move any further down.");
                 }
                 break;
 
@@ -103,16 +115,34 @@ public class MovePlayerView extends View {
 
         }
 
-        while(game.getYear() != 10){
-        if (moves % 3 == 0) {
-            game.setYear(game.getYear()+1);
-            this.console.println("Congratulation you have made it to year " + game.getYear());
+        if(game.getYear() != 10){
+            if (moves % 2 == 0) {
+                game.setYear(game.getYear()+1);
+                this.console.println("Congratulation you have made it to year " + game.getYear());
+                
+                ReportsMenuView reports = new ReportsMenuView();
+                reports.display();
+                
+                ManageCropsView cropsView = new ManageCropsView();
+                cropsView.display();
+            }
         }
-        }
+        //actually end the game here...
         if (game.getYear() == 10){
+            GameMenuView menu = new GameMenuView();
+            menu.displayMap();
+            
             this.console.println("You made it to the end of the game. Congratulations!!!");
+            ReportsMenuView reports = new ReportsMenuView();
+            reports.viewReports();
+            reports.viewPoints();
+            
+            MainMenuView menuView = new MainMenuView();
+            menuView.doAction(new String[]{"Q"});
+            System.exit(0);
         }
-            return false;
+        
+            return true;
 
         }
 

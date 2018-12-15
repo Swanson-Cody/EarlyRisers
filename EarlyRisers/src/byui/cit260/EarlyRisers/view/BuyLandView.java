@@ -5,20 +5,19 @@
  */
 package byui.cit260.EarlyRisers.view;
 
-import byui.cit260.EarlyRisers.control.BuyLand;
+import byui.cit260.EarlyRisers.control.GameControl;
+import byui.cit260.EarlyRisers.control.Land;
+import byui.cit260.EarlyRisers.exceptions.BuyLandException;
+import byui.cit260.EarlyRisers.exceptions.GameControlException;
+import byui.cit260.EarlyRisers.model.InventoryItem;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Cody
  */
 public class BuyLandView extends View {
-
-    private static BuyLand goToBuyLand() {
-        BuyLand buyTheLand = new BuyLand();
-//        buyTheLand.buyLand();
-        return buyTheLand;
-    }
-
     @Override
     public String[] getInputs() {
         String[] inputs = new String[10];
@@ -30,10 +29,15 @@ public class BuyLandView extends View {
 
     @Override
     public boolean doAction(String[] inputs) {
-
-        // this.console.println("This is where we'll validate the input and call the buy land function in the controller.");
-        goToBuyLand();
-
+        Land land = new Land();
+        try {
+            land.buyLand(Integer.parseInt(inputs[0]));
+            InventoryItem acresOwned = GameControl.getInventoryItemByName("Acres");
+            this.console.println("You successfully purchased " + inputs[0] + " acres. You now own " + acresOwned.getQuantity() + " acres.");
+        } catch (BuyLandException | GameControlException ex) {
+            Logger.getLogger(BuyLandView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         ManageCropsView view = new ManageCropsView();
         view.display();
 

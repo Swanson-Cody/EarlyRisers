@@ -42,7 +42,7 @@ public class ManageCropsView extends View {
                 getBuyLandView();
                 break;
             case "2": 
-                calculateSellLand();
+                getSellLand();
                 break;
             case "3":
                 calculateFeedPeople();
@@ -54,7 +54,7 @@ public class ManageCropsView extends View {
                 calculateTithesAndOfferings();
                 break;
             case "6":
-                return true;
+                returnToMainMenu();
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
@@ -66,12 +66,13 @@ public class ManageCropsView extends View {
         menu.display();
     }
     
-    private void calculateSellLand(){
+    private void getSellLand(){
         SellLandView menu = new SellLandView();
-        this.console.println("You're going to sell land!");
+        menu.display();
     }
     private void calculateFeedPeople(){
-        this.console.println("You're going to feed the people!");
+        FeedPeopleView menu = new FeedPeopleView();
+        menu.display();
     }
     private void calculatePlantCrops(){
         PlantCropsView menu = new PlantCropsView();
@@ -80,5 +81,8 @@ public class ManageCropsView extends View {
     private void calculateTithesAndOfferings(){
         this.console.println("You're going to pay tithes and offerings!");
     }
-   
+   private void returnToMainMenu(){
+       GameMenuView game = new GameMenuView();
+       game.display();
+   }
 }

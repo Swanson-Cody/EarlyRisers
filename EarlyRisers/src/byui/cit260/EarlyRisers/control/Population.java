@@ -6,7 +6,9 @@
 //import java.util.Random;
 package byui.cit260.EarlyRisers.control;
 
+import byui.cit260.EarlyRisers.exceptions.GameControlException;
 import byui.cit260.EarlyRisers.exceptions.PopulationException;
+import byui.cit260.EarlyRisers.model.InventoryItem;
 import java.util.Random;
 
 /**
@@ -18,19 +20,14 @@ public class Population {
      * @param population
      * @return
      */
-    private static double calcGrowth(double population) throws PopulationException {
-
-        /**
-         * Set the value of itemType
-         *
-         * @param itemType new value of itemType
-         */
-//Get random number 1-5 for percent of population increase
+    private double calcGrowth(int population) throws PopulationException, GameControlException {
+        //Get random number 1-5 for percent of population increase
         Random percent = new Random();
         int w = percent.nextInt(5);
         ++w;
         System.out.println(w);
-//Define invalid variables
+        
+        //Define invalid variables
         if (population <= 0) { //if population is under 0
             throw new PopulationException("The population can not be negative.");
         }
@@ -54,14 +51,15 @@ public class Population {
 
     /**
      *
-     * @param population
-     * @param tithes
-     * @param wheat
      * @throws PopulationException
      */
-    private static double calcGrowthTithes(double population, double tithes, double wheat) throws PopulationException {
-        double newPopulation = calcGrowth(population);
+    public void calcGrowthTithes() throws PopulationException, GameControlException {
+        InventoryItem population = GameControl.getInventoryItemByName("Population");
+        InventoryItem tithes = GameControl.getInventoryItemByName("Tithing");
+        InventoryItem wheat = GameControl.getInventoryItemByName("Wheat Bushels");
+        double newPopulation = calcGrowth(population.getQuantity());
         double result = newPopulation;
+        
         if (newPopulation <= 0) { //if population is under 0
             throw new PopulationException("The population can not be negative.");
         }
@@ -92,7 +90,9 @@ public class Population {
             result = ((random / 100) * newPopulation)- newPopulation; 
             Math.round(result);
         }
-        return result;
+        
+        //population.setQuantity
+        //tithes.setTithes
+        //wheat.setWheat
     }
-
 }

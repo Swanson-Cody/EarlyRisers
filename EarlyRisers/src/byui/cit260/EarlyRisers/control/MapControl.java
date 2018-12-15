@@ -71,7 +71,7 @@ public class MapControl {
         loc.setItem(item);
         question = new Question();
         question.setQuestionText("How many books are in the Book of Mormon?");
-        question.setAnswer1("1: 14!");
+        question.setAnswer1("1: 14");
         question.setAnswer2("2: 17");
         question.setAnswer3("3: 11");
         question.setAnswer4("4: 15");

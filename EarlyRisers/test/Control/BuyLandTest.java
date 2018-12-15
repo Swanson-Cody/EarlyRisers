@@ -5,7 +5,7 @@
  */
 package Control;
 
-import byui.cit260.EarlyRisers.control.BuyLand;
+import byui.cit260.EarlyRisers.control.Land;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class BuyLandTest {
         int wheatInStorage = 500;
         int population = 3;
         int expResult = -3;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -55,7 +55,7 @@ public class BuyLandTest {
         int wheatInStorage = 951;
         int population = 8;
         int expResult = 70;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -70,7 +70,7 @@ public class BuyLandTest {
         int wheatInStorage = 380;
         int population = 5;
         int expResult = 50;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -85,7 +85,7 @@ public class BuyLandTest {
         int wheatInStorage = 856;
         int population = 12;
         int expResult = -1;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -100,7 +100,7 @@ public class BuyLandTest {
         int wheatInStorage = 1000;
         int population = 20;
         int expResult = -2;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -115,7 +115,7 @@ public class BuyLandTest {
         int wheatInStorage = 628;
         int population = 6;
         int expResult = 60;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
     /**
@@ -130,7 +130,7 @@ public class BuyLandTest {
         int wheatInStorage = 1028;
         int population = 14;
         int expResult = 124;
-        int result = BuyLand.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
+        int result = Land.buyLand(pricePerAcre, acresToBuy, acresOwned, wheatInStorage, population);
         assertEquals(expResult, result);
     }
 }
