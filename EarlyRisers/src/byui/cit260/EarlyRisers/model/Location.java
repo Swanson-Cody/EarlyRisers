@@ -20,6 +20,15 @@ public class Location implements Serializable{
     private String symbol;
     private Question question;
     private InventoryItem item;
+    private boolean locVisited;
+
+    public boolean isLocVisited() {
+        return locVisited;
+    }
+
+    public void setLocVisited(boolean locVisited) {
+        this.locVisited = locVisited;
+    }
 
     public Question getQuestion() {
         return question;
