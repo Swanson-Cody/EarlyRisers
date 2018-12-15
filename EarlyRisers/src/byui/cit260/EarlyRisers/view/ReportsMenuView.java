@@ -47,7 +47,7 @@ public class ReportsMenuView extends View {
     private void viewAnimals() {
 
         String reportInventory = Reports.getInventoryReport("Animal");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -67,7 +67,7 @@ public class ReportsMenuView extends View {
     private void viewTools() {
 
         String reportInventory = Reports.getInventoryReport("Tools");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -82,7 +82,7 @@ public class ReportsMenuView extends View {
 
     private void viewProvisions() {
         String reportInventory = Reports.getInventoryReport("Wheat");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -97,7 +97,7 @@ public class ReportsMenuView extends View {
     
     private void viewLand() {
         String reportInventory = Reports.getInventoryReport("Land");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -112,7 +112,7 @@ public class ReportsMenuView extends View {
     private void viewAuthors() {
                    
           String reportInventory = Reports.endYearReport("");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -127,7 +127,7 @@ public class ReportsMenuView extends View {
     private void viewReports() {
 
         String reportInventory = Reports.getInventoryReport("");
-        System.out.println(reportInventory);
+        this.console.println(reportInventory);
         String response = getInput("Do you want to save this to a file? Y or N");
         if (response.equalsIgnoreCase("Y")) {
             response = getInput("Enter a file name.");
@@ -152,7 +152,7 @@ public class ReportsMenuView extends View {
         choice = choice.toUpperCase();
 
         if ("7".equals(choice)) {
-            System.out.println("You have exited the Reports Menu. "
+            this.console.println("You have exited the Reports Menu. "
                     + "Have fun with the game!");
             goToGameMenu();
             return true;

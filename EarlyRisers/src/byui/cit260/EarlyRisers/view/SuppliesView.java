@@ -57,12 +57,12 @@ public class SuppliesView extends View {
         ArrayList<InventoryItem> population = game.getInventory();
         for (InventoryItem item : population) {
             if (item.getItemType().equals("Utility")) {
-                System.out.println(item.getName() + ", " + item.getQuantity());
+                this.console.println(item.getName() + ", " + item.getQuantity());
             }
         }
 
 //        int population = new InventoryItem().getPopulation();
-//        System.out.println("The current population is " + population);
+//        this.console.println("The current population is " + population);
     }
 
     public void printToolsView() {
@@ -76,7 +76,7 @@ public class SuppliesView extends View {
 //          ArrayList<InventoryItem> cropData = game.getInventory();
         for (InventoryItem item : tools) {
             if (item.getItemType().equals("Tools")) {
-                System.out.println(item.getName() + ", " + item.getItemType() + item.getQuantity());
+                this.console.println(item.getName() + ", " + item.getItemType() + item.getQuantity());
             }
         }
 
@@ -88,7 +88,7 @@ public class SuppliesView extends View {
         choice = choice.toUpperCase();
         switch (choice) {
             case "3":
-                System.out.println("You have exited the supplies screen."
+                this.console.println("You have exited the supplies screen."
                         + "Have fun with the game!");
                 return true;
             case "1":

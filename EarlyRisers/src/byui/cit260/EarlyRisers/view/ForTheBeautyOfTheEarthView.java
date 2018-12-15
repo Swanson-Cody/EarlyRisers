@@ -39,7 +39,7 @@ public class ForTheBeautyOfTheEarthView extends View{
         String choice = input[0];
         switch(choice){
             case "1":
-                System.out.println(
+                this.console.println(
                     "\nAs you observe the sky, you see the billowing white clouds above you."
                     + "\nYou reflect upon the words of Job extolling the greatness of God,"
                     + "\n\"He bindeth up the waters in his thick clouds; and the cloud is not rent under them.\""
@@ -50,7 +50,7 @@ public class ForTheBeautyOfTheEarthView extends View{
                 );
                 break;
             case "2": 
-                System.out.println(
+                this.console.println(
                     "\nAs you finish climbing up a mountain, you gaze around. You can see for a vast distance in all directions."
                     + "\nLooking down below you toss a little pebble and watch as it falls far down below."
                     + "\nA startled bird nearby takes flight from his perch. A single feather escapes from the body of the bird"
@@ -65,7 +65,7 @@ public class ForTheBeautyOfTheEarthView extends View{
                 );
                 break;
             case "3":
-                System.out.println(
+                this.console.println(
                     "\nAs you explore the forest around you. You note the many varied plants and animals around you in all their wondrous detail."
                     + "\nYou reflect upon the words of Job regarding how the Lord governs all things:"
                     + "\n\"But ask now the beasts, and they shall teach thee; and the fowls of the air, and they shall tell thee:"
@@ -78,7 +78,7 @@ public class ForTheBeautyOfTheEarthView extends View{
                 );
                 break;
             case "4":
-                System.out.println(
+                this.console.println(
                     "\nAs you wander deeper and deeper into the cave all light from outside is extinguished."
                     + "\nYet, by the light of your torch you can see the magnicient shapes created by water and earth."
                     + "\nMagnificient spiraled creations portruded all around. Little drops of water occasionally rolling down from their points."
@@ -95,7 +95,7 @@ public class ForTheBeautyOfTheEarthView extends View{
                 );
                 break;
             case "5":
-                System.out.println(
+                this.console.println(
                     "\nAmidst the darkness of the night you gaze upon the heavenly expanse above you, whose glistening lights combat bravely against the night."
                     + "\nYou reflect upon the words of Alma who recently refuted the anti-christ, Korihor:"
                     + "\n\"All things denote there is a God; yea, even the earth, and all things that are upon the face of it, yea, and its motion,"

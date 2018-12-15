@@ -60,18 +60,18 @@ public class WheatFieldsView extends View{
 //    
 //    Scanner keyboard = new Scanner(System.in);
 //    int wheat;
-//    System.out.print("How much wheat would you like to plant?");
+//    this.console.print("How much wheat would you like to plant?");
 //            wheat = keyboard.nextInt();
-//    System.out.println("You planted " + wheat + " more bussles of wheat.");
+//    this.console.println("You planted " + wheat + " more bussles of wheat.");
 //    
     }
 //sit and rest in the church and pray
 
     private void rats() {
         WheatEaten wheatEaten = new WheatEaten();
-        System.out.println("Those rats are such pesky things, but you managed"
+        this.console.println("Those rats are such pesky things, but you managed"
                 + " to scare of a few");
-        System.out.println("They did eat" + wheatEaten + " bussels of wheat though.");
+        this.console.println("They did eat" + wheatEaten + " bussels of wheat though.");
     }
     }
 

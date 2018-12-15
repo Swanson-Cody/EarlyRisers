@@ -102,48 +102,48 @@ public class ToolShopView extends View {
 
     private void buyPlow() {
         
-        System.out.println("Congradulations.  You have purchased a plow to help "
+        this.console.println("Congradulations.  You have purchased a plow to help "
                 + "in your harvest.");
     }
 
     private void buyHorse() {
-        System.out.println("Congradulations.  You have purchased a plow to help "
+        this.console.println("Congradulations.  You have purchased a plow to help "
                 + "in your fields.");
     }
 
     private void buyScythe() {
-        System.out.println("Congradulations.  You have purchased a plow to help "
+        this.console.println("Congradulations.  You have purchased a plow to help "
                 + "in your harvest.");
     }
 
     private void buyShovel() {
-        System.out.println("Congradulations.  You have purchased a plow to help "
+        this.console.println("Congradulations.  You have purchased a plow to help "
                 + "in your planting.");
     }
 
     private void buyOx() {
-        System.out.println("Congradulations.  You have purchased a plow to help "
+        this.console.println("Congradulations.  You have purchased a plow to help "
                 + "in your fields.");
     }
 
     private void sellPlow() {
-        System.out.println("You have successfully sold your Plow.");
+        this.console.println("You have successfully sold your Plow.");
     }
 
     private void sellHorse() {
-        System.out.println("You have successfully sold your Horse.");
+        this.console.println("You have successfully sold your Horse.");
     }
 
     private void sellOx() {
-        System.out.println("You have successfully sold your Ox.");
+        this.console.println("You have successfully sold your Ox.");
     }
 
     private void sellScythe() {
-        System.out.println("You have successfully sold your Scythe.");
+        this.console.println("You have successfully sold your Scythe.");
     }
 
     private void sellShovel() {
-        System.out.println("You have successfully sold your Shovel.");
+        this.console.println("You have successfully sold your Shovel.");
     }
 
 }

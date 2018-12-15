@@ -67,7 +67,7 @@ public class SceneMenuView extends View {
 //scene of the church where you have the option to pay tithing
 
     private void church() {
-            System.out.println("\nYou have chosen to visit the Church.  It is beautiful."
+            this.console.println("\nYou have chosen to visit the Church.  It is beautiful."
                 + "\nYour church leader explained they would appreciate your paying"
                 + "\nyour tithes. Would you like to pay your tithing today?"
                 + "\nPlease enter 'y' for yes and 'n' for no.");
@@ -83,14 +83,14 @@ public class SceneMenuView extends View {
 //scene of the field where you harvest and plant next years crops
 
     private void fields() {
-        System.out.println("\nYou have a lot of beautiful land. You have chosen"
+        this.console.println("\nYou have a lot of beautiful land. You have chosen"
                 + "\nto visit your fields.  They are already to harvest/plant.  What"
                 + "\nwould you like to do today?");
     }
 //scene of a tool shop to help you be able to plant and harvest crops    
 
     private void tools() {
-        System.out.println("\nThis will take us to the tool Shop. The blacksmith is "
+        this.console.println("\nThis will take us to the tool Shop. The blacksmith is "
                 + "\nready to assist you. What would you like to do today?  Buy tools,"
                 + "\nsell tools, or exit. ");
     }

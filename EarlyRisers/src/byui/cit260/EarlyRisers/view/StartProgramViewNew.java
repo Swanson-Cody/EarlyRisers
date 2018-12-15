@@ -39,7 +39,7 @@ public class StartProgramViewNew extends View {
     @Override
     public boolean doAction(String[] inputs) {
         String name = inputs[0]; 
-        System.out.println("\n\nWelcome " + name + " to the City of Aaron.");
+        this.console.println("\n\nWelcome " + name + " to the City of Aaron.");
         Player player = new Player();
         player.setName(name);
         EarlyRisers.setPlayer(player);

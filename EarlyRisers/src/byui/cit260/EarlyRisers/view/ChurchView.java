@@ -48,7 +48,7 @@ public class ChurchView extends View {
             case "3":
                return true;
             default:
-                //System.out.println("\nInvalid selection.");
+                //this.console.println("\nInvalid selection.");
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
         return false;
@@ -59,16 +59,16 @@ public class ChurchView extends View {
     
 //    Scanner keyboard = new Scanner(System.in);
 //    int tithing;
-//    System.out.print("How much wheat would you like to pay for your tithing?");
+//    this.console.print("How much wheat would you like to pay for your tithing?");
 //            tithing = keyboard.nextInt();
-//    System.out.println("You have paid " + tithing +" for your tithes and offerings."
+//    this.console.println("You have paid " + tithing +" for your tithes and offerings."
 //            + "Thank you.");
     
     }
 //sit and rest in the church and pray
 
     private void rest() {
-        System.out.println("Isaiah 40:29 ' But they that wait upon the Lord"
+        this.console.println("Isaiah 40:29 ' But they that wait upon the Lord"
                 + "/n shall renew their strength; they shall mount up with "
                 + "/nwings as eagles; they shall run, and not be weary; and "
                 + "/nthey shall walk, and not faint.'");

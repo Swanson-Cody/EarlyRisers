@@ -48,7 +48,7 @@ public class MainMenuView extends View {
         String choice = input[0].toUpperCase();
         switch (choice) {
             case "Q":
-                System.out.println("Have a good day.  Goodbye!");
+                this.console.println("Have a good day.  Goodbye!");
                 return true;
             case "1":
                 newGame();
@@ -67,7 +67,7 @@ public class MainMenuView extends View {
 
     private void newGame() {
 
-        System.out.println("\nCongratulations! You have been elected as the leader for"
+        this.console.println("\nCongratulations! You have been elected as the leader for"
                 + "\nthe City of Aaron. In this game, you will have 10 "
                 + "\nyears to build a prosperous city. "
                 + "\nYour currency is wheat. Each year you will be given "

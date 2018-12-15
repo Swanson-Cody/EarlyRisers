@@ -106,11 +106,11 @@ public class MovePlayerView extends View {
         while(game.getYear() != 10){
         if (moves % 3 == 0) {
             game.setYear(game.getYear()+1);
-            System.out.println("Congratulation you have made it to year " + game.getYear());
+            this.console.println("Congratulation you have made it to year " + game.getYear());
         }
         }
         if (game.getYear() == 10){
-            System.out.println("You made it to the end of the game. Congratulations!!!");
+            this.console.println("You made it to the end of the game. Congratulations!!!");
         }
             return false;
 

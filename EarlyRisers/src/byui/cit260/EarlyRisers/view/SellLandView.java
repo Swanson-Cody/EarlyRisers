@@ -30,7 +30,7 @@ public class SellLandView extends View {
     @Override
     public boolean doAction(String[] inputs) {
 
-        // System.out.println("This is where we'll validate the input and call the buy land function in the controller.");
+        // this.console.println("This is where we'll validate the input and call the buy land function in the controller.");
         goToSellLand();
 
         ManageCropsView view = new ManageCropsView();
