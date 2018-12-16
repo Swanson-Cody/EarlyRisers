@@ -31,9 +31,9 @@ public class Population {
         if (population <= 0) { //if population is under 0
             throw new PopulationException("The population can not be negative.");
         }
-        if (population > 300) {//if population grows bigger than 300
-            throw new PopulationException("The population cannot be larger than 300.");
-        }
+//        if (population > 300) {//if population grows bigger than 300
+//            throw new PopulationException("The population cannot be larger than 300.");
+//        }
         if (w <= 0) {//if percent is less than or equal to 0
             throw new PopulationException("The return percent cannot be less than 0.");
         }

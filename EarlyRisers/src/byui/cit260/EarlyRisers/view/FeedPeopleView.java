@@ -14,6 +14,7 @@ public class FeedPeopleView extends View {
 
     private static FeedPeople goToFeedPeople() {
         FeedPeople feedPeople = new FeedPeople();
+        
 //        buyTheLand.buyLand();
         return feedPeople;
     }

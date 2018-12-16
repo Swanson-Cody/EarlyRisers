@@ -33,16 +33,11 @@ public class GameMenuView extends View {
                 + "\n|         Game of the City of Aaron         |"
                 + "\n+-------------------------------------------+"
                 + "\n\nPlease make a game selection: "
-                + "\n1) Reports Menu"
+                + "\n1) Display Map"
                 + "\n2) Move Player"
-                + "\n3) Pay tithing"
-                + "\n4) Manage Crops"
-                + "\n5) Go to fields"
-                + "\n6) Admire God's Creations"
-                + "\n7) Display Map"
-                + "\n8) Supplies View"
-                + "\n9) Save the Game"
-                + "\n10) Return to Main Menu");
+                + "\n3) Admire God's Creations"
+                + "\n4) Save the Game"
+                + "\n5) Return to Main Menu");
         inputs[0] = selection;
         return inputs;
     }
@@ -53,33 +48,38 @@ public class GameMenuView extends View {
 
         switch (choice) {
             case "1":
-                reportsMenuView();
+//                reportsMenuView();
+                displayMap();
                 break;
             case "2":
                 movePlayer();
                 break;
             case "3":
-                tithes();
-                break;
-            case "4":
-                getManageCropsView();
-                break;
-            case "5":
-                goToFields();
-                break;
-            case "6":
+//                tithes();
                 admireCreations();
                 break;
-            case "7":
-                displayMap();
-                break;
-            case "8":
-                suppliesView();
-            case "9":
+            case "4":
+//                getManageCropsView();
                 saveGameView();
                 break;
-            case "10":
+            case "5":
+//                goToFields();
                 goToMainMenu();
+//                break;
+//            case "6":
+//                admireCreations();
+//                break;
+//            case "7":
+//                displayMap();
+//                break;
+//            case "8":
+//                suppliesView();
+//                break;
+//            case "9":
+//                saveGameView();
+//                break;
+//            case "10":
+//                goToMainMenu();
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection");
         }
