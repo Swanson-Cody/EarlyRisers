@@ -97,6 +97,7 @@ public class MainMenuView extends View {
     private void startExistingGame() {
         StartSavedGameView loadGame = new StartSavedGameView();
         loadGame.display();
+        
     }
  private void saveGameView() {
         SaveGameView save = new SaveGameView();
