@@ -29,3 +29,41 @@ public class FeedPeople {
         return wheatremaining;
         }
 }
+
+    private void countStarvedPeople() {
+        int peopleFed = grainFedToPeople / 20;
+        if (peopleFed >= population) {
+            starved = 0;
+            percentStarved = 0;
+            System.out.println("Your people are well fed and happy.");
+        } else {
+            starved = population - peopleFed;
+            System.out.println(starved + " people starved to death.");
+            percentStarved = (100 * starved) / population;
+            population = population - starved;
+        }
+    }
+
+
+
+
+  int peopleFed = grainFedToPeople / 20;
+        if (peopleFed >= population) {
+            starved = 0;
+            percentStarved = 0;
+            System.out.println("Your people are well fed and happy.");
+        } else {
+            starved = population - peopleFed;
+            System.out.println(starved + " people starved to death.");
+            percentStarved = (100 * starved) / population;
+            population = population - starved;
+        }
+    private void countImmigrants() {
+        if (starved > 0) {
+            immigrants = 0;
+        } else {
+            immigrants = (20 * acres + grain) / (100 * population) + 1;
+            population += immigrants;
+        }
+
+    }

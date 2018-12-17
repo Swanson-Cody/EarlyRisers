@@ -52,6 +52,7 @@ public class Population {
     /**
      *
      * @throws PopulationException
+     * @throws byui.cit260.EarlyRisers.exceptions.GameControlException
      */
     public void calcGrowthTithes() throws PopulationException, GameControlException {
         InventoryItem population = GameControl.getInventoryItemByName("Population");
@@ -67,7 +68,7 @@ public class Population {
             throw new PopulationException("The population cannot be larger than 300.");
         }
 
-        if (tithes >= wheat * .10) {
+        if (tithes.getQuantity() >= wheat.getQuantity() * .10) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;
@@ -75,19 +76,19 @@ public class Population {
             result = newPopulation + ((random / 100) * newPopulation);
             Math.round(result);
         }
-        else if (tithes <= wheat * .06) {
+        else if (tithes.getQuantity() <= wheat.getQuantity() * .06) {
             Random percent = new Random();
             int random = percent.nextInt(6);
             ++random;
             System.out.println(random);
             result = newPopulation + ((random / 100) * newPopulation);
             Math.round(result);
-        } else if (tithes >= wheat * .04) {
+        } else if (tithes.getQuantity() >= wheat.getQuantity() * .04) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;
             System.out.println(random);
-            result = ((random / 100) * newPopulation)- newPopulation; 
+            result = newPopulation - ((random / 100) * newPopulation); 
             Math.round(result);
         }
         
