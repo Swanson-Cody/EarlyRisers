@@ -18,31 +18,16 @@ public class FeedPeople {
        {InventoryItem wheat = GameControl.getInventoryItemByName("Wheat Bushels");
        InventoryItem population = GameControl.getInventoryItemByName("Population");
        FeedPeopleView feedPeople = new FeedPeopleView ();
-       feedPeople.getInputs();
+       feedPeople.getInputs(Integer.parseInt(inputs[0]));
        int wheatNeeded;
-          
-//            write("amount to set aside for food (20 bushels feed 1 person)")
-//            input;
-//            store amout to set aside for food;
+       int starved;
+       int percentStarved;
+//feedPeople input from FeedPeopleView
+//peopleFed = the input from the FeedPeopleView divided by the 20 bushels needed per person to equal people fed. 
 
         wheatNeeded = population.getQuantity() * 20;
-        wheat.setQuantity() = wheat.getQuantity() - feedPeople.getInputs();
-        
-                
-//                    
-            if (feedPeople < 0)
-	{
-            throw new BuyLandException ("You cannot feed people a negative amount of food");
-	}
-        else if (wheatNeeded > wheat.getQuantity())
-        {
-            throw new BuyLandException ("You do not have enough wheat in storage.");
-        }
-        return wheatremaining;
-        }
-}
-
-  int peopleFed = feedPeople / 20;
+       
+          int peopleFed = feedPeople / 20;
         if (peopleFed >= population.getQuantity()) {
             starved = 0;
             percentStarved = 0;
@@ -68,4 +53,19 @@ public class FeedPeople {
         }
     }
 
+        
+                
+//                    
+            if (feedPeople < 0)
+	{
+            throw new BuyLandException ("You cannot feed people a negative amount of food");
+	}
+        else if (wheatNeeded > wheat.getQuantity())
+        {
+            throw new BuyLandException ("You do not have enough wheat in storage.");
+        }
+        return wheatRemaining;
+        }
+}
 
+ 
