@@ -35,7 +35,8 @@ public class MainMenuView extends View {
                 + "\n+-------------------------------------------+\n"
                 + "\n1: Start a new game"
                 + "\n2: Load a saved game"
-                + "\n3: Display the Help Menu"
+                + "\n3: Save current game"
+                + "\n4: Display the Help Menu"
                 + "\nQ: Quit"
         );
 
@@ -57,6 +58,9 @@ public class MainMenuView extends View {
                 startExistingGame();
                 break;
             case "3":
+                saveGameView();
+                break;    
+            case "4":
                 helpMenu();
                 break;
             default:
@@ -94,7 +98,10 @@ public class MainMenuView extends View {
         StartSavedGameView loadGame = new StartSavedGameView();
         loadGame.display();
     }
-
+ private void saveGameView() {
+        SaveGameView save = new SaveGameView();
+        save.display();
+    }
     private void helpMenu() {
         HelpMenuView menu = new HelpMenuView();
         menu.display();
