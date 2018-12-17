@@ -110,18 +110,10 @@ public class ReportsMenuView extends View {
     }
 
     private void viewAuthors() {
-                   
-          String reportInventory = Reports.endYearReport("");
-        this.console.println(reportInventory);
-        String response = getInput("Do you want to save this to a file? Y or N");
-        if (response.equalsIgnoreCase("Y")) {
-            response = getInput("Enter a file name.");
-            try {
-                Reports.printReport(response, reportInventory);
-            } catch (ReportsException ex) {
-                Logger.getLogger(ReportsMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            
+       
+        this.console.println("Cody, Rachel and Heather are the authors of this game.");
+               
     }
 
     public void viewReports() {
