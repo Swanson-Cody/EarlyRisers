@@ -39,11 +39,8 @@ public class SaveGameView extends View {
         try{
             GameControl.saveGame(game, fileName);
         }
-        catch (GameControlException e){
+        catch (GameControlException | IOException e){
             ErrorView.display(this.getClass().getName(), "\nFailed to save game. Exception: " + e.getMessage());
-            return false;
-        } catch (IOException ex) {
-            ErrorView.display(this.getClass().getName(), "\nFailed to save game. Exception: " + ex.getMessage());
             return false;
         }
 

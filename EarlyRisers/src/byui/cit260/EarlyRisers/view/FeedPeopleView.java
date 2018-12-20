@@ -24,13 +24,13 @@ public class FeedPeopleView extends View {
         String[] inputs = new String[10];
         String selection = this.getInput("How much would you like to feed the people?");
         inputs[0] = selection;
-
+        
         return inputs;
     }
 
     @Override
     public boolean doAction(String[] inputs) {
-
+        
         // this.console.println("This is where we'll validate the input and call the buy land function in the controller.");
         goToFeedPeople();
 

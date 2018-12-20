@@ -122,7 +122,7 @@ public static void createTools() throws GameControlException{
 
     public static void createPopulation() throws GameControlException{
         ArrayList<InventoryItem> population = new ArrayList<>();
-        population.add(new InventoryItem("Utility", "Population", 1000));
+        population.add(new InventoryItem("Utility", "Population", 100));
         EarlyRisers.getCurrentGame().addToInventory(population);
     }
 

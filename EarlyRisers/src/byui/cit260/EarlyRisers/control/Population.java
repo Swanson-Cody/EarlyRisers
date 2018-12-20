@@ -89,6 +89,7 @@ public class Population {
             ++random;
             System.out.println(random);
             result = ((random / 100) * newPopulation)- newPopulation; 
+            //result = newPopulation - ((random / 100) * newPopulation); 
             Math.round(result);
         }
         

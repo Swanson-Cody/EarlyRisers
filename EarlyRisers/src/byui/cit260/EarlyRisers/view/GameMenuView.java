@@ -225,7 +225,7 @@ public class GameMenuView extends View {
                     game.setTotalPoints(tp);
                     currentLocation.setQuestion(null);
                     if (tp >= 80) {
-                        this.console.println("Congrats!  You are smart and know the history of the City of Aaron."
+                        this.console.println("Congrats!  You are smart and know the history of the City of Aaron. "
                                 + "Please come back and play again ");
                         ReportsMenuView reports = new ReportsMenuView();
                         reports.viewReports();

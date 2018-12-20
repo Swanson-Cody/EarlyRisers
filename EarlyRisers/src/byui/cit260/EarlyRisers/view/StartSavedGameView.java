@@ -34,19 +34,13 @@ public class StartSavedGameView extends View {
     @Override
     public boolean doAction(String[] inputs) {
         String fileName = inputs[0];
-        Game game = new Game();
-        
+        Game game;
         try {
-            game = GameControl.getGame(fileName + ".dat");            
-        }   
-        catch(GameControlException e) {
-            ErrorView.display(this.getClass().getName(), "\nFailed to load game. Exception: " + e.getMessage());
-            return false;
-        } catch (IOException | ClassNotFoundException ex) {
+            game = GameControl.getGame(fileName + ".dat");
+        } catch (GameControlException | IOException | ClassNotFoundException ex) {
             Logger.getLogger(StartSavedGameView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return true;
+        }return true;
     }
+   
     
 }
