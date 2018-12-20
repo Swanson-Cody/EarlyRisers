@@ -12,11 +12,4 @@ import byui.cit260.EarlyRisers.exceptions.BuyLandException;
  * @author rache
  */
 public class PlantCrops {
-    public static int plantCrops()
-    {
-        write("How many acres of land do you want to plant?");
-        input;
-        checks;
-        
-    }
 }

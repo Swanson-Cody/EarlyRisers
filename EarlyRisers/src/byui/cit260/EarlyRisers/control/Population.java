@@ -59,6 +59,7 @@ public class Population {
         InventoryItem wheat = GameControl.getInventoryItemByName("Wheat Bushels");
         double newPopulation = calcGrowth(population.getQuantity());
         double result = newPopulation;
+        double tithing = (double) tithes.getQuantity();
         
         if (newPopulation <= 0) { //if population is under 0
             throw new PopulationException("The population can not be negative.");
@@ -67,7 +68,7 @@ public class Population {
             throw new PopulationException("The population cannot be larger than 300.");
         }
 
-        if (tithes >= wheat * .10) {
+        if (tithing >= (wheat.getQuantity() * .10)) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;
@@ -75,14 +76,14 @@ public class Population {
             result = newPopulation + ((random / 100) * newPopulation);
             Math.round(result);
         }
-        else if (tithes <= wheat * .06) {
+        else if (tithing <= wheat.getQuantity() * .06) {
             Random percent = new Random();
             int random = percent.nextInt(6);
             ++random;
             System.out.println(random);
             result = newPopulation + ((random / 100) * newPopulation);
             Math.round(result);
-        } else if (tithes >= wheat * .04) {
+        } else if (tithing >= wheat.getQuantity() * .04) {
             Random percent = new Random();
             int random = percent.nextInt(10);
             ++random;

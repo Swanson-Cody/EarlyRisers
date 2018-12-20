@@ -30,7 +30,7 @@ public class EarlyRisers {
 //    private static double totalTime;
 //    private static ArrayList<InventoryItem> inventory;
     
-    private static PrintWriter logFile = null;
+    public static PrintWriter logFile = null;
 
     
     public static void main(String[] args) {

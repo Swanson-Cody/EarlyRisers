@@ -25,15 +25,15 @@ public class Land {
         
         if (acresToBuy < 0)
 	{
-            throw new BuyLandException ("You cannot have less than 0 acres of land.");
+            throw new BuyLandException ("You entered " + acresToBuy + ". You cannot have less than 0 acres of land. Please try again.");
 	}
         else if (wheatNeeded > wheatInStorage.getQuantity())
         {
-            throw new BuyLandException ("You need wheat in your storage.");
+            throw new BuyLandException ("You do not have enough wheat in your storage to purchase " + acresToBuy + ". You only have " + wheatInStorage.getQuantity() + " but need " + wheatNeeded + ".");
         }
         else if (peopleNeeded > population.getQuantity()) 
         {
-            throw new BuyLandException ("You must have people to work the land.");
+            throw new BuyLandException ("You do not have enough population to purchase " + acresToBuy + ". You only have " + population.getQuantity() + " but need " + peopleNeeded + ".");
         }
         
         int remainingWheat = wheatInStorage.getQuantity() - wheatNeeded;

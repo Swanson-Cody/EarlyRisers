@@ -9,6 +9,7 @@ import byui.cit260.EarlyRisers.control.GameControl;
 import byui.cit260.EarlyRisers.control.Land;
 import byui.cit260.EarlyRisers.exceptions.BuyLandException;
 import byui.cit260.EarlyRisers.exceptions.GameControlException;
+import byui.cit260.EarlyRisers.main.EarlyRisers;
 import byui.cit260.EarlyRisers.model.InventoryItem;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,7 +40,7 @@ public class SellLandView extends View {
             InventoryItem wheatOwned = GameControl.getInventoryItemByName("Wheat Bushels");
             this.console.println("You successfully sold " + inputs[0] + " acres. You now own " + wheatOwned.getQuantity() + " amount of wheat. You also have " + acresOwned.getQuantity() + " amount of acres.");
         } catch (BuyLandException | GameControlException ex) {
-            Logger.getLogger(BuyLandView.class.getName()).log(Level.SEVERE, null, ex);
+            EarlyRisers.logFile.write(ex.getMessage());
         }
         
         ManageCropsView view = new ManageCropsView();
